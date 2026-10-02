@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/main.css">
+    <link rel="stylesheet" href="../assets/styles/avatar.css">
+    <title>Jeton-like Website</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="../assets/images/logo.png" alt="Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="../review-writing.html">Review Student Writing</a></li>
+            </ul>
+        </nav>
+        <!-- User Account Avatar/Profile Summary -->
+        <div id="accountAvatar" style="display:none; position:relative;">
+            <button id="avatarBtn" style="background:none; border:none; cursor:pointer;">
+                <img src="../assets/images/logos/default-avatar.png" alt="Avatar" style="width:40px; height:40px; border-radius:50%;">
+            </button>
+            <div id="avatarDropdown" style="display:none; position:absolute; right:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.15); min-width:200px; z-index:100; border-radius:8px;">
+                <div style="padding:16px; border-bottom:1px solid #eee;">
+                    <strong id="avatarUserName">-</strong><br>
+                    <span id="avatarUserEmail" style="font-size:0.9em; color:#666;">-</span><br>
+                    <span id="avatarUserPhone" style="font-size:0.9em; color:#666;">-</span>
+                </div>
+                <ul style="list-style:none; margin:0; padding:0;">
+                    <li><a href="../profile.php" style="display:block; padding:10px 16px; text-decoration:none; color:#333;">View Profile</a></li>
+                    <li><a href="#" id="changePasswordBtn" style="display:block; padding:10px 16px; text-decoration:none; color:#333;">Change Password</a></li>
+                    <li><a href="#" id="logoutBtn" style="display:block; padding:10px 16px; text-decoration:none; color:#c00;">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<script>
+// Avatar logic: show avatar if logged in, handle dropdown
+document.addEventListener('DOMContentLoaded', function() {
+    var isLoggedIn = false;
+    var userEmail = '';
+    var userName = '';
+    var userPhone = '';
+    try {
+        var acc = localStorage.getItem('wwlcAccountStatus');
+        if (acc) {
+            var accObj = JSON.parse(acc);
+            if (accObj.verified && accObj.email) {
+                isLoggedIn = true;
+                userEmail = accObj.email;
+                userName = accObj.fullName || '';
+                userPhone = accObj.phone || '';
+            }
+        }
+    } catch(e) {}
+    var avatar = document.getElementById('accountAvatar');
+    var avatarBtn = document.getElementById('avatarBtn');
+    var avatarDropdown = document.getElementById('avatarDropdown');
+    var avatarUserEmail = document.getElementById('avatarUserEmail');
+    var avatarUserName = document.getElementById('avatarUserName');
+    var avatarUserPhone = document.getElementById('avatarUserPhone');
+    if (isLoggedIn && avatar) {
+        avatar.style.display = 'block';
+        if (avatarUserEmail) avatarUserEmail.textContent = userEmail;
+        if (avatarUserName) avatarUserName.textContent = userName || '-';
+        if (avatarUserPhone) avatarUserPhone.textContent = userPhone || '-';
+    }
+        // Change Password button (placeholder)
+        var changePasswordBtn = document.getElementById('changePasswordBtn');
+        if (changePasswordBtn) {
+            changePasswordBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Change password feature coming soon!');
+            });
+        }
+    if (avatarBtn && avatarDropdown) {
+        avatarBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            avatarDropdown.style.display = avatarDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function() {
+            avatarDropdown.style.display = 'none';
+        });
+        avatarDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    var logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('wwlcAccountStatus');
+            window.location.reload();
+        });
+    }
+});
+</script>
+</body>
+</html>
+

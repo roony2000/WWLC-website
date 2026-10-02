@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Ministry of Education Malaysia Placeholder</title>
+  <desc id="desc">Abstract placeholder emblem with the letters MOE</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B3D91" />
+      <stop offset="100%" stop-color="#F1B814" />
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="208" height="208" rx="28" fill="#0B1F3D" opacity="0.9" />
+  <rect x="28" y="28" width="184" height="184" rx="24" fill="url(#grad)" opacity="0.92" />
+  <path d="M60 170 L120 70 L180 170" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" />
+  <path d="M82 170 L120 110 L158 170" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+  <text x="120" y="190" font-family="'Montserrat', 'Segoe UI', Arial, sans-serif" font-size="42" text-anchor="middle" fill="#FFFFFF" font-weight="700">MOE</text>
+</svg>

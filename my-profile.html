@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/images/ss.png" />
+    <title>My Profile | Wordsworth Language Centre</title>
+    <link rel="stylesheet" href="assets/styles/main.css" />
+
+    <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
+    <script src='scripts/ga4.js'></script>
+</head>
+<body>
+    <div class="social-fixed" aria-hidden="false">
+        <a class="social-item whatsapp" href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <!-- ...existing code... -->
+        </a>
+        <a class="social-item wechat" href="#" target="_blank" rel="noopener" aria-label="WeChat">
+            <!-- ...existing code... -->
+        </a>
+        <a class="social-item telegram" href="https://t.me/USERNAME" target="_blank" rel="noopener" aria-label="Telegram">
+            <!-- ...existing code... -->
+        </a>
+    </div>
+
+    <header class="navbar" role="banner">
+        <div class="container nav-inner">
+            <a class="logo-link" href="index.html" aria-label="Wordsworth Home">
+                <img class="logo-img" src="assets/images/ss.png" alt="Wordsworth Logo" />
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
+                <span class="nav-toggle-lines" aria-hidden="true">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </span>
+            </button>
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main">
+                <ul>                    <li><a href="placement.php">Placement Test</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="fee-calendar.html">Fee & Calendar</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="lang-selector" id="langSelector" aria-haspopup="true">
+                    <button id="langBtn" class="lang-btn" aria-expanded="false" title="Select language">
+                        <img class="flag-img" id="langBtnFlag" src="https://flagcdn.com/gb.svg" alt="English (UK)" />
+                        <span id="langBtnLabel" class="lang-label">EN</span>
+                        <svg class="chev" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <ul class="lang-menu" id="langMenu" role="menu" aria-labelledby="langBtn">
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="en" data-code="EN" data-label="English" data-flag="https://flagcdn.com/gb.svg">
+                                <img class="flag-img" src="https://flagcdn.com/gb.svg" alt="English (UK)" />
+                                <span class="lang-native">English</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="ar" data-code="AR" data-label="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;" data-flag="https://flagcdn.com/sa.svg">
+                                <img class="flag-img" src="https://flagcdn.com/sa.svg" alt="Arabic (SA)" />
+                                <span class="lang-native">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
+                                <span class="lang-translate">Arabic</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="ru" data-code="RU" data-label="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;" data-flag="https://flagcdn.com/ru.svg">
+                                <img class="flag-img" src="https://flagcdn.com/ru.svg" alt="Russian" />
+                                <span class="lang-native">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span>
+                                <span class="lang-translate">Russian</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="zh" data-code="ZH" data-label="&#20013;&#25991;" data-flag="https://flagcdn.com/cn.svg">
+                                <img class="flag-img" src="https://flagcdn.com/cn.svg" alt="Chinese" />
+                                <span class="lang-native">&#20013;&#25991;</span>
+                                <span class="lang-translate">Chinese</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="ko" data-code="KO" data-label="&#54620;&#44397;&#50612;" data-flag="https://flagcdn.com/kr.svg">
+                                <img class="flag-img" src="https://flagcdn.com/kr.svg" alt="Korean" />
+                                <span class="lang-native">&#54620;&#44397;&#50612;</span>
+                                <span class="lang-translate">Korean</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="fr" data-code="FR" data-label="Fran&ccedil;ais" data-flag="https://flagcdn.com/fr.svg">
+                                <img class="flag-img" src="https://flagcdn.com/fr.svg" alt="French" />
+                                <span class="lang-native">Fran&ccedil;ais</span>
+                                <span class="lang-translate">French</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <a class="ghost nav-signin" href="register.html?showLogin=1">Sign In</a>
+                <a class="cta" href="register.html">Register</a>
+            </div>
+        </div>
+    </header>
+    <main style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #f9f9f9; border-radius: 12px; box-shadow: 0 2px 8px rgba(44,62,80,0.07);">
+        <div class="profile-card">
+            <div class="profile-avatar-wrap">
+                <img src="assets/images/myprofile.png" alt="Profile Photo" class="profile-avatar-img" />
+            </div>
+            <h1 class="profile-title">My Profile</h1>
+            <div class="profile-info">
+                <div class="profile-info-row">
+                    <span class="profile-label">Name:</span>
+                    <span class="profile-value" id="profileName">Loading...</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Email:</span>
+                    <span class="profile-value" id="profileEmail">Loading...</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Phone:</span>
+                    <span class="profile-value" id="profilePhone">Loading...</span>
+                </div>
+                <div class="profile-info-row">
+                    <span class="profile-label">Password:</span>
+                    <span class="profile-value" id="profilePassword">â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢</span>
+                </div>
+            </div>
+            <button class="profile-edit-btn" title="Edit Profile">Edit Profile</button>
+                            <button class="profile-edit-btn" id="logoutBtn" style="background:#c00; color:#fff; margin-top:1rem;">Log Out</button>
+                <div id="changePasswordSection" style="display:none; margin-top:1.5rem; width:100%;">
+                    <form id="changePasswordForm" style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                        <div style="width:100%;">
+                            <label for="currentPassword" style="font-weight:600; color:#4e6a8a;">Current Password</label>
+                            <input type="password" id="currentPassword" name="currentPassword" class="profile-input" style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc; margin-top:0.3rem;" required />
+                        </div>
+                        <div style="width:100%;">
+                            <label for="newPassword" style="font-weight:600; color:#4e6a8a;">New Password</label>
+                            <input type="password" id="newPassword" name="newPassword" class="profile-input" style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc; margin-top:0.3rem;" required />
+                        </div>
+                        <div style="width:100%; text-align:right;">
+                            <button type="submit" class="profile-edit-btn" style="padding:0.5rem 1.5rem; font-size:1rem;">Save</button>
+                            <button type="button" id="cancelChangePassword" class="profile-edit-btn" style="background:#eee; color:#2563eb; margin-left:0.7rem; box-shadow:none;" >Cancel</button>
+                        </div>
+                        <div id="passwordChangeMsg" style="width:100%; text-align:center; color:#c00; font-size:0.98rem; margin-top:0.5rem;"></div>
+                    </form>
+                </div>
+        </div>
+        <style>
+        .profile-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 420px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s;
+        }
+        .profile-card:hover {
+            box-shadow: 0 8px 32px rgba(44,62,80,0.16);
+        }
+        .profile-avatar-wrap {
+            margin-bottom: 1.2rem;
+        }
+        .profile-avatar-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+        }
+        .profile-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+        }
+        .profile-info {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .profile-info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1.08rem;
+        }
+        .profile-label {
+            color: #4e6a8a;
+            font-weight: 600;
+        }
+        .profile-value {
+            color: #222;
+        }
+        .profile-edit-btn {
+            background: linear-gradient(120deg, #2563eb 60%, #4e6a8a 100%);
+            color: #fff;
+            border: none;
+            border-radius: 999px;
+            padding: 0.7rem 2.2rem;
+            font-size: 1.08rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+            transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+        }
+        .profile-edit-btn:hover, .profile-edit-btn:focus {
+            background: linear-gradient(120deg, #4e6a8a 60%, #2563eb 100%);
+            box-shadow: 0 6px 18px rgba(44,62,80,0.13);
+            transform: translateY(-2px) scale(1.04);
+        }
+        @media (max-width: 600px) {
+            .profile-card {
+                padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+            }
+            .profile-title {
+                font-size: 1.3rem;
+            }
+            .profile-avatar-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        </style>
+        <script src="scripts/nav.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch profile info
+            fetch('profile.php')
+                .then(function(response) {
+                    if (!response.ok) throw new Error('Not logged in or error fetching profile');
+                    return response.json();
+                })
+                .then(function(data) {
+                    document.getElementById('profileName').textContent = data.name || '-';
+                    document.getElementById('profileEmail').textContent = data.email || '-';
+                    document.getElementById('profilePhone').textContent = data.phone || '-';
+                })
+                .catch(function(err) {
+                    document.getElementById('profileName').textContent = 'Not logged in';
+                    document.getElementById('profileEmail').textContent = '-';
+                    document.getElementById('profilePhone').textContent = '-';
+                });
+
+            // Password change logic (real data)
+            var editBtn = document.querySelector('.profile-edit-btn');
+            var changeSection = document.getElementById('changePasswordSection');
+            var form = document.getElementById('changePasswordForm');
+            var cancelBtn = document.getElementById('cancelChangePassword');
+            var msg = document.getElementById('passwordChangeMsg');
+            if (editBtn && changeSection && form && cancelBtn) {
+                editBtn.addEventListener('click', function() {
+                    changeSection.style.display = 'block';
+                    editBtn.style.display = 'none';
+                });
+                cancelBtn.addEventListener('click', function() {
+                    changeSection.style.display = 'none';
+                    editBtn.style.display = '';
+                    form.reset();
+                    msg.textContent = '';
+                });
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    msg.textContent = '';
+                    var current = document.getElementById('currentPassword').value;
+                    var newPass = document.getElementById('newPassword').value;
+                    if (newPass.length < 6) {
+                        msg.textContent = 'New password must be at least 6 characters.';
+                        return;
+                    }
+                    var formData = new FormData();
+                    formData.append('currentPassword', current);
+                    formData.append('newPassword', newPass);
+                    fetch('profile.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        if (data.success) {
+                            msg.style.color = '#2563eb';
+                            msg.textContent = 'Password changed successfully!';
+                            setTimeout(function() {
+                                changeSection.style.display = 'none';
+                                editBtn.style.display = '';
+                                form.reset();
+                                msg.textContent = '';
+                            }, 1500);
+                        } else {
+                            msg.style.color = '#c00';
+                            msg.textContent = data.error || 'Error changing password.';
+                        }
+                    })
+                    .catch(function() {
+                        msg.style.color = '#c00';
+                        msg.textContent = 'Error changing password.';
+                    });
+                });
+            }
+
+            // Logout button logic
+            var logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    // Optionally, destroy session via PHP
+                    fetch('logout.php', { method: 'POST' })
+                        .then(function() {
+                            window.location.href = 'index.html';
+                        })
+                        .catch(function() {
+                            window.location.href = 'index.html';
+                        });
+                });
+            }
+        });
+        </script>
+    </main>
+</body>
+</html>
+
+
+

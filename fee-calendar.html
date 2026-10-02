@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fee & Calendar | Wordsworth Language Centre</title>
+    <link rel="icon" type="image/png" href="assets/images/ss.png" />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
+    <script src='scripts/ga4.js'></script>
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="container nav-inner">
+            <a class="logo-link" href="index.html" aria-label="Wordsworth Home">
+                <img class="logo-img" src="assets/images/ss.png" alt="Wordsworth Logo" />
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
+                <span class="nav-toggle-lines" aria-hidden="true">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </span>
+            </button>
+            <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main">
+                <ul>                    <li><a href="placement.php">Placement Test</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="fee-calendar.html" aria-current="page">Fee & Calendar</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="lang-selector" id="langSelector" aria-haspopup="true">
+                    <button id="langBtn" class="lang-btn" aria-expanded="false" title="Select language">
+                        <img class="flag-img" id="langBtnFlag" src="https://flagcdn.com/gb.svg" alt="English (UK)" />
+                        <span id="langBtnLabel" class="lang-label">EN</span>
+                        <svg class="chev" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <ul class="lang-menu" id="langMenu" role="menu" aria-labelledby="langBtn">
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="en" data-code="EN" data-label="English" data-flag="https://flagcdn.com/gb.svg">
+                                <img class="flag-img" src="https://flagcdn.com/gb.svg" alt="English (UK)" />
+                                <span class="lang-native">English</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="ar" data-code="AR" data-label="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;" data-flag="https://flagcdn.com/sa.svg">
+                                <img class="flag-img" src="https://flagcdn.com/sa.svg" alt="Arabic (SA)" />
+                                <span class="lang-native">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
+                                <span class="lang-translate">Arabic</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="ru" data-code="RU" data-label="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;" data-flag="https://flagcdn.com/ru.svg">
+                                <img class="flag-img" src="https://flagcdn.com/ru.svg" alt="Russian" />
+                                <span class="lang-native">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span>
+                                <span class="lang-translate">Russian</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="zh" data-code="ZH" data-label="&#20013;&#25991;" data-flag="https://flagcdn.com/cn.svg">
+                                <img class="flag-img" src="https://flagcdn.com/cn.svg" alt="Chinese" />
+                                <span class="lang-native">&#20013;&#25991;</span>
+                                <span class="lang-translate">Chinese</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="ko" data-code="KO" data-label="&#54620;&#44397;&#50612;" data-flag="https://flagcdn.com/kr.svg">
+                                <img class="flag-img" src="https://flagcdn.com/kr.svg" alt="Korean" />
+                                <span class="lang-native">&#54620;&#44397;&#50612;</span>
+                                <span class="lang-translate">Korean</span>
+                            </button>
+                        </li>
+                        <li role="menuitem">
+                            <button class="lang-item" data-lang="fr" data-code="FR" data-label="Fran&ccedil;ais" data-flag="https://flagcdn.com/fr.svg">
+                                <img class="flag-img" src="https://flagcdn.com/fr.svg" alt="French" />
+                                <span class="lang-native">Fran&ccedil;ais</span>
+                                <span class="lang-translate">French</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <a class="ghost nav-signin" href="register.html?showLogin=1">Sign In</a>
+                <a class="cta" href="register.html">Register</a>
+            </div>
+        </div>
+    </header>
+    <main class="calendar-main">
+        <section class="calendar-section">
+                        <h1 class="calendar-title" style="text-align: center; font-size: 2.5rem; font-weight: 700; color: #1a237e; margin-top: 2rem; margin-bottom: 2rem; letter-spacing: 1px; font-family: 'Segoe UI', Arial, sans-serif; text-shadow: 0 2px 8px #e3e3e3;">
+                            Fee Structure & Academic Calendar 2026
+                        </h1>
+            <div class="fee-calendar-flex">
+                                <div class="fee-card brochure-card" data-download="assets/fee-structure-2026.pdf" style="position: relative; cursor: pointer;">
+                                    <img src="assets/images/fee.png" alt="Fee Structure" class="fee-img clickable-img" data-img="assets/images/fee.png" />
+                                    <a href="assets/fee-structure-2026.pdf" download title="Download Fee Structure PDF" style="position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 50%; padding: 8px; box-shadow: 0 2px 6px #bbb; display: flex; align-items: center; justify-content: center;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#1a237e" viewBox="0 0 24 24"><path d="M12 16a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v10a1 1 0 0 1-1 1zm5.707-3.707a1 1 0 0 0-1.414 0L13 15.586V5a1 1 0 1 0-2 0v10.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414z"/></svg>
+                                    </a>
+                                    <a href="assets/fee-structure-2026.pdf" download class="brochure-download-btn">Download Now</a>
+                                </div>
+                                <div class="calendar-card brochure-card" data-download="assets/academic-calendar-2026.pdf" style="position: relative; cursor: pointer;">
+                                    <img src="assets/images/WWLC Academic Calendar 2026.jpg" alt="Academic Calendar 2026" class="calendar-img clickable-img" data-img="assets/images/WWLC Academic Calendar 2026.jpg" />
+                                    <a href="assets/academic-calendar-2026.pdf" download title="Download Academic Calendar PDF" style="position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 50%; padding: 8px; box-shadow: 0 2px 6px #bbb; display: flex; align-items: center; justify-content: center;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#1a237e" viewBox="0 0 24 24"><path d="M12 16a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v10a1 1 0 0 1-1 1zm5.707-3.707a1 1 0 0 0-1.414 0L13 15.586V5a1 1 0 1 0-2 0v10.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414z"/></svg>
+                                    </a>
+                                    <a href="assets/academic-calendar-2026.pdf" download class="brochure-download-btn">Download Now</a>
+                                </div>
+            </div>
+        </section>
+        <section class="courses-preview-section">
+            <div class="courses-preview-header">Brochures.showing 2 Items</div>
+            <div class="courses-preview-grid">
+                <article class="course-preview-card tone-blue brochure-card" data-download="assets/fee-structure-2026.pdf" style="cursor: pointer;">
+                    <div class="course-tags"><span>Brochure</span><span>2026</span></div>
+                    <h3>Fee Structure</h3>
+                    <p>Complete fee details by study duration, including enrollment fee, registration fee, and books/materials information.</p>
+                    <div class="course-meta">Document type: PDF</div>
+                    <div class="course-meta">Use this for full tuition breakdown</div>
+                    <div class="course-actions">
+                        <a href="assets/images/fee.png" class="course-btn course-btn-primary">View Details</a>
+                        <a href="assets/fee-structure-2026.pdf" download class="course-btn course-btn-ghost">Brochure</a>
+                    </div>
+                </article>
+                <article class="course-preview-card tone-green brochure-card" data-download="assets/academic-calendar-2026.pdf" style="cursor: pointer;">
+                    <div class="course-tags"><span>Brochure</span><span>2026</span></div>
+                    <h3>Academic Calendar</h3>
+                    <p>Official class calendar with monthly schedule, key public holidays, exam periods, and important annual dates.</p>
+                    <div class="course-meta">Document type: PDF</div>
+                    <div class="course-meta">Use this for yearly planning</div>
+                    <div class="course-actions">
+                        <a href="assets/images/WWLC Academic Calendar 2026.jpg" class="course-btn course-btn-primary">View Details</a>
+                        <a href="assets/academic-calendar-2026.pdf" download class="course-btn course-btn-ghost">Brochure</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <style>
+            .fee-calendar-flex {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
+                margin: 40px 0 0 0;
+            }
+            .fee-card, .calendar-card {
+                background: #fff;
+                border-radius: 18px;
+                box-shadow: 0 4px 24px rgba(17,32,78,0.08);
+                padding: 24px 24px 16px 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 420px;
+                min-width: 280px;
+            }
+            .fee-img, .calendar-img {
+                max-width: 350px;
+                width: 100%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(30,58,138,0.10);
+            }
+            .brochure-download-btn {
+                margin-top: 16px;
+                padding: 10px 18px;
+                border-radius: 10px;
+                background: #1a237e;
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 0.95rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s ease;
+            }
+            .brochure-download-btn:hover {
+                background: #0f1760;
+            }
+            @media (max-width: 900px) {
+                .fee-calendar-flex {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .fee-card, .calendar-card {
+                    max-width: 95vw;
+                }
+            }
+            .courses-preview-section {
+                margin: 56px auto 24px;
+                max-width: 1240px;
+                padding: 0 20px;
+            }
+            .courses-preview-header {
+                color: #1d2758;
+                font-size: 1.7rem;
+                font-weight: 700;
+                margin-bottom: 22px;
+            }
+            .courses-preview-grid {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+            .course-preview-card {
+                border-radius: 16px;
+                padding: 24px;
+                box-shadow: 0 6px 18px rgba(14, 33, 83, 0.08);
+                border: 1px solid rgba(17, 34, 78, 0.08);
+            }
+            .tone-blue { background: #eaf0fb; }
+            .tone-green { background: #e9f4ef; }
+            .course-tags {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 14px;
+            }
+            .course-tags span {
+                background: #fff;
+                color: #1a237e;
+                border-radius: 999px;
+                padding: 6px 12px;
+                font-size: 0.86rem;
+                font-weight: 600;
+            }
+            .course-preview-card h3 {
+                margin: 0 0 10px;
+                font-size: 2rem;
+                color: #04103a;
+            }
+            .course-preview-card p {
+                margin: 0 0 14px;
+                color: #15285f;
+                line-height: 1.55;
+                min-height: 74px;
+            }
+            .course-meta {
+                color: #1a2c5f;
+                margin-bottom: 8px;
+                font-weight: 500;
+            }
+            .course-actions {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            .course-btn {
+                text-decoration: none;
+                padding: 10px 18px;
+                border-radius: 12px;
+                font-weight: 700;
+                min-width: 132px;
+                text-align: center;
+                border: 2px solid transparent;
+            }
+            .course-btn-primary {
+                background: #1a3a95;
+                color: #fff;
+            }
+            .course-btn-ghost {
+                background: transparent;
+                border-color: #b8bfd3;
+                color: #16265e;
+            }
+            .course-btn-primary:hover { background: #102b77; }
+            .course-btn-ghost:hover { background: rgba(255,255,255,0.8); }
+            @media (max-width: 1100px) {
+                .courses-preview-grid { grid-template-columns: 1fr; }
+            }
+            @media (max-width: 700px) {
+                .courses-preview-grid { grid-template-columns: 1fr; }
+                .courses-preview-section { margin-top: 44px; }
+            }
+        </style>
+    </main>
+    <script src="scripts/nav.js"></script>
+    <script>
+        document.querySelectorAll('.brochure-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+                var filePath = card.getAttribute('data-download');
+                if (!filePath) return;
+
+                var link = document.createElement('a');
+                link.href = filePath;
+                link.setAttribute('download', '');
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

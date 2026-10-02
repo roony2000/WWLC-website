@@ -1,0 +1,6 @@
+assets/videos/
+assets/images/question*.png
+*.zip
+*.php
+.env*
+error_log
