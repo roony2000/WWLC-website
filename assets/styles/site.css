@@ -840,3 +840,148 @@ body.home-page {
         padding: 22px;
     }
 }
+
+
+/* ==========================================================================
+   HOMEPAGE: globe and learner stories (.global-voices, #stories)
+   The one dark band on the page: full-width navy so the 3D globe sits in its
+   own night sky. The story panel is a navy "margin note" with a gold edge.
+   ========================================================================== */
+
+.home-page .global-voices {
+    display: grid;
+    grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+    padding-block: clamp(64px, 9vw, 112px);
+    background: var(--wwlc-navy);
+    /* Paint the navy to the full window width while the content stays in
+       the container. border-image does not change layout. */
+    border-image: linear-gradient(var(--wwlc-navy), var(--wwlc-navy)) fill 0 / 0 / 0 100vmax;
+    /* main.css sets content-visibility:auto here, which would clip that
+       full-width paint, so turn it off for this section. */
+    content-visibility: visible;
+    color: #fff;
+}
+
+.home-page .globe-copy h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 2.875rem);
+    line-height: 1.12;
+    color: #fff;
+}
+
+.home-page .globe-copy p {
+    margin: 0 0 24px;
+    font-size: 1.0625rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.home-page .globe-legend {
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.home-page .globe-legend .dot {
+    margin: 0;
+}
+
+.home-page .globe-stage {
+    border: 1px solid rgba(240, 167, 40, 0.35);
+    border-radius: 24px;
+    box-shadow: none;
+}
+
+/* Gold focus ring on the dark background */
+.home-page .global-voices button:focus-visible {
+    outline: 3px solid var(--wwlc-gold);
+    outline-offset: 3px;
+}
+
+/* Overlays use logical sides so they swap over in Arabic */
+.home-page .globe-panel {
+    left: auto;
+    right: auto;
+    inset-inline-start: 24px;
+    bottom: 24px;
+    background: rgba(5, 15, 79, 0.86);
+    border-inline-start: 3px solid var(--wwlc-gold);
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+.home-page .globe-clock {
+    left: auto;
+    right: auto;
+    inset-inline-end: 24px;
+    top: 24px;
+}
+
+.home-page .globe-fullscreen {
+    left: auto;
+    right: auto;
+    inset-inline-end: 18px;
+}
+
+.home-page .globe-stage.is-fullscreen .globe-panel {
+    left: auto;
+    right: auto;
+    inset-inline-start: clamp(24px, 6vw, 56px);
+}
+
+.home-page .globe-stage.is-fullscreen .globe-clock {
+    left: auto;
+    right: auto;
+    inset-inline-end: clamp(20px, 6vw, 56px);
+}
+
+.home-page .globe-stage.is-fullscreen .globe-fullscreen {
+    left: auto;
+    right: auto;
+    inset-inline-end: clamp(24px, 6vw, 56px);
+}
+
+.home-page .panel-name {
+    color: var(--wwlc-gold);
+}
+
+.home-page .panel-watch {
+    border: 0;
+    background: var(--wwlc-gold);
+    color: var(--wwlc-navy);
+}
+
+.home-page .panel-watch:hover:not(:disabled) {
+    background: var(--wwlc-gold-light);
+}
+
+.home-page .panel-watch:disabled {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+/* Story video pop-up */
+.home-page .modal-close {
+    left: auto;
+    right: auto;
+    inset-inline-end: 16px;
+}
+
+.home-page .modal-header h3 {
+    color: var(--wwlc-navy);
+}
+
+@media (max-width: 900px) {
+    .home-page .global-voices {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .home-page .globe-legend {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+}
