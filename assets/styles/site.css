@@ -1097,6 +1097,25 @@ body.home-page {
     height: auto;
 }
 
+/* Light bulb face: the one navy side, so the gold bulb glows against it */
+.home-page .cube-face--bulb {
+    background: radial-gradient(circle at 50% 42%, #0d1f7a 0%, var(--wwlc-navy) 70%);
+}
+
+/* Gentle glow pulse. It only runs when the visitor has not asked for
+   reduced motion; otherwise the bulb simply stays lit. */
+@media (prefers-reduced-motion: no-preference) {
+    .home-page .cube-face--bulb .bulb-glow,
+    .home-page .cube-face--bulb .bulb-rays {
+        animation: wwlc-bulb-pulse 3.2s ease-in-out infinite;
+    }
+}
+
+@keyframes wwlc-bulb-pulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+}
+
 /* "Logo coming soon" placeholder. Swap the <span> for an <img> to replace it. */
 .home-page .cube-face .cube-placeholder {
     display: grid;

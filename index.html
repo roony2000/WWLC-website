@@ -491,6 +491,7 @@
             <div class="container trusted-layout">
                 <div class="trusted-copy">
                     <p class="trusted-eyebrow">Trusted · Accredited</p>
+                    <!-- TODO-verify exact accreditation wording -->
                     <!-- TODO: confirm the exact wording of this heading and paragraph once the recognising
                          organisations and their official logos are confirmed. If you change the English,
                          update the matching Arabic keys in scripts/main.js too. -->
@@ -539,25 +540,41 @@
                             </svg>
                         </div>
 
-                        <!-- Face 4: open book with a speech bubble -->
-                        <div class="cube-face cube-face--top" role="img"
-                            aria-label="Illustration of an open book with a speech bubble">
+                        <!-- Face 4: glowing light bulb, inspired by the bulb in the WWLC logo.
+                             The filament is a small "W". The glow pulse stops for "reduce motion". -->
+                        <div class="cube-face cube-face--top cube-face--bulb" role="img"
+                            aria-label="Illustration of a glowing light bulb with a W-shaped filament">
                             <svg class="cube-art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
-                                <path d="M64 26 H104 A12 12 0 0 1 116 38 V54 A12 12 0 0 1 104 66 H76 L62 78 L65 66 A12 12 0 0 1 52 54 V38 A12 12 0 0 1 64 26 Z"
-                                    fill="#f0a728" />
-                                <g fill="#050f4f">
-                                    <circle cx="70" cy="46" r="4" />
-                                    <circle cx="84" cy="46" r="4" />
-                                    <circle cx="98" cy="46" r="4" />
+                                <defs>
+                                    <radialGradient id="cubeBulbGlow" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#f0a728" stop-opacity="0.55" />
+                                        <stop offset="60%" stop-color="#f0a728" stop-opacity="0.16" />
+                                        <stop offset="100%" stop-color="#f0a728" stop-opacity="0" />
+                                    </radialGradient>
+                                    <radialGradient id="cubeBulbGlass" cx="42%" cy="38%" r="65%">
+                                        <stop offset="0%" stop-color="#ffe2a6" />
+                                        <stop offset="55%" stop-color="#f7c766" />
+                                        <stop offset="100%" stop-color="#f0a728" />
+                                    </radialGradient>
+                                </defs>
+                                <circle class="bulb-glow" cx="80" cy="64" r="66" fill="url(#cubeBulbGlow)" />
+                                <g class="bulb-rays" fill="none" stroke="#f0a728" stroke-width="4"
+                                    stroke-linecap="round">
+                                    <path d="M80 20 V9 M49 33 L41 25 M111 33 L119 25 M36 64 H25 M124 64 H135" />
                                 </g>
+                                <path d="M67 106 C67 95 46 87 46 64 A34 34 0 1 1 114 64 C114 87 93 95 93 106 Z"
+                                    fill="url(#cubeBulbGlass)" stroke="#f0a728" stroke-width="2.5"
+                                    stroke-linejoin="round" />
+                                <path d="M58 52 A24 24 0 0 1 72 38" fill="none" stroke="#fdf1da"
+                                    stroke-width="3" stroke-linecap="round" opacity="0.6" />
                                 <g fill="none" stroke="#050f4f" stroke-width="3.5" stroke-linecap="round"
                                     stroke-linejoin="round">
-                                    <path d="M80 134 C66 126 46 124 28 128 V86 C46 82 66 84 80 92 Z" />
-                                    <path d="M80 134 C94 126 114 124 132 128 V86 C114 82 94 84 80 92 Z" />
+                                    <path d="M64 60 L71 80 L80 67 L89 80 L96 60" />
+                                    <path d="M71 80 L73 104 M89 80 L87 104" />
                                 </g>
-                                <g fill="none" stroke="#050f4f" stroke-width="2" stroke-linecap="round" opacity="0.5">
-                                    <path d="M38 98 C50 95 62 96 72 101 M38 108 C50 105 62 106 72 111 M38 118 C50 115 60 116 70 120" />
-                                    <path d="M122 98 C110 95 98 96 88 101 M122 108 C110 105 98 106 88 111 M122 118 C110 115 100 116 90 120" />
+                                <g fill="none" stroke="#f0a728" stroke-width="4" stroke-linecap="round">
+                                    <path d="M67 112 H93 M69 119 H91 M72 126 H88" />
+                                    <path d="M76 133 H84" stroke-width="5" />
                                 </g>
                             </svg>
                         </div>
