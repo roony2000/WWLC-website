@@ -1114,9 +1114,12 @@ body.home-page {
 }
 
 .home-page .globe-stage {
-    border: 1px solid rgba(240, 167, 40, 0.35);
+    border: 1px solid rgba(240, 167, 40, 0.45);
     border-radius: 24px;
-    box-shadow: none;
+    /* A soft gold halo so the globe frame lifts off the navy band */
+    box-shadow:
+        0 0 0 6px rgba(240, 167, 40, 0.06),
+        0 30px 80px -30px rgba(240, 167, 40, 0.35);
 }
 
 /* Gold focus ring on the dark background */
