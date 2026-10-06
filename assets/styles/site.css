@@ -1017,6 +1017,54 @@ body.home-page {
     }
 }
 
+/* --- Courses: colour and depth ---
+   Warm cream section (gold-soft at low strength).
+   Tabs are white until chosen; cards are white with a gold top line and a
+   gentle hover lift. A navy curve leads into the dark globe band below. */
+.home-page .courses {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+    padding-block-end: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background: var(--wwlc-cream);
+}
+
+.home-page .courses::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: -1px;
+    height: var(--wwlc-divider-h);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V48C380 4 960-6 1440 34V80Z' fill='%23050f4f'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat;
+    pointer-events: none;
+}
+
+.home-page .courses-pill {
+    background: var(--wwlc-surface);
+}
+
+.home-page .courses-pill:hover {
+    background: var(--wwlc-gold-soft);
+}
+
+.home-page .course-card,
+.home-page .course-card:hover {
+    border: 1px solid rgba(5, 15, 79, 0.06);
+    border-block-start: 4px solid var(--wwlc-gold);
+    box-shadow: 0 16px 36px -22px rgba(5, 15, 79, 0.3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .home-page .course-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .home-page .course-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 44px -24px rgba(5, 15, 79, 0.4);
+    }
+}
+
 
 /* ==========================================================================
    HOMEPAGE: globe and learner stories (.global-voices, #stories)
