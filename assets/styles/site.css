@@ -620,6 +620,20 @@ body.home-page {
     }
 }
 
+/* The hero's bottom edge is a curve (mask); "Why WWLC" slides up beneath it */
+.home-page .hero {
+    -webkit-mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+.home-page .hero::after {
+    content: none;
+}
+
 @keyframes wwlc-drift {
     from { transform: translate(0, 0) rotate(0deg); }
     to { transform: translate(-14px, 18px) rotate(4deg); }
@@ -872,6 +886,26 @@ body.home-page {
     .home-page .why-wwlc-benefit:hover {
         padding: 18px 18px 20px;
     }
+}
+
+
+/* --- Why WWLC: designed background ---
+   Light section, tinted pale blue fading to cream. Layers: fine navy grain,
+   a large faint "Aa" watermark in the empty space under the heading, a soft
+   sky-blue glow, a gold glow at the bottom corner, a fine dot grid, and the
+   tinted base. It slides
+   up under the hero's curved edge, so its pattern runs right up to it. */
+.home-page .why-wwlc {
+    z-index: 5;
+    margin-block-start: calc(-1 * var(--wwlc-divider-h));
+    padding-block-start: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80'%3E%3Ctext x='60' y='64' text-anchor='middle' font-family='Georgia,serif' font-size='72' font-weight='700' fill='%23050f4f' fill-opacity='0.05'%3EAa%3C/text%3E%3C/svg%3E") left 1% bottom 10% / clamp(200px, 30vw, 440px) auto no-repeat,
+        radial-gradient(45% 50% at 100% 30%, rgba(156, 201, 255, 0.35), transparent 70%),
+        radial-gradient(50% 45% at 0% 100%, rgba(240, 167, 40, 0.14), transparent 70%),
+        radial-gradient(circle, rgba(5, 15, 79, 0.07) 1px, transparent 1.5px) 0 0 / 22px 22px,
+        linear-gradient(170deg, var(--wwlc-paleblue) 0%, var(--wwlc-paleblue-soft) 55%, #fbf5ea 100%);
 }
 
 
