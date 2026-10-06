@@ -989,9 +989,9 @@ body.home-page {
 
 /* ==========================================================================
    HOMEPAGE: accreditation (.trusted-accredited)
-   Quiet white section. The cube keeps its drag/arrow-key behaviour; its
-   faces become solid navy with a gold inner line, the logo face is white,
-   and empty faces show the crest on a white disc until real logos arrive.
+   Quiet white section. The cube keeps its drag/arrow-key behaviour. Its six
+   faces are all different: two logos, two navy-and-gold drawings and two
+   "Logo coming soon" placeholders until the official logos arrive.
    ========================================================================== */
 
 .home-page .trusted-accredited {
@@ -1056,40 +1056,64 @@ body.home-page {
     outline-offset: 12px;
 }
 
+/* Every face is white with a navy edge and the gold inner line, so the
+   navy-and-gold drawings and the logos all read clearly. The top and bottom
+   faces are a shade cooler so the cube keeps its 3D shape on a white page. */
 .home-page .cube-face {
-    border: 1px solid rgba(240, 167, 40, 0.5);
+    border: 2px solid var(--wwlc-navy);
     border-radius: 22px;
-    background: var(--wwlc-navy);
+    background: var(--wwlc-surface);
     box-shadow: none;
     backdrop-filter: none;
 }
 
+.home-page .cube-face--top,
+.home-page .cube-face--bottom {
+    background: var(--wwlc-surface-alt);
+}
+
 .home-page .cube-face::before {
-    border-color: rgba(240, 167, 40, 0.55);
+    border-color: rgba(240, 167, 40, 0.7);
     box-shadow: none;
 }
 
 .home-page .cube-face::after {
-    opacity: 0.2;
+    display: none;
 }
 
-/* The logo face stays white so the ministry logo is clear */
-.home-page .cube-face--front {
-    background: var(--wwlc-surface);
-    border-color: var(--wwlc-border);
+.home-page .cube-face img {
+    max-width: 66%;
+    max-height: 66%;
+    filter: none;
 }
 
-.home-page .cube-face--front::before {
-    border-color: rgba(5, 15, 79, 0.12);
+/* The WWLC logo is wide, so it gets more width than the square logos */
+.home-page .cube-face img.cube-logo-wide {
+    max-width: 80%;
 }
 
-/* Empty faces: crest on a white disc (path is relative to this CSS file) */
-.home-page .cube-face span:empty {
-    display: block;
-    width: 46%;
+.home-page .cube-art {
+    width: 76%;
+    height: auto;
+}
+
+/* "Logo coming soon" placeholder. Swap the <span> for an <img> to replace it. */
+.home-page .cube-face .cube-placeholder {
+    display: grid;
+    place-items: center;
+    width: 62%;
     aspect-ratio: 1;
-    border-radius: 50%;
-    background: #fff url("../images/ss.png") center / 62% no-repeat;
+    padding: 12px;
+    border: 2px dashed rgba(5, 15, 79, 0.35);
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: none;
+    text-shadow: none;
+    color: var(--wwlc-ink-muted);
 }
 
 

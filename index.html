@@ -503,16 +503,75 @@
                     <div class="trusted-cube-backlight" aria-hidden="true"></div>
                     <div class="trusted-cube-shadow" aria-hidden="true"></div>
                     <div class="trusted-cube" data-trusted-cube tabindex="0"
-                        aria-label="Interactive cube of accreditation partners">
-                        <div class="cube-face cube-face--front">
-                            <img src="assets/images/MOEM.png" alt="Ministry of Education Malaysia logo" loading="lazy"
+                        aria-label="Interactive cube. Drag or use the arrow keys to turn it.">
+                        <!-- Face 1: the WWLC logo -->
+                        <div class="cube-face cube-face--front" role="img"
+                            aria-label="Wordsworth Language Centre logo">
+                            <img class="cube-logo-wide" src="assets/images/ss.png" alt="" loading="lazy"
                                 decoding="async" />
                         </div>
-                        <div class="cube-face cube-face--back"><span></span></div>
-                        <div class="cube-face cube-face--right"><span></span></div>
-                        <div class="cube-face cube-face--left"><span></span></div>
-                        <div class="cube-face cube-face--top"><span></span></div>
-                        <div class="cube-face cube-face--bottom"><span></span></div>
+
+                        <!-- Face 2: Ministry of Education Malaysia logo -->
+                        <div class="cube-face cube-face--left" role="img"
+                            aria-label="Ministry of Education Malaysia logo">
+                            <img src="assets/images/MOEM.png" alt="" loading="lazy" decoding="async" />
+                        </div>
+
+                        <!-- Face 3: Kuala Lumpur skyline with the Petronas Towers -->
+                        <div class="cube-face cube-face--right" role="img"
+                            aria-label="Illustration of the Kuala Lumpur skyline with the Petronas Towers">
+                            <svg class="cube-art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+                                <circle cx="116" cy="46" r="14" fill="#f0a728" />
+                                <g fill="none" stroke="#050f4f" stroke-width="3.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M18 128 H142" />
+                                    <path d="M24 128 V102 H42 V128" />
+                                    <path d="M53 128 V62 L55 60 V50 L57 48 V40 L60 38 V30 L62 18 L64 30 V38 L67 40 V48 L69 50 V60 L71 62 V128" />
+                                    <path d="M89 128 V62 L91 60 V50 L93 48 V40 L96 38 V30 L98 18 L100 30 V38 L103 40 V48 L105 50 V60 L107 62 V128" />
+                                    <path d="M136 128 V78 M136 66 V50 M130 128 L136 112 L142 128" />
+                                    <ellipse cx="136" cy="72" rx="7" ry="5" />
+                                    <path d="M112 128 V108 H124 V128" />
+                                </g>
+                                <rect x="71" y="80" width="18" height="5" rx="1" fill="#f0a728" />
+                                <path d="M62 68 V122 M98 68 V122" stroke="#050f4f" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.45" />
+                            </svg>
+                        </div>
+
+                        <!-- Face 4: open book with a speech bubble -->
+                        <div class="cube-face cube-face--top" role="img"
+                            aria-label="Illustration of an open book with a speech bubble">
+                            <svg class="cube-art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
+                                <path d="M64 26 H104 A12 12 0 0 1 116 38 V54 A12 12 0 0 1 104 66 H76 L62 78 L65 66 A12 12 0 0 1 52 54 V38 A12 12 0 0 1 64 26 Z"
+                                    fill="#f0a728" />
+                                <g fill="#050f4f">
+                                    <circle cx="70" cy="46" r="4" />
+                                    <circle cx="84" cy="46" r="4" />
+                                    <circle cx="98" cy="46" r="4" />
+                                </g>
+                                <g fill="none" stroke="#050f4f" stroke-width="3.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M80 134 C66 126 46 124 28 128 V86 C46 82 66 84 80 92 Z" />
+                                    <path d="M80 134 C94 126 114 124 132 128 V86 C114 82 94 84 80 92 Z" />
+                                </g>
+                                <g fill="none" stroke="#050f4f" stroke-width="2" stroke-linecap="round" opacity="0.5">
+                                    <path d="M38 98 C50 95 62 96 72 101 M38 108 C50 105 62 106 72 111 M38 118 C50 115 60 116 70 120" />
+                                    <path d="M122 98 C110 95 98 96 88 101 M122 108 C110 105 98 106 88 111 M122 118 C110 115 100 116 90 120" />
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Faces 5 and 6: placeholders until the official logos arrive.
+                             To add a logo, replace the <span> line with one line like:
+                             <img src="assets/images/logos/FILE-NAME.png" alt="NAME OF ORGANISATION logo" loading="lazy" decoding="async" /> -->
+                        <div class="cube-face cube-face--back">
+                            <!-- TODO: add official Ministry of Culture / Saudi Cultural Attaché logo -->
+                            <span class="cube-placeholder" role="img" aria-label="Partner logo coming soon">Logo coming soon</span>
+                        </div>
+                        <div class="cube-face cube-face--bottom">
+                            <!-- TODO: add official Ministry of Culture / Saudi Cultural Attaché logo -->
+                            <span class="cube-placeholder" role="img" aria-label="Partner logo coming soon">Logo coming soon</span>
+                        </div>
                     </div>
                 </div>
             </div>

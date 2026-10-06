@@ -394,6 +394,7 @@ function initLanguageSelector() {
                     'Partners who validate our promise': 'شركاء يثبتون وعدنا',
                     'The official marks of the organisations that recognise our teaching.': 'الشعارات الرسمية للجهات التي تعترف بتعليمنا.',
                     'Drag, tap, or use your arrow keys to rotate the cube and reveal every logo.': 'اسحب أو انقر أو استخدم مفاتيح الأسهم لتدوير المكعب وكشف كل شعار.',
+                    'Logo coming soon': 'الشعار قريبًا',
                     // ...existing translations...
                     // Navigation & Buttons
                     'Wordsworth': 'ووردزوورث',
