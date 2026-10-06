@@ -1541,6 +1541,20 @@ body.home-page {
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Accreditation ends in a curve (mask); the contact section slides up beneath it */
+.home-page .trusted-accredited {
+    -webkit-mask:
+        var(--wwlc-curve-b) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-b) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+.home-page .trusted-accredited::after {
+    content: none;
+}
+
 /* Every face is a navy-to-deep-blue panel with a thin gold frame, a faint
    light-blue dot grid, a soft gold glow and a few gold sparkles, so no side
    of the cube looks empty. Small corner radius so each face fills its side.
@@ -1815,4 +1829,47 @@ body.home-page {
 .home-page .home-contact-form {
     border-block-start: 4px solid var(--wwlc-gold);
     box-shadow: 0 30px 60px -34px rgba(5, 15, 79, 0.45);
+}
+
+/* --- Contact: designed background ---
+   Light section, warm cream. Layers: fine grain, two faint speech bubbles
+   in the empty corner under the text (one says "Aa", one holds the Arabic
+   letter ain, a nod to both languages taught here), a gold glow behind the
+   form, a sky glow in the top corner, and the cream base. It slides up under
+   the accreditation curve and ends in its own curve over the footer. */
+.home-page .home-contact {
+    z-index: 1;
+    margin-block-start: calc(-1 * var(--wwlc-divider-h));
+    padding-block-start: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 165'%3E%3Cg fill='none' stroke-width='2.5' stroke-linejoin='round'%3E%3Cpath d='M32 10H108A22 22 0 0 1 130 32V68A22 22 0 0 1 108 90H52L34 106L38 90H32A22 22 0 0 1 10 68V32A22 22 0 0 1 32 10Z' stroke='%23050f4f' stroke-opacity='0.09'/%3E%3Cpath d='M112 70H188A22 22 0 0 1 210 92V126A22 22 0 0 1 188 148H182L186 162L168 148H112A22 22 0 0 1 90 126V92A22 22 0 0 1 112 70Z' stroke='%23f0a728' stroke-opacity='0.35'/%3E%3C/g%3E%3Ctext x='70' y='64' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23050f4f' fill-opacity='0.09'%3EAa%3C/text%3E%3Ctext x='150' y='126' text-anchor='middle' font-family='Tahoma,Segoe UI,sans-serif' font-size='44' font-weight='700' fill='%23f0a728' fill-opacity='0.35'%3E%D8%B9%3C/text%3E%3C/svg%3E") left 2% bottom 10% / clamp(200px, 26vw, 360px) auto no-repeat,
+        radial-gradient(45% 55% at 78% 45%, rgba(240, 167, 40, 0.18), transparent 70%),
+        radial-gradient(40% 45% at 0% 0%, rgba(156, 201, 255, 0.28), transparent 70%),
+        linear-gradient(180deg, var(--wwlc-cream) 0%, #fcefd6 100%);
+    -webkit-mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+.home-page .home-contact::after {
+    content: none;
+}
+
+/* On narrow screens the form fills the width, so move the bubbles to the
+   top corner beside the heading (one position/size per background layer) */
+@media (max-width: 900px) {
+    .home-page .home-contact {
+        background-position: 0 0, right 4% top calc(var(--wwlc-divider-h) + 20px), 0 0, 0 0, 0 0;
+        background-size: 180px 180px, clamp(96px, 26vw, 160px) auto, auto, auto, auto;
+    }
+}
+
+/* The footer slides up beneath the contact curve */
+.home-page .wwlc-footer {
+    margin-top: calc(-1 * var(--wwlc-divider-h));
+    padding-top: var(--wwlc-divider-h);
 }
