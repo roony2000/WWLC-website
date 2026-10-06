@@ -1226,6 +1226,45 @@ body.home-page {
     background: var(--wwlc-surface);
 }
 
+/* --- Accreditation: colour and depth ---
+   Light section between the navy globe band and the cream contact section.
+   A navy curve comes down from the band above and a cream curve leads into
+   the contact section, so the two edges match their neighbours. */
+.home-page .trusted-accredited {
+    position: relative;
+    isolation: isolate;
+    padding-block: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background:
+        radial-gradient(circle, rgba(5, 15, 79, 0.07) 1px, transparent 1.5px) 0 0 / 22px 22px,
+        var(--wwlc-surface-alt);
+    /* main.css hides overflow and uses content-visibility here; both stop the
+       curves from overlapping their neighbours by a pixel and leave a thin
+       seam. Clip sideways only, so nothing can scroll horizontally. */
+    overflow: visible;
+    overflow-x: clip;
+    content-visibility: visible;
+}
+
+.home-page .trusted-accredited::before,
+.home-page .trusted-accredited::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset-inline: 0;
+    height: var(--wwlc-divider-h);
+    pointer-events: none;
+}
+
+.home-page .trusted-accredited::before {
+    inset-block-start: -1px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V30C1060 78 480 74 0 26Z' fill='%23050f4f'/%3E%3C/svg%3E") center top / 100% 100% no-repeat;
+}
+
+.home-page .trusted-accredited::after {
+    inset-block-end: -2px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V44C420 0 980 2 1440 46V80Z' fill='%23fef7ea'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat;
+}
+
 .home-page .trusted-layout {
     grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
 }
@@ -1532,3 +1571,4 @@ body.home-page {
         justify-self: stretch;
     }
 }
+
