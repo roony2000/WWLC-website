@@ -1177,6 +1177,21 @@ body.home-page {
 }
 
 
+/* Courses end in a curve (mask); the globe band slides up beneath it */
+.home-page .courses {
+    -webkit-mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+.home-page .courses::after {
+    content: none;
+}
+
+
 /* ==========================================================================
    HOMEPAGE: globe and learner stories (.global-voices, #stories)
    The one dark band on the page: full-width navy so the 3D globe sits in its
@@ -1322,6 +1337,47 @@ body.home-page {
         flex-wrap: wrap;
         gap: 10px 20px;
     }
+}
+
+
+/* --- Globe: designed background ---
+   Dark section: a night sky. The navy base (border-image above) stays; on
+   top, a full-width layer holds fine grain, a scatter of tiny stars, a faint
+   globe wireframe of latitude and longitude lines on the start side, a deep
+   blue glow behind the globe and a soft gold glow. The layer fades out at
+   the bottom so it meets the navy curve of the next section cleanly. */
+.home-page .global-voices {
+    position: relative;
+    z-index: 3;
+    isolation: isolate;
+    margin-block-start: calc(-1 * var(--wwlc-divider-h));
+    padding-block-start: calc(clamp(64px, 9vw, 112px) + var(--wwlc-divider-h));
+}
+
+/* Centred on the window with left/translate (works the same in Arabic) */
+.home-page .global-voices::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background:
+        var(--wwlc-grain-dark) 0 0 / 180px 180px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='18' cy='26' r='1' opacity='0.6'/%3E%3Ccircle cx='92' cy='14' r='0.7' opacity='0.4'/%3E%3Ccircle cx='160' cy='48' r='1.2' opacity='0.5'/%3E%3Ccircle cx='214' cy='18' r='0.6' opacity='0.5'/%3E%3Ccircle cx='54' cy='110' r='0.8' opacity='0.35'/%3E%3Ccircle cx='132' cy='126' r='0.6' opacity='0.5'/%3E%3Ccircle cx='200' cy='150' r='1' opacity='0.4'/%3E%3Ccircle cx='30' cy='196' r='0.7' opacity='0.5'/%3E%3Ccircle cx='110' cy='214' r='1.1' opacity='0.45'/%3E%3C/g%3E%3Ccircle cx='176' cy='206' r='1.2' fill='%23f0a728' opacity='0.6'/%3E%3Ccircle cx='72' cy='64' r='0.9' fill='%239cc9ff' opacity='0.6'/%3E%3C/svg%3E") 0 0 / 240px 240px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%239cc9ff' stroke-opacity='0.12' stroke-width='0.6'%3E%3Ccircle cx='100' cy='100' r='96'/%3E%3Cellipse cx='100' cy='100' rx='32' ry='96'/%3E%3Cellipse cx='100' cy='100' rx='64' ry='96'/%3E%3Cpath d='M4 100H196M13 60H187M13 140H187M42 24H158M42 176H158'/%3E%3C/g%3E%3C/svg%3E") left -8% bottom -18% / clamp(320px, 48vw, 700px) auto no-repeat,
+        radial-gradient(45% 55% at 68% 50%, rgba(18, 49, 143, 0.85), transparent 70%),
+        radial-gradient(30% 40% at 12% 18%, rgba(240, 167, 40, 0.14), transparent 70%);
+    -webkit-mask: linear-gradient(to bottom, #000 0 82%, transparent 100%);
+    mask: linear-gradient(to bottom, #000 0 82%, transparent 100%);
+    pointer-events: none;
+}
+
+/* When the globe is in its (non-native) fullscreen mode, lift the whole band
+   above the rest of the page so the fixed globe is not covered. */
+.home-page.globe-fullscreen-active .global-voices {
+    z-index: 10000;
 }
 
 
