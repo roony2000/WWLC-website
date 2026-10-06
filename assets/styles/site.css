@@ -1489,6 +1489,58 @@ body.home-page {
     outline-offset: 12px;
 }
 
+/* --- Accreditation: designed background ---
+   Light section, tinted pale blue. The idea is a seal of approval: faint
+   gold rings radiate behind the cube, a dashed navy ring turns very slowly
+   around it (still for reduced motion), and a large faint navy teacher's
+   tick sits low on the start side. Layers: fine grain, the tick, a gold glow behind
+   the cube, a sky glow in the top corner, and the pale-blue base. */
+.home-page .trusted-accredited {
+    z-index: 2;
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M8 54L36 80L92 18' fill='none' stroke='%23050f4f' stroke-opacity='0.06' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") left 1% bottom 4% / clamp(140px, 18vw, 260px) auto no-repeat,
+        radial-gradient(38% 50% at 74% 52%, rgba(240, 167, 40, 0.18), transparent 70%),
+        radial-gradient(50% 60% at 0% 0%, rgba(156, 201, 255, 0.4), transparent 70%),
+        linear-gradient(180deg, var(--wwlc-paleblue-soft) 0%, var(--wwlc-paleblue) 100%);
+}
+
+.home-page .trusted-cube-stage::before,
+.home-page .trusted-cube-stage::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.home-page .trusted-cube-stage::before {
+    z-index: -1;
+    width: min(560px, 96%);
+    background: repeating-radial-gradient(circle, transparent 0 30px, rgba(240, 167, 40, 0.55) 30px 31.5px);
+    -webkit-mask: radial-gradient(closest-side, #000 60%, transparent 100%);
+    mask: radial-gradient(closest-side, #000 60%, transparent 100%);
+}
+
+.home-page .trusted-cube-stage::after {
+    z-index: -1;
+    width: min(440px, 78%);
+    border: 1.5px dashed rgba(5, 15, 79, 0.3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .home-page .trusted-cube-stage::after {
+        animation: wwlc-seal-turn 80s linear infinite;
+    }
+}
+
+@keyframes wwlc-seal-turn {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 /* Every face is a navy-to-deep-blue panel with a thin gold frame, a faint
    light-blue dot grid, a soft gold glow and a few gold sparkles, so no side
    of the cube looks empty. Small corner radius so each face fills its side.
