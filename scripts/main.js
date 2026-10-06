@@ -392,7 +392,7 @@ function initLanguageSelector() {
                     // ...existing translations...
                     // Trusted/Accredited Section
                     'Partners who validate our promise': 'شركاء يثبتون وعدنا',
-                    'Highlight the exam boards, universities, and cultural missions who endorse your teaching. Swap each face of the cube with their official marks to build instant confidence.': 'سلط الضوء على هيئات الامتحانات والجامعات والبعثات الثقافية التي تصادق على تعليمك. بدّل كل وجه من أوجه المكعب بشعارهم الرسمي لبناء الثقة فوراً.',
+                    'The official marks of the organisations that recognise our teaching.': 'الشعارات الرسمية للجهات التي تعترف بتعليمنا.',
                     'Drag, tap, or use your arrow keys to rotate the cube and reveal every logo.': 'اسحب أو انقر أو استخدم مفاتيح الأسهم لتدوير المكعب وكشف كل شعار.',
                     // ...existing translations...
                     // Navigation & Buttons

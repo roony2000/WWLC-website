@@ -985,3 +985,109 @@ body.home-page {
         gap: 10px 20px;
     }
 }
+
+
+/* ==========================================================================
+   HOMEPAGE: accreditation (.trusted-accredited)
+   Quiet white section. The cube keeps its drag/arrow-key behaviour; its
+   faces become solid navy with a gold inner line, the logo face is white,
+   and empty faces show the crest on a white disc until real logos arrive.
+   ========================================================================== */
+
+.home-page .trusted-accredited {
+    padding: clamp(64px, 9vw, 120px) 0;
+    background: var(--wwlc-surface);
+}
+
+.home-page .trusted-layout {
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+}
+
+.home-page .trusted-copy {
+    text-align: start;
+}
+
+.home-page .trusted-eyebrow {
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .trusted-copy h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 2.875rem);
+    line-height: 1.12;
+    color: var(--wwlc-navy);
+}
+
+.home-page .trusted-copy p {
+    margin-inline: 0;
+    font-size: 1.0625rem;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .trusted-copy .trusted-note {
+    padding-inline-start: 14px;
+    border-inline-start: 3px solid var(--wwlc-gold);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--wwlc-navy);
+}
+
+.home-page .trusted-cube-backlight {
+    background: radial-gradient(62% 62% at 50% 50%, rgba(240, 167, 40, 0.32) 0%, rgba(240, 167, 40, 0.08) 58%, rgba(240, 167, 40, 0) 100%);
+}
+
+.home-page .trusted-cube-shadow {
+    background: radial-gradient(60% 60% at 50% 50%, rgba(5, 15, 79, 0.35) 0%, rgba(5, 15, 79, 0.04) 72%);
+}
+
+.home-page .trusted-cube,
+.home-page .trusted-cube.is-grabbing,
+.home-page .trusted-cube-stage:hover .trusted-cube {
+    box-shadow: none;
+}
+
+.home-page .trusted-cube:focus-visible {
+    outline: 3px solid var(--wwlc-navy);
+    outline-offset: 12px;
+}
+
+.home-page .cube-face {
+    border: 1px solid rgba(240, 167, 40, 0.5);
+    border-radius: 22px;
+    background: var(--wwlc-navy);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.home-page .cube-face::before {
+    border-color: rgba(240, 167, 40, 0.55);
+    box-shadow: none;
+}
+
+.home-page .cube-face::after {
+    opacity: 0.2;
+}
+
+/* The logo face stays white so the ministry logo is clear */
+.home-page .cube-face--front {
+    background: var(--wwlc-surface);
+    border-color: var(--wwlc-border);
+}
+
+.home-page .cube-face--front::before {
+    border-color: rgba(5, 15, 79, 0.12);
+}
+
+/* Empty faces: crest on a white disc (path is relative to this CSS file) */
+.home-page .cube-face span:empty {
+    display: block;
+    width: 46%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff url("../images/ss.png") center / 62% no-repeat;
+}
