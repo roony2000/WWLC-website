@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="assets/styles/main.css" />
     <link rel="stylesheet" href="assets/styles/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+        rel="stylesheet" />
 
     <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
     <script src='scripts/ga4.js'></script>
@@ -87,6 +90,56 @@
         <section class="video-intro" aria-hidden="false">
             <video id="intro-video" class="intro-video" src="assets/videos/WEBSITE INTRO (UPDATED).mp4" autoplay muted
                 loop playsinline preload="metadata" tabindex="-1"></video>
+        </section>
+
+        <!-- HERO (sits straight under the intro video) -->
+        <section class="hero" id="about">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">English language centre in Kuala Lumpur</p>
+                    <h1>Unlock confident English, <span>for every stage of life</span>.</h1>
+                    <p class="lead">From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers
+                        help you speak with clarity, fluency, and heart.</p>
+
+                    <div class="hero-cta">
+                        <a class="cta large" href="placement.php#start">Start Your Placement Test</a>
+                        <a class="ghost" href="#courses">Explore courses</a>
+                    </div>
+
+                    <div class="trust-row">
+                        <div class="trust-pill">8:1 average class size</div><!-- TODO-verify -->
+                        <div class="trust-pill">Cambridge-aligned curriculum</div>
+                        <div class="trust-pill">Evening & weekend options</div>
+                    </div>
+                </div>
+
+                <!-- Decorative "teacher's correction" card. Hidden from screen readers;
+                     dir="ltr" keeps the English sentence in order when the page is Arabic. -->
+                <div class="hero-media" aria-hidden="true">
+                    <div class="media-shape"></div>
+                    <div class="hero-note" dir="ltr">
+                        <p class="hero-note-line">Yesterday I <span class="hero-note-fix"><span
+                                    class="hero-note-wrong">go</span><span class="hero-note-right">went</span></span>
+                            to the market.</p>
+                        <svg class="hero-note-tick" viewBox="0 0 40 32" focusable="false">
+                            <path d="M4 17 L15 27 L36 5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <aside class="hero-card reveal" aria-label="Wordsworth highlights">
+                    <div class="card-inner">
+                        <img src="assets/images/ss.png" alt="Wordsworth crest" class="hero-logo" />
+                        <h3>What makes us different?</h3>
+                        <ul class="benefits">
+                            <li>Personal learning plans tracked weekly</li>
+                            <li>Native-speaking coaches with CELTA &amp; DELTA</li><!-- TODO-verify -->
+                            <li>Community events, clubs, and conversation labs</li>
+                        </ul>
+                        <a class="cta small" href="#stories">Meet our learners</a>
+                    </div>
+                </aside>
+            </div>
         </section>
 
         <!-- WHY WWLC SECTION -->
@@ -224,45 +277,6 @@
         </section>
 
         <section class="courses" id="courses" data-courses>
-
-            <section class="hero" id="about">
-                <div class="container hero-grid">
-                    <div class="hero-copy reveal">
-                        <p class="eyebrow">Wordsworth Language Centre · Kuala Lumpur</p>
-                        <h1>Unlock confident English, <span>for every stage of life</span>.</h1>
-                        <p class="lead">From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers
-                            help you speak with clarity, fluency, and heart.</p>
-
-                        <div class="hero-cta">
-                            <a class="cta large" href="placement.php#start">Start Your Placement Test</a>
-                            <a class="ghost" href="#courses">Explore courses</a>
-                        </div>
-
-                        <div class="trust-row">
-                            <div class="trust-pill">8:1 average class size</div>
-                            <div class="trust-pill">Cambridge-aligned curriculum</div>
-                            <div class="trust-pill">Evening & weekend options</div>
-                        </div>
-                    </div>
-
-                    <aside class="hero-card reveal" aria-label="Wordsworth highlights">
-                        <div class="card-inner">
-                            <img src="assets/images/ss.png" alt="Wordsworth crest" class="hero-logo" />
-                            <h3>What makes us different?</h3>
-                            <ul class="benefits">
-                                <li>Personal learning plans tracked weekly</li>
-                                <li>Native-speaking coaches with CELTA &amp; DELTA</li>
-                                <li>Community events, clubs, and conversation labs</li>
-                            </ul>
-                            <a class="cta small" href="#stories">Meet our learners</a>
-                        </div>
-                    </aside>
-
-                    <div class="hero-media" aria-hidden="true">
-                        <div class="media-shape"></div>
-                    </div>
-                </div>
-            </section>
             <div class="courses-bg" aria-hidden="true"></div>
             <div class="container courses-inner">
                 <header class="courses-head">
@@ -588,6 +602,21 @@
                 }
             });
         });
+    </script>
+    <script>
+        // Hero correction card: play the pen animation once, when it scrolls into view.
+        // Purely decorative; the CSS in site.css shows the finished card if this never runs.
+        (function () {
+            var note = document.querySelector('.hero-note');
+            if (!note || !('IntersectionObserver' in window)) return;
+            note.classList.add('is-armed');
+            var observer = new IntersectionObserver(function (entries) {
+                if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+                note.classList.add('is-inview');
+                observer.disconnect();
+            }, { threshold: 0.6 });
+            observer.observe(note);
+        })();
     </script>
 </body>
 

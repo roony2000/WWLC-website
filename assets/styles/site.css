@@ -1,9 +1,14 @@
 /* ==========================================================================
-   WWLC site.css — design tokens for the redesign
-   Loaded AFTER main.css. Variables only: no selectors besides :root,
-   so this file causes no visible change by itself.
-   All names use the --wwlc- prefix so they never clash with the older
-   variables in main.css (--brand-navy, --brand-orange, --muted, ...).
+   WWLC site.css — design tokens and redesigned page styles
+   Loaded AFTER main.css, so a rule here wins over a main.css rule of the
+   same specificity.
+   1. Design tokens (:root)
+   2. Homepage ("Margin notes" design), scoped to body.home-page so other
+      pages are not affected. One block per section, in page order.
+   All variable names use the --wwlc- prefix so they never clash with the
+   older variables in main.css (--brand-navy, --brand-orange, --muted, ...).
+   RTL: use logical properties (margin-inline, inset-inline-start, ...)
+   so the layout mirrors by itself when Arabic sets <html dir="rtl">.
    ========================================================================== */
 
 :root {
@@ -22,9 +27,15 @@
     --wwlc-surface-alt: #f6f7fb;   /* alternate section background */
     --wwlc-border: #e3e6f0;        /* hairlines and card borders */
 
-    /* Fonts (system stacks for now, no web fonts loaded yet) */
+    /* Fonts (system stacks) */
     --wwlc-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --wwlc-font-arabic: "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+
+    /* Web fonts (loaded from Google Fonts on pages that use them).
+       Each stack lists the Latin face first and its Arabic partner second:
+       the browser picks the Arabic face only for Arabic letters. */
+    --wwlc-font-display: "Source Serif 4", "Noto Naskh Arabic", Georgia, "Times New Roman", serif;
+    --wwlc-font-body: "Noto Sans", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
 
     /* Spacing scale */
     --wwlc-space-1: 4px;
@@ -41,4 +52,406 @@
     --wwlc-radius-md: 12px;
     --wwlc-radius-lg: 20px;
     --wwlc-radius-pill: 999px;
+}
+
+
+/* ==========================================================================
+   HOMEPAGE: base
+   Idea: a well-marked notebook. Navy is the ink, gold is the teacher's pen.
+   Contrast rule: gold is a background, a line or a mark, never text on white.
+   Navy on gold = 8.6:1, white on navy = 17.7:1, ink-muted on white = 6.1:1.
+   ========================================================================== */
+
+body.home-page {
+    background: var(--wwlc-surface);
+    color: var(--wwlc-ink);
+}
+
+/* Only the page content gets the new fonts; the shared header and footer
+   keep Montserrat so they match every other page. */
+.home-page #main-content {
+    font-family: var(--wwlc-font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+}
+
+.home-page main h1,
+.home-page main h2 {
+    font-family: var(--wwlc-font-display);
+    font-weight: 700;
+    color: var(--wwlc-navy);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+/* Main gold button: navy text on gold */
+.home-page main .cta {
+    background: var(--wwlc-gold);
+    color: var(--wwlc-navy);
+    border: 0;
+    border-radius: var(--wwlc-radius-pill);
+    box-shadow: none;
+    font-weight: 700;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.home-page main .cta:hover {
+    background: var(--wwlc-gold-hover);
+}
+
+/* Keyboard focus that is always visible on light backgrounds */
+.home-page main a:focus-visible,
+.home-page main button:focus-visible {
+    outline: 3px solid var(--wwlc-navy);
+    outline-offset: 3px;
+}
+
+/* Teacher's tick, used as the bullet in hero lists and course lists.
+   Drawn with two borders; a tick is not directional, so it is not mirrored
+   in Arabic, only moved to the inline-start side. */
+.home-page .trust-pill::before,
+.home-page .benefits li::before {
+    content: "";
+    position: absolute;
+    left: auto;
+    right: auto;
+    inset-inline-start: 2px;
+    top: 0.45em;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid var(--wwlc-navy);
+    border-bottom: 2px solid var(--wwlc-navy);
+    transform: rotate(-45deg);
+}
+
+/* Fixed social icons: sit on the inline-start edge (right side in Arabic) */
+.home-page .social-fixed {
+    left: auto;
+    inset-inline-start: 16px;
+}
+
+
+/* ==========================================================================
+   HOMEPAGE: hero (#about)
+   Text on the start side with a gold "margin line"; on the end side a navy
+   card where a gold pen corrects a sentence (the one signature animation),
+   and the crest card styled as a margin note.
+   ========================================================================== */
+
+.home-page .hero {
+    padding: clamp(56px, 8vw, 104px) 0;
+    background: var(--wwlc-surface);
+}
+
+.home-page .hero-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-areas:
+        "copy note"
+        "copy card";
+    column-gap: clamp(32px, 6vw, 88px);
+    row-gap: 36px;
+    align-items: start;
+}
+
+.home-page .hero-copy {
+    grid-area: copy;
+    align-self: center;
+    padding-inline-start: clamp(16px, 3vw, 36px);
+    border-inline-start: 2px solid var(--wwlc-gold);
+}
+
+.home-page .hero-copy .eyebrow {
+    margin: 0 0 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .hero-copy h1 {
+    margin: 0 0 22px;
+    max-width: 16ch;
+    font-size: clamp(2.375rem, 1.5rem + 3.4vw, 4rem);
+    line-height: 1.06;
+}
+
+.home-page .hero-copy h1 span {
+    color: inherit;
+}
+
+.home-page .hero-copy .lead {
+    margin: 0 0 30px;
+    max-width: 34em;
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .hero-cta {
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 0;
+}
+
+.home-page .hero-cta .cta.large,
+.home-page .hero-cta .ghost {
+    min-height: 52px;
+    padding: 0 28px;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    border-radius: var(--wwlc-radius-pill);
+}
+
+.home-page .hero-cta .ghost {
+    border: 2px solid var(--wwlc-navy);
+    background: transparent;
+    color: var(--wwlc-navy);
+    transition: background-color 0.18s ease;
+}
+
+.home-page .hero-cta .ghost:hover {
+    background: var(--wwlc-gold-soft);
+}
+
+.home-page .trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    margin-top: 30px;
+}
+
+.home-page .trust-pill {
+    position: relative;
+    padding: 0;
+    padding-inline-start: 24px;
+    border: 0;
+    background: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--wwlc-ink);
+}
+
+/* The correction card. Paper (.media-shape) in gold sits under a navy card. */
+.home-page .hero-media {
+    grid-area: note;
+    position: relative;
+    margin-block-start: 8px;
+}
+
+.home-page .media-shape {
+    position: absolute;
+    inset-block: 14px -14px;
+    inset-inline: 22px -8px;
+    border-radius: 18px;
+    background: var(--wwlc-gold);
+    transform: rotate(3deg);
+}
+
+.home-page .hero-note {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(40px, 5vw, 56px) clamp(24px, 3.5vw, 40px) clamp(20px, 3vw, 28px);
+    border-radius: 18px;
+    background: var(--wwlc-navy);
+    color: #fff;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 28px 48px -28px rgba(5, 15, 79, 0.6);
+}
+
+.home-page .hero-note-line {
+    margin: 0;
+    font-family: var(--wwlc-font-display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 1.05rem + 1.5vw, 2.125rem);
+    line-height: 1.9;
+    color: #fff;
+}
+
+.home-page .hero-note-fix {
+    position: relative;
+    display: inline-block;
+}
+
+.home-page .hero-note-wrong {
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* The pen stroke through the wrong word */
+.home-page .hero-note-wrong::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: 52%;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--wwlc-gold);
+    transform: rotate(-10deg);
+    transform-origin: left center;
+}
+
+/* The correct word, written above in gold (gold on navy = 8.6:1) */
+.home-page .hero-note-right {
+    position: absolute;
+    left: 50%;
+    bottom: 68%;
+    transform: translateX(-50%) rotate(-4deg);
+    font-style: italic;
+    font-size: 0.8em;
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--wwlc-gold);
+}
+
+.home-page .hero-note-tick {
+    align-self: flex-end;
+    width: 44px;
+    height: auto;
+    margin-top: 6px;
+    fill: none;
+    stroke: var(--wwlc-gold);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+
+/* Animation runs once, when the card scrolls into view. The small script at
+   the end of index.html adds .is-armed (hide marks) and then .is-inview (draw
+   them). Without JS, or with reduced motion, the card simply shows its final
+   state. */
+@media (prefers-reduced-motion: no-preference) {
+    .home-page .hero-note.is-armed .hero-note-wrong::after {
+        transform: rotate(-10deg) scaleX(0);
+    }
+
+    .home-page .hero-note.is-armed .hero-note-right {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    .home-page .hero-note.is-armed .hero-note-tick path {
+        stroke-dashoffset: 60;
+    }
+
+    .home-page .hero-note.is-inview .hero-note-wrong::after {
+        animation: wwlc-strike 0.45s 0.35s cubic-bezier(0.6, 0, 0.3, 1) forwards;
+    }
+
+    .home-page .hero-note.is-inview .hero-note-right {
+        animation: wwlc-write 0.6s 0.85s ease-out forwards;
+    }
+
+    .home-page .hero-note.is-inview .hero-note-tick path {
+        animation: wwlc-tick 0.4s 1.5s ease-out forwards;
+    }
+}
+
+@keyframes wwlc-strike {
+    to { transform: rotate(-10deg) scaleX(1); }
+}
+
+@keyframes wwlc-write {
+    to { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+@keyframes wwlc-tick {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Crest card, styled as a margin note */
+.home-page .hero-card {
+    grid-area: card;
+    justify-self: stretch;
+}
+
+.home-page .card-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: center;
+    padding: 24px 28px;
+    text-align: start;
+    background: var(--wwlc-surface-alt);
+    border: 0;
+    border-inline-start: 4px solid var(--wwlc-gold);
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.home-page .hero-logo {
+    height: 48px;
+    margin: 0;
+    animation: none;
+}
+
+.home-page .card-inner h3 {
+    margin: 0;
+    font-family: var(--wwlc-font-display);
+    font-size: 1.25rem;
+    color: var(--wwlc-navy);
+}
+
+.home-page .benefits {
+    grid-column: 1 / -1;
+    margin: 16px 0 20px;
+    color: var(--wwlc-ink);
+}
+
+.home-page .benefits li {
+    position: relative;
+    padding: 5px 0;
+    padding-inline-start: 24px;
+    border-top: 0;
+    font-size: 0.98rem;
+}
+
+.home-page .benefits li::before {
+    top: calc(5px + 0.45em);
+}
+
+.home-page .hero-card .cta.small {
+    grid-column: 1 / -1;
+    justify-self: start;
+    min-height: 44px;
+    padding: 0 20px;
+    background: transparent;
+    border: 2px solid var(--wwlc-navy);
+    color: var(--wwlc-navy);
+}
+
+.home-page .hero-card .cta.small:hover {
+    background: var(--wwlc-navy);
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .home-page .hero-grid {
+        grid-template-areas:
+            "copy"
+            "note"
+            "card";
+        row-gap: 44px;
+    }
+
+    .home-page .hero-media {
+        width: min(100%, 520px);
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-page .hero-copy {
+        padding-inline-start: 16px;
+    }
+
+    .home-page .hero-cta a {
+        flex: 1 1 100%;
+    }
+
+    .home-page .card-inner {
+        padding: 20px;
+    }
 }

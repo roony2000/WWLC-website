@@ -409,7 +409,8 @@ function initLanguageSelector() {
                     'Book placement': 'احجز اختبار المستوى',
                     'Meet our learners': 'تعرف على طلابنا',
                     // Hero & Section Titles
-                    'Unlock confident English, for every stage of life.': 'افتح باب الإنجليزية بثقة لكل مرحلة من حياتك.',
+                    'English language centre in Kuala Lumpur': 'مركز لتعليم اللغة الإنجليزية في كوالالمبور',
+                    'Unlock confident English, for every stage of life.':'افتح باب الإنجليزية بثقة لكل مرحلة من حياتك.',
                     'From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers help you speak with clarity, fluency, and heart.': 'من معسكرات IELTS السريعة إلى نوادي الأطفال النشطة، يساعدك معلمونا الداعمون على التحدث بوضوح وطلاقة وثقة.',
                     '8:1 average class size': 'متوسط حجم الصف 8:1',
                     'Cambridge-aligned curriculum': 'منهج متوافق مع كامبريدج',
