@@ -10,6 +10,9 @@
     /* Brand colours */
     --wwlc-navy: #050f4f;          /* primary brand navy */
     --wwlc-gold: #f0a728;          /* primary brand gold */
+    --wwlc-gold-hover: #d98e14;    /* darker gold for hover and pressed states */
+    --wwlc-gold-light: #f7c766;    /* lighter gold for the soft end of gradients */
+    --wwlc-gold-text: #8a5a00;     /* dark gold, only for gold text on white (readable) */
     --wwlc-gold-soft: #fdf1da;     /* pale gold for backgrounds and highlights */
 
     /* Ink (text) and surface (background) colours */
