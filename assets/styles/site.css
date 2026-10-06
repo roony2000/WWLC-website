@@ -909,6 +909,21 @@ body.home-page {
 }
 
 
+/* Why WWLC ends in a curve (mask); the courses section slides up beneath it */
+.home-page .why-wwlc {
+    -webkit-mask:
+        var(--wwlc-curve-b) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-b) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+.home-page .why-wwlc::after {
+    content: none;
+}
+
+
 /* ==========================================================================
    HOMEPAGE: courses ([data-courses])
    The tabs look like notebook dividers: the active one is gold and joins a
@@ -1141,6 +1156,24 @@ body.home-page {
         transform: translateY(-4px);
         box-shadow: 0 24px 44px -24px rgba(5, 15, 79, 0.4);
     }
+}
+
+
+/* --- Courses: designed background ---
+   Light section, warm cream deepening slightly towards the bottom. Layers:
+   fine navy grain, a gold glow on the end side, a soft sky glow on the start
+   side, fine diagonal gold hairlines (a teacher's ruled margin), and the
+   cream base. It slides up under the Why section's curved edge. */
+.home-page .courses {
+    z-index: 4;
+    margin-block-start: calc(-1 * var(--wwlc-divider-h));
+    padding-block-start: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        radial-gradient(40% 50% at 100% 25%, rgba(240, 167, 40, 0.2), transparent 70%),
+        radial-gradient(40% 45% at 0% 70%, rgba(156, 201, 255, 0.24), transparent 70%),
+        repeating-linear-gradient(120deg, transparent 0 56px, rgba(240, 167, 40, 0.14) 56px 57px),
+        linear-gradient(180deg, #fbf5ea 0%, var(--wwlc-cream) 40%, #fcefd6 100%);
 }
 
 
