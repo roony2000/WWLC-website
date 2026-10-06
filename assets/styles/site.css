@@ -774,6 +774,62 @@ body.home-page {
     }
 }
 
+/* --- Why WWLC: colour and depth ---
+   Light section with a faint dot grid. Each reason is a
+   white card with a gold top line and a soft shadow that lifts a little on
+   hover. A soft curve leads into the warm cream courses section. */
+.home-page .why-wwlc {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+    padding-block-end: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background:
+        radial-gradient(circle, rgba(5, 15, 79, 0.07) 1px, transparent 1.5px) 0 0 / 22px 22px,
+        var(--wwlc-surface-alt);
+}
+
+.home-page .why-wwlc::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: -1px;
+    height: var(--wwlc-divider-h);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V38C540-10 1120 6 1440 52V80Z' fill='%23fef7ea'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat;
+    pointer-events: none;
+}
+
+.home-page .why-wwlc-benefits-grid {
+    gap: 18px;
+}
+
+.home-page .why-wwlc-benefit,
+.home-page .why-wwlc-benefit:hover {
+    padding: 22px 22px 24px;
+    border: 1px solid rgba(5, 15, 79, 0.06);
+    border-block-start: 3px solid var(--wwlc-gold);
+    border-radius: 14px;
+    background: var(--wwlc-surface);
+    box-shadow: 0 14px 32px -20px rgba(5, 15, 79, 0.28);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .home-page .why-wwlc-benefit {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .home-page .why-wwlc-benefit:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 40px -22px rgba(5, 15, 79, 0.38);
+    }
+}
+
+@media (max-width: 640px) {
+    .home-page .why-wwlc-benefit,
+    .home-page .why-wwlc-benefit:hover {
+        padding: 18px 18px 20px;
+    }
+}
+
 
 /* ==========================================================================
    HOMEPAGE: courses ([data-courses])
