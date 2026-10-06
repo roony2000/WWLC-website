@@ -1091,3 +1091,132 @@ body.home-page {
     border-radius: 50%;
     background: #fff url("../images/ss.png") center / 62% no-repeat;
 }
+
+
+/* ==========================================================================
+   HOMEPAGE: contact (#home-contact)
+   Pale gold section. Heading and a WhatsApp alternative on the start side,
+   the form (unchanged fields) on a white card with notebook-line inputs.
+   ========================================================================== */
+
+.home-page .home-contact {
+    display: block;
+    min-height: 0;
+    padding: clamp(64px, 9vw, 120px) 0;
+    border-top: 0;
+    background: var(--wwlc-gold-soft);
+}
+
+.home-page .home-contact-grid {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+    gap: clamp(32px, 6vw, 88px);
+    align-items: start;
+}
+
+.home-page .home-contact-heading {
+    text-align: start;
+}
+
+.home-page .home-contact-eyebrow {
+    display: block;
+    margin: 0 0 16px;
+    font-family: var(--wwlc-font-display);
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 2.875rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--wwlc-navy);
+}
+
+.home-page .home-contact-lead {
+    max-width: 36ch;
+    margin: 0 0 24px;
+    font-size: 1.125rem;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .home-contact-alt {
+    margin: 0;
+    padding-inline-start: 14px;
+    border-inline-start: 3px solid var(--wwlc-gold);
+    font-weight: 600;
+    color: var(--wwlc-ink);
+}
+
+.home-page .home-contact-alt a {
+    font-weight: 700;
+    color: var(--wwlc-navy);
+    text-decoration-color: var(--wwlc-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.home-page .home-contact-form {
+    max-width: none;
+    margin: 0;
+    padding: clamp(24px, 4vw, 40px);
+    gap: 20px 24px;
+    border: 1px solid rgba(5, 15, 79, 0.08);
+    border-radius: 18px;
+    background: var(--wwlc-surface);
+    box-shadow: 0 24px 48px -32px rgba(5, 15, 79, 0.35);
+}
+
+.home-page .home-contact-form::before {
+    display: none;
+}
+
+.home-page .home-contact-form label span {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--wwlc-navy);
+}
+
+/* Notebook-line inputs: the bottom line is dark enough to see (6:1) */
+.home-page .home-contact-form input,
+.home-page .home-contact-form textarea {
+    padding: 14px;
+    border: 0;
+    border-bottom: 2px solid var(--wwlc-ink-muted);
+    border-radius: 8px 8px 0 0;
+    background: var(--wwlc-surface-alt);
+    font-size: 1rem;
+    color: var(--wwlc-ink);
+}
+
+.home-page .home-contact-form input:focus,
+.home-page .home-contact-form textarea:focus {
+    outline: 2px solid var(--wwlc-navy);
+    outline-offset: 2px;
+    border-bottom-color: var(--wwlc-gold);
+    background: var(--wwlc-surface);
+    box-shadow: none;
+}
+
+.home-page .home-contact-form .cta,
+.home-page .home-contact-form .cta:hover,
+.home-page .home-contact-form .cta:active {
+    justify-self: start;
+    min-height: 56px;
+    padding: 0 36px;
+    font-size: 1.0625rem;
+    letter-spacing: 0;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+}
+
+@media (max-width: 900px) {
+    .home-page .home-contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .home-page .home-contact-form .cta,
+    .home-page .home-contact-form .cta:hover {
+        justify-self: stretch;
+    }
+}

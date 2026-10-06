@@ -410,7 +410,7 @@ function initLanguageSelector() {
                     'Meet our learners': 'تعرف على طلابنا',
                     // Hero & Section Titles
                     'English language centre in Kuala Lumpur': 'مركز لتعليم اللغة الإنجليزية في كوالالمبور',
-                    'Unlock confident English, for every stage of life.':'افتح باب الإنجليزية بثقة لكل مرحلة من حياتك.',
+                    'Unlock confident English, for every stage of life.': 'افتح باب الإنجليزية بثقة لكل مرحلة من حياتك.',
                     'From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers help you speak with clarity, fluency, and heart.': 'من معسكرات IELTS السريعة إلى نوادي الأطفال النشطة، يساعدك معلمونا الداعمون على التحدث بوضوح وطلاقة وثقة.',
                     '8:1 average class size': 'متوسط حجم الصف 8:1',
                     'Cambridge-aligned curriculum': 'منهج متوافق مع كامبريدج',
@@ -465,6 +465,17 @@ function initLanguageSelector() {
                     'Evening schedule': 'جدول مسائي',
                     '1:1 coaching': 'تدريب فردي',
                     'Access to leadership speaker series': 'الوصول إلى سلسلة محاضرات القيادة',
+                    // Homepage contact section
+                    'Contact Us': 'اتصل بنا',
+                    'Questions about courses or the placement test? Send us a message and our team will get back to you.': 'هل لديك أسئلة عن الدورات أو اختبار تحديد المستوى؟ أرسل لنا رسالة وسيتواصل معك فريقنا.',
+                    'Prefer to chat?': 'تفضّل المحادثة؟',
+                    'Message us on WhatsApp': 'راسلنا عبر واتساب',
+                    'Full Name': 'الاسم الكامل',
+                    'Email': 'البريد الإلكتروني',
+                    'Phone': 'الهاتف',
+                    'Course': 'الدورة',
+                    'Message': 'الرسالة',
+                    'Send Message': 'إرسال الرسالة',
                     // Add more translations for the rest of the page as needed...
                 };
                 // Update navigation
