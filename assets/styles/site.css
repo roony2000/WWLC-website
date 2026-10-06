@@ -1,0 +1,41 @@
+/* ==========================================================================
+   WWLC site.css — design tokens for the redesign
+   Loaded AFTER main.css. Variables only: no selectors besides :root,
+   so this file causes no visible change by itself.
+   All names use the --wwlc- prefix so they never clash with the older
+   variables in main.css (--brand-navy, --brand-orange, --muted, ...).
+   ========================================================================== */
+
+:root {
+    /* Brand colours */
+    --wwlc-navy: #050f4f;          /* primary brand navy */
+    --wwlc-gold: #f0a728;          /* primary brand gold */
+    --wwlc-gold-soft: #fdf1da;     /* pale gold for backgrounds and highlights */
+
+    /* Ink (text) and surface (background) colours */
+    --wwlc-ink: #0b1233;           /* main text, near-navy */
+    --wwlc-ink-muted: #5a6180;     /* secondary text */
+    --wwlc-surface: #ffffff;       /* page and card background */
+    --wwlc-surface-alt: #f6f7fb;   /* alternate section background */
+    --wwlc-border: #e3e6f0;        /* hairlines and card borders */
+
+    /* Fonts (system stacks for now, no web fonts loaded yet) */
+    --wwlc-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --wwlc-font-arabic: "Segoe UI", Tahoma, "Noto Sans Arabic", Arial, sans-serif;
+
+    /* Spacing scale */
+    --wwlc-space-1: 4px;
+    --wwlc-space-2: 8px;
+    --wwlc-space-3: 12px;
+    --wwlc-space-4: 16px;
+    --wwlc-space-5: 24px;
+    --wwlc-space-6: 32px;
+    --wwlc-space-7: 48px;
+    --wwlc-space-8: 64px;
+
+    /* Corner radius */
+    --wwlc-radius-sm: 6px;
+    --wwlc-radius-md: 12px;
+    --wwlc-radius-lg: 20px;
+    --wwlc-radius-pill: 999px;
+}
