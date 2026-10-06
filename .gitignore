@@ -4,3 +4,4 @@ assets/images/question*.png
 *.php
 .env*
 error_log
+CLAUDE.md
