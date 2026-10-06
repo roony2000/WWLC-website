@@ -110,7 +110,8 @@ body.home-page {
    Drawn with two borders; a tick is not directional, so it is not mirrored
    in Arabic, only moved to the inline-start side. */
 .home-page .trust-pill::before,
-.home-page .benefits li::before {
+.home-page .benefits li::before,
+.home-page .course-highlights li::before {
     content: "";
     position: absolute;
     left: auto;
@@ -119,8 +120,12 @@ body.home-page {
     top: 0.45em;
     width: 12px;
     height: 7px;
+    border: 0;
     border-left: 2px solid var(--wwlc-navy);
     border-bottom: 2px solid var(--wwlc-navy);
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
     transform: rotate(-45deg);
 }
 
@@ -646,5 +651,192 @@ body.home-page {
     .home-page .why-wwlc-btn {
         width: 100%;
         justify-content: center;
+    }
+}
+
+
+/* ==========================================================================
+   HOMEPAGE: courses ([data-courses])
+   The tabs look like notebook dividers: the active one is gold and joins a
+   gold line on top of the panel. Cards are plain white with a highlighter
+   stroke under the course type.
+   ========================================================================== */
+
+.home-page .courses {
+    padding: clamp(64px, 9vw, 120px) 0;
+    background: var(--wwlc-surface);
+}
+
+.home-page .courses-bg {
+    display: none;
+}
+
+.home-page .courses-inner {
+    gap: 0;
+}
+
+.home-page .courses-head {
+    gap: 14px;
+    max-width: 760px;
+}
+
+.home-page .courses-eyebrow {
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .courses-head h2 {
+    margin: 0;
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 2.875rem);
+    line-height: 1.12;
+    color: var(--wwlc-navy);
+}
+
+.home-page .courses-head p {
+    max-width: 60ch;
+    color: var(--wwlc-ink-muted);
+}
+
+/* Divider tabs. On narrow screens they scroll sideways instead of wrapping. */
+.home-page .courses-tabs {
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 6px;
+    margin-top: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.home-page .courses-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.home-page .courses-pill {
+    flex: 0 0 auto;
+    padding: 12px 22px;
+    border-radius: 12px 12px 0 0;
+    background: var(--wwlc-surface-alt);
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--wwlc-navy);
+    transition: background-color 0.18s ease;
+}
+
+.home-page .courses-pill:hover {
+    background: var(--wwlc-gold-soft);
+}
+
+.home-page .courses-pill.is-active {
+    background: var(--wwlc-gold);
+    box-shadow: none;
+    font-weight: 700;
+    color: var(--wwlc-navy);
+}
+
+.home-page .courses-track {
+    padding: 32px 0 0;
+    border: 0;
+    border-top: 3px solid var(--wwlc-gold);
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.home-page .course-card,
+.home-page .course-card:hover {
+    align-content: start;
+    gap: 14px;
+    padding: 28px;
+    border: 1px solid var(--wwlc-border);
+    border-radius: 14px;
+    background: var(--wwlc-surface);
+    box-shadow: none;
+    transform: none;
+}
+
+/* Course type with a gold highlighter stroke under it (navy text stays on
+   white/gold, both readable) */
+.home-page .course-tag {
+    justify-self: start;
+    display: inline;
+    padding: 0 3px;
+    background: linear-gradient(to top, var(--wwlc-gold-light) 0 42%, transparent 42%);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--wwlc-navy);
+}
+
+.home-page .course-tag::before {
+    display: none;
+}
+
+.home-page .course-card h3 {
+    font-family: var(--wwlc-font-display);
+    font-size: 1.375rem;
+    line-height: 1.25;
+    color: var(--wwlc-navy);
+}
+
+.home-page .course-card p {
+    font-size: 1rem;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .course-highlights {
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--wwlc-border);
+    font-size: 0.98rem;
+    color: var(--wwlc-ink);
+}
+
+.home-page .course-highlights li {
+    padding: 0;
+    padding-inline-start: 24px;
+}
+
+/* Most cards have an empty meta row; hide it so it adds no gap */
+.home-page .course-meta:not(:has(*)) {
+    display: none;
+}
+
+.home-page .course-link {
+    color: var(--wwlc-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--wwlc-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+/* Point the arrow the other way in Arabic */
+[dir="rtl"] .home-page .course-link::after {
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .home-page .course-link:hover::after,
+[dir="rtl"] .home-page .course-link:focus-visible::after {
+    transform: scaleX(-1) translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .home-page .courses-track {
+        padding: 24px 0 0;
+    }
+
+    .home-page .course-card {
+        padding: 22px;
     }
 }
