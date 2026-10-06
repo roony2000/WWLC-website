@@ -41,82 +41,18 @@
 		</a>
 	</div>
 
-	<header class="navbar" role="banner">
-		<div class="container nav-inner">
-			<a class="logo-link" href="index.html" aria-label="Wordsworth Home">
-				<img class="logo-img" src="assets/images/ss.png" alt="Wordsworth Logo" />
-			</a>
-			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
-				<span class="nav-toggle-lines" aria-hidden="true">
-					<span class="nav-toggle-bar"></span>
-					<span class="nav-toggle-bar"></span>
-					<span class="nav-toggle-bar"></span>
-				</span>
-			</button>
-			<nav class="main-nav" id="mainNav" role="navigation" aria-label="Main">
-				<ul>					<li><a href="placement.php">Placement Test</a></li>
-					<li><a href="events.html" aria-current="page">Events</a></li>
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="fee-calendar.html">Fee & Calendar</a></li>
-
-				</ul>
-			</nav>
-			<div class="nav-actions">
-				<div class="lang-selector" id="langSelector" aria-haspopup="true">
-					<button id="langBtn" class="lang-btn" aria-expanded="false" title="Select language">
-						<img class="flag-img" id="langBtnFlag" src="https://flagcdn.com/gb.svg" alt="English (UK)" />
-						<span id="langBtnLabel" class="lang-label">EN</span>
-						<svg class="chev" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
-					</button>
-					<ul class="lang-menu" id="langMenu" role="menu" aria-labelledby="langBtn">
-						<li role="menuitem">
-							<button class="lang-item" data-lang="en" data-code="EN" data-label="English" data-flag="https://flagcdn.com/gb.svg">
-								<img class="flag-img" src="https://flagcdn.com/gb.svg" alt="English (UK)" />
-								<span class="lang-native">English</span>
-							</button>
-						</li>
-						<li role="menuitem">
-							<button class="lang-item" data-lang="ar" data-code="AR" data-label="&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;" data-flag="https://flagcdn.com/sa.svg">
-								<img class="flag-img" src="https://flagcdn.com/sa.svg" alt="Arabic (SA)" />
-								<span class="lang-native">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
-                                <span class="lang-translate">Arabic</span>
-							</button>
-						</li>
-						<li role="menuitem">
-							<button class="lang-item" data-lang="ru" data-code="RU" data-label="&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;" data-flag="https://flagcdn.com/ru.svg">
-								<img class="flag-img" src="https://flagcdn.com/ru.svg" alt="Russian" />
-								<span class="lang-native">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span>
-                                <span class="lang-translate">Russian</span>
-							</button>
-						</li>
-						<li role="menuitem">
-							<button class="lang-item" data-lang="zh" data-code="ZH" data-label="&#20013;&#25991;" data-flag="https://flagcdn.com/cn.svg">
-								<img class="flag-img" src="https://flagcdn.com/cn.svg" alt="Chinese" />
-								<span class="lang-native">&#20013;&#25991;</span>
-                                <span class="lang-translate">Chinese</span>
-							</button>
-						</li>
-						<li role="menuitem">
-							<button class="lang-item" data-lang="ko" data-code="KO" data-label="&#54620;&#44397;&#50612;" data-flag="https://flagcdn.com/kr.svg">
-								<img class="flag-img" src="https://flagcdn.com/kr.svg" alt="Korean" />
-								<span class="lang-native">&#54620;&#44397;&#50612;</span>
-                                <span class="lang-translate">Korean</span>
-							</button>
-						</li>
-						<li role="menuitem">
-							<button class="lang-item" data-lang="fr" data-code="FR" data-label="Fran&ccedil;ais" data-flag="https://flagcdn.com/fr.svg">
-								<img class="flag-img" src="https://flagcdn.com/fr.svg" alt="French" />
-								<span class="lang-native">Fran&ccedil;ais</span>
-                                <span class="lang-translate">French</span>
-							</button>
-						</li>
-					</ul>
-				</div>
-				<a class="ghost nav-signin" href="register.html?showLogin=1">Sign In</a>
-				<a class="cta" href="register.html">Register</a>
-			</div>
-		</div>
-	</header>
+	<script src="scripts/layout.js"></script>
+	<noscript>
+	    <nav aria-label="Main" style="padding:12px 16px; background:#050f4f; color:#ffffff;">
+	        <a href="index.html" style="color:#ffffff;">Home</a> |
+	        <a href="placement.php" style="color:#ffffff;">Placement Test</a> |
+	        <a href="events.html" style="color:#ffffff;">Events</a> |
+	        <a href="contact.html" style="color:#ffffff;">Contact</a> |
+	        <a href="fee-calendar.html" style="color:#ffffff;">Fee &amp; Calendar</a> |
+	        <a href="register.html?showLogin=1" style="color:#ffffff;">Sign In</a> |
+	        <a href="register.html" style="color:#ffffff;">Register</a>
+	    </nav>
+	</noscript>
 
 	<main class="events-main">
 		<!-- Featured Trip: Treasure Hunt (Lately Trip) -->
