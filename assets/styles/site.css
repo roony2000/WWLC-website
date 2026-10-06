@@ -455,3 +455,196 @@ body.home-page {
         padding: 20px;
     }
 }
+
+
+/* ==========================================================================
+   HOMEPAGE: why WWLC (.why-wwlc)
+   No more 9 tilted cards: the heading sits on the start side and the reasons
+   read as a calm two-column list, each separated by a hairline.
+   ========================================================================== */
+
+.home-page .why-wwlc {
+    margin: 0;
+    padding: clamp(64px, 9vw, 120px) 0;
+    border-radius: 0;
+    background: var(--wwlc-surface-alt);
+    box-shadow: none;
+    perspective: none;
+}
+
+.home-page .why-wwlc-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 2fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "head list"
+        "cta  list";
+    column-gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+    max-width: 1280px;
+    padding-inline: 20px;
+}
+
+.home-page .why-wwlc-header {
+    grid-area: head;
+    margin: 0;
+    text-align: start;
+    transform: none;
+}
+
+/* Remove the old gradient-filled text so the words are solid and readable */
+.home-page .why-wwlc-title,
+.home-page .why-wwlc-sub,
+.home-page .why-wwlc-benefit p {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+}
+
+.home-page .why-wwlc-title {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 2.875rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--wwlc-navy);
+}
+
+.home-page .why-wwlc-sub {
+    margin: 0;
+    text-align: start;
+    font-size: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .why-wwlc-benefits-grid {
+    grid-area: list;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 40px;
+    margin: 0;
+    transform-style: flat;
+}
+
+.home-page .why-wwlc-benefit,
+.home-page .why-wwlc-benefit:hover {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
+    min-height: 0;
+    padding: 26px 0;
+    border: 0;
+    border-top: 1px solid var(--wwlc-border);
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+    will-change: auto;
+}
+
+.home-page .why-wwlc-icon {
+    grid-row: 1 / span 2;
+    margin: 0;
+    filter: none;
+    transform: none;
+}
+
+.home-page .why-wwlc-icon svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.home-page .why-wwlc-benefit h3 {
+    margin: 6px 0;
+    font-family: var(--wwlc-font-display);
+    font-size: 1.1875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    text-shadow: none;
+    text-align: start;
+    color: var(--wwlc-navy);
+}
+
+.home-page .why-wwlc-benefit p {
+    padding: 0;
+    text-align: start;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0;
+    color: var(--wwlc-ink-muted);
+}
+
+.home-page .why-wwlc-cta {
+    grid-area: cta;
+    margin-top: 32px;
+    text-align: start;
+}
+
+.home-page .why-wwlc-btn,
+.home-page .why-wwlc-btn:hover {
+    display: inline-flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 0 28px;
+    border-radius: var(--wwlc-radius-pill);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    box-shadow: none;
+    transform: none;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.home-page .why-wwlc-btn {
+    background: var(--wwlc-navy);
+    color: #fff;
+}
+
+.home-page .why-wwlc-btn:hover {
+    background: var(--wwlc-gold);
+    color: var(--wwlc-navy);
+}
+
+@media (max-width: 900px) {
+    .home-page .why-wwlc-inner {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: none;
+        grid-template-areas:
+            "head"
+            "list"
+            "cta";
+        row-gap: 28px;
+    }
+
+    .home-page .why-wwlc-cta {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-page .why-wwlc-benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .home-page .why-wwlc-benefit,
+    .home-page .why-wwlc-benefit:hover {
+        grid-template-columns: 32px minmax(0, 1fr);
+        column-gap: 14px;
+        padding: 20px 0;
+    }
+
+    .home-page .why-wwlc-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .home-page .why-wwlc-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -425,7 +425,7 @@ function initLanguageSelector() {
                     'Expert Coaches': 'مدربون خبراء',
                     'Learn from certified, passionate educators who turn lessons into life-changing experiences.': 'تعلم من معلمين معتمدين وملهمين يحولون الدروس إلى تجارب تغير الحياة.',
                     'Real-World Confidence': 'ثقة في العالم الحقيقي',
-                    'Build skills that go beyond exams—communicate, present, and connect with impact.': 'ابنِ مهارات تتجاوز الامتحانات — تواصل، قدم، وتواصل بفعالية.',
+                    'Build skills that go beyond exams - communicate, present, and connect with impact.': 'ابنِ مهارات تتجاوز الامتحانات — تواصل، قدم، وتواصل بفعالية.',
                     'Personalized Pathways': 'مسارات مخصصة',
                     'Your journey is unique. We tailor every step to your goals, strengths, and dreams.': 'رحلتك فريدة. نخصص كل خطوة لأهدافك ونقاط قوتك وأحلامك.',
                     'Global Community': 'مجتمع عالمي',
