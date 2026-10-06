@@ -1572,3 +1572,28 @@ body.home-page {
     }
 }
 
+/* --- Contact: colour and depth ---
+   Warm cream (gold-soft at low strength) to match the courses section. The
+   form card gets a gold top line and a deeper soft shadow; it does not move
+   on hover, so typing feels steady. A navy curve leads into the footer. */
+.home-page .home-contact {
+    position: relative;
+    isolation: isolate;
+    padding-block-end: calc(clamp(64px, 9vw, 120px) + var(--wwlc-divider-h));
+    background: var(--wwlc-cream);
+}
+
+.home-page .home-contact::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: -1px;
+    height: var(--wwlc-divider-h);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 80V40C460-4 1000 0 1440 50V80Z' fill='%23050f4f'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat;
+    pointer-events: none;
+}
+
+.home-page .home-contact-form {
+    border-block-start: 4px solid var(--wwlc-gold);
+    box-shadow: 0 30px 60px -34px rgba(5, 15, 79, 0.45);
+}
