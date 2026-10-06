@@ -58,6 +58,21 @@
 
     /* Height of the soft curved edge between homepage sections */
     --wwlc-divider-h: clamp(28px, 5vw, 72px);
+
+    /* Pale blue tints for light sections (never plain white) */
+    --wwlc-paleblue: #eaf1fd;
+    --wwlc-paleblue-soft: #f3f6fd;
+
+    /* Fine grain textures (tiny SVG noise, tiled): white specks for dark
+       sections, navy specks for light ones. */
+    --wwlc-grain-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+    --wwlc-grain-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.02 0 0 0 0 0.06 0 0 0 0 0.31 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+
+    /* Curved bottom edges, used as masks: the section ends in a soft curve
+       and the next section slides up underneath it, so each section's own
+       background runs right up to the curve with no seam. */
+    --wwlc-curve-a: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V38C900-10 320 6 0 52Z'/%3E%3C/svg%3E");
+    --wwlc-curve-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V52C1120 6 540-10 0 38Z'/%3E%3C/svg%3E");
 }
 
 
@@ -579,6 +594,35 @@ body.home-page {
         transform: translateY(-4px);
         box-shadow: 0 36px 64px -28px rgba(0, 0, 0, 0.6);
     }
+}
+
+
+/* --- Hero: designed background ---
+   Dark section. Layers, top to bottom: fine grain, a huge faint gold
+   quotation mark (a learner's voice), soft light rays from the top corner,
+   the gold and sky glows, faint ruled notebook lines, and the navy-to-deep-
+   blue base. The two gold rings drift very slowly (off for reduced motion). */
+.home-page .hero {
+    z-index: 6;
+    background:
+        var(--wwlc-grain-dark) 0 0 / 180px 180px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='112' text-anchor='middle' font-family='Georgia,serif' font-size='150' fill='%23f0a728' fill-opacity='0.08'%3E%E2%80%9C%3C/text%3E%3C/svg%3E") left 2% bottom 6% / clamp(200px, 26vw, 400px) auto no-repeat,
+        conic-gradient(from 200deg at 92% -8%, transparent 0deg, rgba(255, 255, 255, 0.05) 5deg, transparent 11deg, rgba(240, 167, 40, 0.06) 18deg, transparent 25deg, rgba(255, 255, 255, 0.04) 33deg, transparent 40deg, transparent 360deg),
+        radial-gradient(55% 65% at 88% 12%, rgba(240, 167, 40, 0.24), transparent 62%),
+        radial-gradient(45% 55% at 0% 100%, rgba(156, 201, 255, 0.14), transparent 62%),
+        repeating-linear-gradient(to bottom, transparent 0 39px, rgba(255, 255, 255, 0.045) 39px 40px),
+        linear-gradient(160deg, var(--wwlc-blue-deep) 0%, #0a1d6e 45%, var(--wwlc-navy) 100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .home-page .hero::before {
+        animation: wwlc-drift 18s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes wwlc-drift {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(-14px, 18px) rotate(4deg); }
 }
 
 
