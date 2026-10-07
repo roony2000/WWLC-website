@@ -1983,6 +1983,68 @@ body.home-page {
     }
 }
 
+/* --- Contact: bigger, more prominent form ---
+   A wider form column, more room inside the card, taller fields with larger
+   text, a taller message box and a bigger send button. Only sizes change;
+   the form's fields and behaviour are untouched. */
+.home-page .home-contact {
+    padding-block-start: calc(clamp(72px, 10vw, 136px) + var(--wwlc-divider-h));
+    padding-block-end: calc(clamp(72px, 10vw, 136px) + var(--wwlc-divider-h));
+}
+
+.home-page .home-contact-grid {
+    gap: clamp(32px, 5vw, 72px);
+}
+
+@media (min-width: 901px) {
+    .home-page .home-contact-grid {
+        grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.6fr);
+    }
+}
+
+.home-page .home-contact-form {
+    padding: clamp(22px, 4.5vw, 56px);
+    gap: 24px 28px;
+    border-radius: 22px;
+    box-shadow:
+        0 0 0 8px rgba(240, 167, 40, 0.12),
+        0 36px 72px -36px rgba(5, 15, 79, 0.5);
+}
+
+.home-page .home-contact-form label span {
+    margin-bottom: 10px;
+    font-size: 1.0625rem;
+}
+
+.home-page .home-contact-form input,
+.home-page .home-contact-form textarea {
+    min-height: 58px;
+    padding: 16px 18px;
+    font-size: 1.0625rem;
+}
+
+.home-page .home-contact-form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.home-page .home-contact-form .cta,
+.home-page .home-contact-form .cta:hover,
+.home-page .home-contact-form .cta:active {
+    min-height: 62px;
+    padding: 0 44px;
+    font-size: 1.125rem;
+}
+
+@media (max-width: 640px) {
+    .home-page .home-contact-form {
+        gap: 20px;
+        box-shadow:
+            0 0 0 5px rgba(240, 167, 40, 0.12),
+            0 28px 56px -32px rgba(5, 15, 79, 0.5);
+    }
+}
+
 /* The footer slides up beneath the contact curve */
 .home-page .wwlc-footer {
     margin-top: calc(-1 * var(--wwlc-divider-h));
