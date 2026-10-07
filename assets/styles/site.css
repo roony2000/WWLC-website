@@ -1768,8 +1768,9 @@ body.home-page {
     width: min(calc(var(--wwlc-cube) * 1.38), 94%);
 }
 
-/* One column: the cube has the full width, so it can be larger */
-@media (max-width: 980px) {
+/* One column (main.css switches at 992px): the cube has the full width,
+   so it can be larger */
+@media (max-width: 992px) {
     .home-page .trusted-cube-stage {
         --wwlc-cube: clamp(210px, 46vw, 360px);
     }
