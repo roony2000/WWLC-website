@@ -5,6 +5,8 @@
     <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
     <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Account page: keep it out of search results -->
+    <meta name="robots" content="noindex" />
     <link rel="icon" type="image/png" href="assets/images/ss.png" />
     <title data-i18n="page.profile.title">My Profile | Wordsworth Language Centre</title>
     <link rel="stylesheet" href="assets/styles/main.css" />
