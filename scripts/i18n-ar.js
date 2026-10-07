@@ -25,6 +25,7 @@ window.WWLC_I18N_AR = {
     'page.courses.title': 'دورات اللغة الإنجليزية في كوالالمبور | مركز ووردزوورث للغات',
     'page.about.title': 'من نحن | مركز ووردزوورث للغات، كوالالمبور',
     'page.faq.title': 'الأسئلة الشائعة | مركز ووردزوورث للغات، كوالالمبور',
+    'page.blog.title': 'المدونة | مركز ووردزوورث للغات، كوالالمبور',
 
     // --- Brand ---
     'brand.name': 'مركز ووردزوورث للغات',
@@ -378,6 +379,22 @@ window.WWLC_I18N_AR = {
     'fees.docType': 'نوع المستند: PDF',
     'fees.viewDetails': 'عرض التفاصيل',
     'fees.brochureButton': 'الكتيّب',
+
+    // --- Blog (blog/index.html) ---
+    'blog.title': 'ملاحظات لمتعلمي اللغة الإنجليزية',
+    'blog.lead': 'أفكار عملية تساعدك على تعلّم اللغة الإنجليزية وممارستها، في الصف وفي المنزل.',
+    'blog.latest': 'أحدث المقالات',
+    'blog.cat.practice': 'نصائح للدراسة',
+    'blog.draft': 'مسودة',
+    'blog.readMore': 'اقرأ المزيد',
+    'blog.slot.title': 'المزيد من المقالات في الطريق',
+    'blog.slot.text': 'في هذه الأثناء، اكتشف مستواك من خلال اختبار تحديد المستوى.',
+    'blog.cta.title': 'هل أنت مستعد للتعلّم مع معلّم؟',
+    'blog.cta.text': 'خُض اختبار تحديد المستوى، ثم اختر الدورة التي تناسب مستواك وأهدافك.',
+    // Sample article card (also used on blog/sample-article.html)
+    'sample.title': 'كيف تمارس اللغة الإنجليزية كل يوم',
+    'sample.excerpt': 'عادات يومية صغيرة للقراءة والاستماع والتحدث والكتابة تناسب يومك المزدحم.',
+    'sample.readTime': 'قراءة في 3 دقائق',
 
     // --- My profile page ---
     'profile.photoAlt': 'الصورة الشخصية',

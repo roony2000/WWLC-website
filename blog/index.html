@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
+    <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
+    <!-- This page is in the blog/ folder, so every local path starts with "../" -->
+    <link rel="icon" type="image/png" href="../assets/images/ss.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Practical ideas for learning and practising English, from Wordsworth Language Centre in Kuala Lumpur." />
+    <title data-i18n="page.blog.title">Blog | Wordsworth Language Centre, Kuala Lumpur</title>
+    <!-- TODO: add the canonical link once the domain is confirmed:
+         <link rel="canonical" href="https://YOUR-DOMAIN/blog/" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../assets/styles/main.css" />
+    <link rel="stylesheet" href="../assets/styles/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+        rel="stylesheet" />
+
+    <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
+    <script src='../scripts/ga4.js'></script>
+    <script defer src="../scripts/i18n-ar.js"></script>
+    <script defer src="../scripts/i18n.js"></script>
+</head>
+
+<body class="inner-page blog-page">
+    <!-- The header is written here by layout.js; it adds "../" to its links by itself -->
+    <script src="../scripts/layout.js"></script>
+    <noscript>
+        <nav class="noscript-nav" aria-label="Main">
+            <a href="../index.html">Home</a> |
+            <a href="../courses.html">Courses</a> |
+            <a href="../placement.php">Placement Test</a> |
+            <a href="../fee-calendar.html">Fee &amp; Calendar</a> |
+            <a href="../events.html">Events</a> |
+            <a href="index.html">Blog</a> |
+            <a href="../about.html">About</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../contact.html">Contact</a> |
+            <a href="../register.html?showLogin=1">Sign In</a> |
+            <a href="../register.html">Register</a>
+        </nav>
+    </noscript>
+
+    <main id="main-content">
+        <section class="pg-band pg-hero pg-curve" aria-labelledby="page-title">
+            <div class="pg-wrap">
+                <div class="pg-hero-copy">
+                    <nav class="pg-crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs.label">
+                        <ol>
+                            <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                            <li aria-current="page" data-i18n="nav.blog">Blog</li>
+                        </ol>
+                    </nav>
+                    <h1 id="page-title" data-i18n="blog.title">Notes for English learners</h1>
+                    <p class="pg-lead" data-i18n="blog.lead">Practical ideas to help you learn and practise English, in class and at home.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pg-band pg-band--cream pg-curve" aria-labelledby="blog-latest-title">
+            <div class="pg-wrap">
+                <h2 class="pg-title" id="blog-latest-title" data-i18n="blog.latest">Latest articles</h2>
+
+                <!-- ARTICLE CARDS
+                     Newest article first. The first card is the large one (.bl-card--lead).
+                     To add an article: copy one <article class="bl-card"> block, change the
+                     link, the category, the title, its id (and the matching aria-describedby
+                     on "Read more"), the excerpt and the reading time. Only the first card
+                     keeps .bl-card--lead.
+                     Image area: the drawn cover (.bl-cover) is used until there is a real
+                     photo. To use a photo, put it inside .bl-cover in place of the <span>s:
+                     <img src="../assets/images/blog/NAME.jpg" alt="DESCRIBE THE PHOTO"
+                          width="800" height="500" loading="lazy" decoding="async" />
+                     Cover colours by category: .bl-cover--practice, --speaking, --writing. -->
+                <ul class="bl-grid" role="list">
+                    <li>
+                        <article class="bl-card bl-card--lead">
+                            <div class="bl-cover bl-cover--practice" aria-hidden="true">
+                                <span class="bl-cover-label"></span>
+                                <span class="bl-cover-band"></span>
+                            </div>
+                            <div class="bl-card-body">
+                                <p class="bl-tags">
+                                    <span class="bl-tag" data-i18n="blog.cat.practice">Study tips</span>
+                                    <!-- TODO: remove this "Draft" tag (and this whole card, if needed)
+                                         once the sample article is replaced by a real one. -->
+                                    <span class="bl-tag bl-tag--draft" data-i18n="blog.draft">Draft</span>
+                                </p>
+                                <h3 class="bl-card-title" id="post-practise-daily" data-i18n="sample.title">How to practise English every day</h3>
+                                <p class="bl-excerpt" data-i18n="sample.excerpt">Small daily habits for reading, listening, speaking and writing that fit around a busy day.</p>
+                                <!-- TODO: add the publish date here once known, e.g.
+                                     <time datetime="YYYY-MM-DD">DD Month YYYY</time> -->
+                                <p class="bl-meta" data-i18n="sample.readTime">3 minute read</p>
+                                <a class="bl-more" href="sample-article.html" aria-describedby="post-practise-daily" data-i18n="blog.readMore">Read more</a>
+                            </div>
+                        </article>
+                    </li>
+
+                    <!-- Placeholder slot: remove it once there are three or more articles -->
+                    <li>
+                        <div class="bl-slot">
+                            <h3 class="bl-slot-title" data-i18n="blog.slot.title">More articles are on the way</h3>
+                            <p data-i18n="blog.slot.text">While you wait, find your level with our placement test.</p>
+                            <a class="pg-link" href="../placement.php#start" data-i18n="hero.ctaPlacement">Start Your Placement Test</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Closing call to action -->
+        <section class="pg-band pg-band--gold pg-curve" aria-labelledby="blog-cta-title">
+            <div class="pg-wrap pg-cta">
+                <div class="pg-cta-copy">
+                    <h2 class="pg-title" id="blog-cta-title" data-i18n="blog.cta.title">Ready to learn with a teacher?</h2>
+                    <p data-i18n="blog.cta.text">Take the placement test, then choose the course that fits your level and goals.</p>
+                </div>
+                <div class="pg-cta-actions">
+                    <a class="pg-btn pg-btn--navy" href="../placement.php#start" data-i18n="hero.ctaPlacement">Start Your Placement Test</a>
+                    <a class="pg-btn pg-btn--line" href="../courses.html" data-i18n="faq.coursesLink">See all courses</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../scripts/nav.js"></script>
+</body>
+
+</html>
