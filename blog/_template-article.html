@@ -8,8 +8,9 @@
      1. Copy this file inside the blog/ folder and give the copy a short,
         lowercase name with hyphens, e.g. blog/learning-new-words.html.
         (Keep the file in blog/: every local path below starts with "../".)
-     2. In <head>: write the <title> and the meta description (about 150
-        characters, saying what the reader will learn), and fill in the
+     2. In <head>: write the <title> (under about 60 characters) and the meta
+        description (about 150 characters, saying what the reader will learn),
+        copy both into og:title and og:description, and fill in the
         canonical link once the domain is confirmed.
      3. Replace every text in [square brackets]. Do not invent facts, prices,
         dates, results or quotes: leave a hidden TODO comment instead.
@@ -38,9 +39,20 @@
     <link rel="icon" type="image/png" href="../assets/images/ss.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="[One or two sentences, about 150 characters, saying what the reader will learn.]" />
-    <title data-i18n="page.blogTemplate.title">[Article title] | Wordsworth Language Centre Blog</title>
+    <title data-i18n="page.blogTemplate.title">[Article title] | Wordsworth Blog</title>
     <!-- TODO: add the canonical link once the domain is confirmed:
          <link rel="canonical" href="https://YOUR-DOMAIN/blog/FILE-NAME.html" /> -->
+    <!-- Social sharing (Open Graph and Twitter/X). TODO: add og:url and og:image once
+         the domain and a share image (about 1200x630) exist, then change
+         twitter:card to "summary_large_image".
+    <meta property="og:url" content="https://YOUR-DOMAIN/blog/FILE-NAME.html" />
+    <meta property="og:image" content="https://YOUR-DOMAIN/assets/images/SHARE-IMAGE.jpg" /> -->
+    <meta property="og:title" content="[Article title] | Wordsworth Blog" />
+    <meta property="og:description" content="[One or two sentences, about 150 characters, saying what the reader will learn.]" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Wordsworth Language Centre" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary" />
     <!-- TODO: structured data. Fill in every value with real details, then remove
          the comment marks around the <script> block:
     <script type="application/ld+json">
