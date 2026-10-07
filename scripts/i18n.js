@@ -381,9 +381,11 @@
                 stopWatching();
                 mutations.forEach(function (m) {
                     if (m.type === 'childList') {
-                        Array.prototype.forEach.call(m.addedNodes, function (node) {
-                            if (node.isConnected && (node.nodeType === 1 || node.nodeType === 3)) translateWithin(node, dict);
-                        });
+                        // Re-check the element whose children changed: this also
+                        // catches a labelled element whose text a script replaced.
+                        if (m.addedNodes.length && m.target.nodeType === 1 && m.target.isConnected) {
+                            translateWithin(m.target, dict);
+                        }
                     } else if (m.target.isConnected) {
                         // characterData: the text node; attributes: the element
                         var target = m.type === 'attributes' ? m.target : m.target.parentElement;
