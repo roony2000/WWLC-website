@@ -3441,3 +3441,269 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
         height: 68px;
     }
 }
+
+
+/* ==========================================================================
+   NO-SCRIPT MENU (contact.html, events.html, fee-calendar.html)
+   The plain links shown inside <noscript> when JavaScript is off.
+   ========================================================================== */
+
+.noscript-nav {
+    padding: 12px 16px;
+    background: var(--wwlc-navy);
+    color: #ffffff;
+}
+
+.noscript-nav a {
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   CONTACT PAGE (contact.html)
+   The form is a letter: a white sheet with a gold top edge and a postage
+   stamp in its corner, on the wider side of the page. Beside it, the same
+   navy address card as the About page, then a drawn map with a gold pin.
+   The form keeps its old classes (.contact-pro-form, .contact-pro-full),
+   so the rules below first undo the old card look from main.css.
+   ========================================================================== */
+
+.ct-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(40px, 5vw, 64px);
+}
+
+@media (max-width: 980px) {
+    .ct-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* --- The letter (form card) --- */
+.ct-letter {
+    position: relative;
+    padding: clamp(24px, 4.5vw, 56px);
+    border: 1px solid rgba(5, 15, 79, 0.08);
+    border-block-start: 5px solid var(--wwlc-gold);
+    border-radius: 22px;
+    background: var(--wwlc-surface);
+    box-shadow:
+        0 0 0 8px rgba(240, 167, 40, 0.12),
+        0 36px 72px -36px rgba(5, 15, 79, 0.5);
+}
+
+/* Postage stamp: an envelope on pale gold inside a dashed gold edge */
+.ct-letter::after {
+    content: "";
+    position: absolute;
+    inset-block-start: -20px;
+    inset-inline-end: clamp(16px, 4vw, 40px);
+    width: clamp(56px, 7vw, 76px);
+    aspect-ratio: 4 / 5;
+    border: 2px dashed var(--wwlc-gold);
+    border-radius: 6px;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 36'%3E%3Cg fill='none' stroke='%23050f4f' stroke-width='3' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='42' height='30' rx='4'/%3E%3Cpath d='M4 5L24 20L44 5'/%3E%3C/g%3E%3C/svg%3E") center / 58% auto no-repeat,
+        var(--wwlc-gold-soft);
+    box-shadow: 0 10px 20px -12px rgba(5, 15, 79, 0.45);
+    transform: rotate(5deg);
+    pointer-events: none;
+}
+
+[dir="rtl"] .ct-letter::after {
+    transform: rotate(-5deg);
+}
+
+/* Keep the heading clear of the stamp */
+.inner-page .ct-letter .pg-title {
+    padding-inline-end: clamp(64px, 9vw, 96px);
+}
+
+/* --- The form inside the letter (fields unchanged) --- */
+.contact-page .contact-pro-form {
+    margin-block-start: 28px;
+    padding: 0;
+    gap: 24px 28px;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.contact-page .contact-pro-form::before {
+    display: none;
+}
+
+.contact-page .contact-pro-form label span {
+    margin-bottom: 10px;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--wwlc-navy);
+}
+
+/* Notebook-line inputs, as on the homepage (bottom line 6:1 on white) */
+.contact-page .contact-pro-form input,
+.contact-page .contact-pro-form textarea {
+    min-height: 58px;
+    padding: 16px 18px;
+    border: 0;
+    border-bottom: 2px solid var(--wwlc-ink-muted);
+    border-radius: 8px 8px 0 0;
+    background: var(--wwlc-surface-alt);
+    font-size: 1.0625rem;
+    color: var(--wwlc-ink);
+}
+
+.contact-page .contact-pro-form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.contact-page .contact-pro-form input:focus,
+.contact-page .contact-pro-form textarea:focus {
+    outline: 2px solid var(--wwlc-navy);
+    outline-offset: 2px;
+    border-bottom-color: var(--wwlc-gold);
+    background: var(--wwlc-surface);
+    box-shadow: none;
+}
+
+.contact-page .contact-pro-form .cta,
+.contact-page .contact-pro-form .cta:hover,
+.contact-page .contact-pro-form .cta:active {
+    justify-self: start;
+    min-height: 62px;
+    padding: 0 44px;
+    border: 0;
+    border-radius: var(--wwlc-radius-pill);
+    background: var(--wwlc-gold);
+    font-size: 1.125rem;
+    letter-spacing: 0;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+}
+
+.contact-page .contact-pro-form .cta:hover {
+    background: var(--wwlc-gold-hover);
+}
+
+.contact-page .contact-pro-form .cta:focus-visible {
+    outline: 3px solid var(--wwlc-navy);
+    outline-offset: 3px;
+}
+
+/* The message the form script writes after sending (hidden until then) */
+.contact-page .home-contact-message {
+    padding: 12px 16px;
+    border-inline-start: 4px solid currentColor;
+    border-radius: 10px;
+}
+
+.contact-page .home-contact-message[data-variant="success"] {
+    background: #e6f4f1;
+}
+
+.contact-page .home-contact-message[data-variant="error"] {
+    background: #fdecec;
+}
+
+@media (max-width: 640px) {
+    .contact-page .contact-pro-form {
+        gap: 20px;
+    }
+
+    .contact-page .contact-pro-form .cta,
+    .contact-page .contact-pro-form .cta:hover {
+        justify-self: stretch;
+    }
+
+    .ct-letter {
+        box-shadow:
+            0 0 0 5px rgba(240, 167, 40, 0.12),
+            0 28px 56px -32px rgba(5, 15, 79, 0.5);
+    }
+}
+
+/* --- Details column (the About page's navy address card) --- */
+.ct-side {
+    display: grid;
+    gap: 44px;
+}
+
+.inner-page .ct-details-title {
+    margin-block-end: 22px;
+    font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+    color: #ffffff;
+}
+
+/* --- Map placeholder: drawn streets on pale blue, a gold pin, a link --- */
+.ct-map {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 260px;
+    padding: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(5, 15, 79, 0.12);
+    border-radius: 18px;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 260' preserveAspectRatio='xMidYMid slice'%3E%3Crect x='212' y='26' width='120' height='70' rx='10' fill='%23fdf1da'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-linecap='round'%3E%3Cpath d='M-10 120C90 110 190 150 410 96' stroke-width='16'/%3E%3Cpath d='M150-10L176 270' stroke-width='14'/%3E%3Cpath d='M-10 210H410M60-10V270M300-10L330 270M-10 40H410' stroke-width='6'/%3E%3C/g%3E%3Cpath d='M-10 120C90 110 190 150 410 96' fill='none' stroke='%23f0a728' stroke-opacity='0.55' stroke-width='2' stroke-dasharray='8 8'/%3E%3C/svg%3E") center / cover no-repeat,
+        radial-gradient(circle, rgba(5, 15, 79, 0.08) 1px, transparent 1.5px) 0 0 / 18px 18px,
+        linear-gradient(160deg, #e9f0fb 0%, #dce6f7 100%);
+}
+
+/* The pin sits near where the two main roads meet */
+.ct-map-pin {
+    position: absolute;
+    inset-block-start: 26%;
+    inset-inline-start: 41%;
+    width: 38px;
+    height: 38px;
+    border: 3px solid var(--wwlc-navy);
+    border-radius: 50% 50% 50% 0;
+    background: var(--wwlc-gold);
+    box-shadow: 0 12px 18px -8px rgba(5, 15, 79, 0.6);
+    transform: rotate(-45deg);
+}
+
+.ct-map-pin::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    border-radius: 50%;
+    background: var(--wwlc-navy);
+}
+
+/* The pin drops in once; with "reduce motion" it is simply there */
+@media (prefers-reduced-motion: no-preference) {
+    .ct-map-pin {
+        animation: ct-pin-drop 0.7s 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+    }
+}
+
+@keyframes ct-pin-drop {
+    from { opacity: 0; translate: 0 -40px; }
+    to { opacity: 1; translate: 0 0; }
+}
+
+.inner-page .ct-map .pg-btn {
+    position: relative;
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .ct-map {
+        min-height: 220px;
+    }
+
+    .ct-map .pg-btn {
+        width: 100%;
+    }
+}

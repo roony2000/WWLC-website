@@ -330,10 +330,11 @@ window.WWLC_I18N_AR = {
     'contact.title': 'تحدّث إلى مركز ووردزوورث للغات',
     'contact.lead': 'أرسل إلينا استفسارك وسنوصي لك بأفضل مسار دراسي يناسب أهدافك.',
     'contact.detailsTitle': 'بياناتنا',
-    'contact.nameLabel': 'الاسم:',
-    'contact.addressLabel': 'العنوان:',
-    'contact.emailLabel': 'البريد الإلكتروني:',
-    'contact.phoneLabel': 'الهاتف:',
+    'contact.nameLabel': 'الاسم',
+    'contact.addressLabel': 'العنوان',
+    'contact.emailLabel': 'البريد الإلكتروني',
+    'contact.phoneLabel': 'الهاتف',
+    'contactPage.formTitle': 'أرسل لنا رسالة',
 
     // --- Events page ---
     'events.treasure.title': 'البحث عن الكنز (أحدث رحلة)',

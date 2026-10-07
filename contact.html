@@ -5,54 +5,64 @@
     <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
     <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/png" href="assets/images/ss.png" />
-        <title data-i18n="page.contact.title">Contact | Wordsworth Language Centre</title>
+    <link rel="icon" type="image/png" href="assets/images/ss.png" />
+    <meta name="description"
+        content="Contact Wordsworth Language Centre in Kuala Lumpur. Send us your enquiry, email info@wordsworth.edu.my or call 0175045565. Address: A-8-4, Megan Avenue 2, Jalan Yap Kwan Seng." />
+    <title data-i18n="page.contact.title">Contact | Wordsworth Language Centre</title>
+    <!-- TODO: add the canonical link once the domain is confirmed:
+         <link rel="canonical" href="https://YOUR-DOMAIN/contact.html" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/styles/main.css" />
     <link rel="stylesheet" href="assets/styles/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+        rel="stylesheet" />
 
     <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
     <script src='scripts/ga4.js'></script>
     <script defer src="scripts/i18n-ar.js"></script>
     <script defer src="scripts/i18n.js"></script>
 </head>
-<body>
+<body class="inner-page contact-page">
     <script src="scripts/layout.js"></script>
     <noscript>
-        <nav aria-label="Main" style="padding:12px 16px; background:#050f4f; color:#ffffff;">
-            <a href="index.html" style="color:#ffffff;">Home</a> |
-            <a href="placement.php" style="color:#ffffff;">Placement Test</a> |
-            <a href="events.html" style="color:#ffffff;">Events</a> |
-            <a href="contact.html" style="color:#ffffff;">Contact</a> |
-            <a href="fee-calendar.html" style="color:#ffffff;">Fee &amp; Calendar</a> |
-            <a href="register.html?showLogin=1" style="color:#ffffff;">Sign In</a> |
-            <a href="register.html" style="color:#ffffff;">Register</a>
+        <nav class="noscript-nav" aria-label="Main">
+            <a href="index.html">Home</a> |
+            <a href="courses.html">Courses</a> |
+            <a href="placement.php">Placement Test</a> |
+            <a href="fee-calendar.html">Fee &amp; Calendar</a> |
+            <a href="events.html">Events</a> |
+            <a href="about.html">About</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="register.html?showLogin=1">Sign In</a> |
+            <a href="register.html">Register</a>
         </nav>
     </noscript>
 
-    <main class="contact-pro-main">
-        <section class="container contact-pro-shell">
-            <div class="contact-pro-head">
-                <p class="contact-pro-eyebrow" data-i18n="contact.eyebrow">Contact</p>
-                <h1 data-i18n="contact.title">Talk to Wordsworth Language Centre</h1>
-                <p data-i18n="contact.lead">Send us your enquiry and we will recommend the best class pathway for your goals.</p>
-            </div>
-
-            <div class="contact-pro-grid">
-                <div class="contact-pro-left">
-                    <div class="contact-pro-card">
-                        <h2 data-i18n="contact.detailsTitle">Our Details</h2>
-                        <!-- The name and address values stay in English (translate="no"), as written officially. -->
-                        <ul class="contact-pro-list">
-                            <li><strong data-i18n="contact.nameLabel">Name:</strong> <span translate="no" dir="ltr">WordsWorth Language Center</span></li>
-                            <li><strong data-i18n="contact.addressLabel">Address:</strong> <span translate="no" dir="ltr">A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng, Wilayah Persekutuan, 50450 Kuala Lumpur, Malaysia</span></li>
-                            <li><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:info@wordsworth.edu.my">info@wordsworth.edu.my</a></li>
-                            <li><strong data-i18n="contact.phoneLabel">Phone:</strong> <a href="tel:0175045565">0175045565</a></li>
-                        </ul>
-                    </div>
+    <main id="main-content">
+        <section class="pg-band pg-hero pg-curve" aria-labelledby="page-title">
+            <div class="pg-wrap">
+                <div class="pg-hero-copy">
+                    <nav class="pg-crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs.label">
+                        <ol>
+                            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                            <li aria-current="page" data-i18n="nav.contact">Contact</li>
+                        </ol>
+                    </nav>
+                    <h1 id="page-title" data-i18n="contact.title">Talk to Wordsworth Language Centre</h1>
+                    <p class="pg-lead" data-i18n="contact.lead">Send us your enquiry and we will recommend the best class pathway for your goals.</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-pro-right">
+        <!-- FORM + DETAILS. The form's fields, names, id, action and script are unchanged. -->
+        <section class="pg-band pg-band--cream pg-curve" aria-labelledby="form-title">
+            <div class="pg-wrap ct-layout">
+                <div class="ct-letter">
+                    <h2 class="pg-title" id="form-title" data-i18n="contactPage.formTitle">Send us a message</h2>
                     <form id="contactPageForm" class="contact-pro-form" action="contact_submit.php" method="post" novalidate>
                         <label>
                             <span data-i18n="contactForm.name">Full Name</span>
@@ -78,6 +88,49 @@
                         <p id="contactPageMessage" class="home-contact-message" hidden></p>
                     </form>
                 </div>
+
+                <aside class="ct-side" aria-labelledby="details-title">
+                    <div class="ab-address-wrap">
+                        <div class="ab-address">
+                            <h2 class="ct-details-title" id="details-title" data-i18n="contact.detailsTitle">Our Details</h2>
+                            <!-- The name and address values stay in English (translate="no"), as written officially. -->
+                            <dl>
+                                <div>
+                                    <dt data-i18n="contact.nameLabel">Name</dt>
+                                    <dd translate="no" dir="ltr">WordsWorth Language Center</dd>
+                                </div>
+                                <div>
+                                    <dt data-i18n="contact.addressLabel">Address</dt>
+                                    <dd translate="no" dir="ltr">A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng, Wilayah Persekutuan, 50450 Kuala Lumpur, Malaysia</dd>
+                                </div>
+                                <div>
+                                    <dt data-i18n="contact.emailLabel">Email</dt>
+                                    <dd><a href="mailto:info@wordsworth.edu.my">info@wordsworth.edu.my</a></dd>
+                                </div>
+                                <div>
+                                    <dt data-i18n="contact.phoneLabel">Phone</dt>
+                                    <dd><a href="tel:0175045565">0175045565</a></dd>
+                                </div>
+                            </dl>
+                            <!-- TODO: opening hours — add only once confirmed by WWLC. -->
+                            <div class="ab-address-actions">
+                                <!-- Same WhatsApp link as the homepage and the About page -->
+                                <a class="pg-btn" href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre"
+                                    target="_blank" rel="noopener" data-i18n="homeContact.whatsapp">Message us on WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map placeholder: a drawn street grid with a gold pin, plus a link to Google Maps. -->
+                    <!-- TODO: replace this block with the Google Maps embed once WWLC confirms it, e.g.
+                         <iframe class="ct-map-frame" src="https://www.google.com/maps/embed?pb=..." title="Map: Wordsworth Language Centre"
+                                 loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe> -->
+                    <div class="ct-map">
+                        <span class="ct-map-pin" aria-hidden="true"></span>
+                        <a class="pg-btn pg-btn--navy" href="https://www.google.com/maps/search/?api=1&amp;query=A-8-4%2C%20Megan%20Avenue%202%2C%20Jalan%20Yap%20Kwan%20Seng%2C%2050450%20Kuala%20Lumpur%2C%20Malaysia"
+                            target="_blank" rel="noopener" data-i18n="aboutPage.visit.map">Open in Google Maps</a>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>
