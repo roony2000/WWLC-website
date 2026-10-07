@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO BEFORE GOING LIVE: replace every https://YOUR-DOMAIN with the real domain.
+     Lists the public pages only. Not listed on purpose: register.html and my-profile.html
+     (account pages, noindex), blog/_template-article.html and blog/sample-article.html
+     (draft/noindex). Add each new blog article here when it is published. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-DOMAIN/</loc></url>
+  <url><loc>https://YOUR-DOMAIN/courses.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN/fee-calendar.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN/events.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN/blog/</loc></url>
+  <url><loc>https://YOUR-DOMAIN/about.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN/faq.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN/contact.html</loc></url>
+</urlset>

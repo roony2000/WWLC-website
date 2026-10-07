@@ -1,0 +1,11 @@
+# TODO BEFORE GOING LIVE: replace YOUR-DOMAIN below with the real domain
+# (for example https://www.example.com/sitemap.xml). Search engines ignore a
+# Sitemap line with a placeholder domain.
+
+# Allow every search engine and AI crawler to read the whole site.
+# Account pages (register.html, my-profile.html) use <meta name="robots" content="noindex">
+# instead of a Disallow line, so crawlers can still see that tag.
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-DOMAIN/sitemap.xml

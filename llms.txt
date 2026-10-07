@@ -1,0 +1,41 @@
+<!-- TODO BEFORE GOING LIVE: replace every https://YOUR-DOMAIN with the real domain.
+     Only facts already shown on the website are written here. Keep this file in step
+     with the pages when details change. -->
+
+# Wordsworth Language Centre
+
+> Wordsworth Language Centre is an English language centre in Kuala Lumpur, Malaysia.
+> It teaches adults, teens and young learners with immersive courses, expert teachers
+> and a supportive community.
+
+## Courses
+
+- Adults and professionals: general English, IELTS and business English.
+- Teens: Cambridge exam preparation (IGCSE English as a Second Language), public speaking and study skills.
+- Young learners: phonics, creative and confidence clubs.
+- A placement test helps the centre recommend the best class pathway for each learner.
+- Outside the classroom, learners join community trips and events, such as waterfall and hill walks and a treasure hunt.
+
+## Contact
+
+- Address: A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng, Wilayah Persekutuan, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia
+- Email: info@wordsworth.edu.my
+- Phone: 0175045565
+
+## Pages
+
+- [Courses](https://YOUR-DOMAIN/courses.html): all courses for adults, teens and young learners
+- [Fee & Calendar](https://YOUR-DOMAIN/fee-calendar.html): 2026 fee structure and academic calendar (PDF downloads)
+- [Events](https://YOUR-DOMAIN/events.html): photos from student trips and events
+- [Blog](https://YOUR-DOMAIN/blog/): practical ideas for learning and practising English
+- [About](https://YOUR-DOMAIN/about.html): who we are and where to find us
+- [FAQ](https://YOUR-DOMAIN/faq.html): answers to common questions
+- [Contact](https://YOUR-DOMAIN/contact.html): send an enquiry
+
+## Not confirmed yet
+
+- TODO: opening hours.
+- TODO: year founded and number of students taught.
+- TODO: teacher qualifications.
+- TODO: official recognitions and accreditations.
+- TODO: fees are in the 2026 fee structure PDF; do not quote prices here until confirmed.
