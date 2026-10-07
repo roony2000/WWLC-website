@@ -409,6 +409,7 @@ body.home-page {
 
 .home-page .hero-logo {
     height: 48px;
+    width: auto; /* keeps the logo's shape now that the <img> has width/height attributes */
     margin: 0;
     animation: none;
 }

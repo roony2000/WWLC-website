@@ -133,7 +133,7 @@
             '<header class="navbar" role="banner">' +
             '<div class="container nav-inner">' +
             '<a class="logo-link" href="' + url('index.html') + '" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink">' +
-            '<img class="logo-img" src="' + url('assets/images/ss.png') + '" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" />' +
+            '<img class="logo-img" src="' + url('assets/images/ss.png') + '" width="832" height="300" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" />' +
             '</a>' +
             '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation" data-i18n-attr="aria-label:nav.openMenu">' +
             '<span class="nav-toggle-lines" aria-hidden="true">' +
@@ -171,7 +171,7 @@
 
             // Brand column: logo, tagline, social links
             '<div class="footer-col footer-brand">' +
-            '<a href="' + url('index.html') + '" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink"><img src="' + url('assets/images/ss.png') + '" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" class="footer-logo" /></a>' +
+            '<a href="' + url('index.html') + '" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink"><img src="' + url('assets/images/ss.png') + '" width="832" height="300" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" class="footer-logo" loading="lazy" decoding="async" /></a>' +
             '<div class="footer-tagline" data-i18n="footer.tagline" data-i18n-html>Empowering <span style="color:#f0a728; font-weight:900; letter-spacing:0.04em;">Language</span>, Inspiring <span style="color:#ffffff; font-weight:900; letter-spacing:0.04em;">Futures</span></div>' +
             '<div class="footer-socials">' +
             '<a href="https://www.instagram.com/wordsworth.language.centre?igsh=eTFvbHB4ZWl4czZx" target="_blank" rel="noopener" aria-label="Instagram" data-i18n-attr="aria-label:social.instagram" class="footer-social">' +
