@@ -1225,6 +1225,11 @@ body.home-page {
     content: none;
 }
 
+/* Tighter top and bottom space, so the cards sit closer to the curves */
+.home-page .courses {
+    padding-block: calc(clamp(44px, 6vw, 80px) + var(--wwlc-divider-h));
+}
+
 
 /* ==========================================================================
    HOMEPAGE: globe and learner stories (.global-voices, #stories)
@@ -1708,6 +1713,81 @@ body.home-page {
     width: 44%;
     aspect-ratio: 1;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4L40 10V22C40 33 33 40 24 44C15 40 8 33 8 22V10Z' fill='%23f0a728' fill-opacity='0.15' stroke='%23f0a728' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M24 15L26.6 21L33 21.4L28 25.5L29.6 32L24 28.4L18.4 32L20 25.5L15 21.4L21.4 21Z' fill='%23f0a728'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* --- Accreditation: fuller layout ---
+   Less empty space above and below, a bigger cube and bigger text.
+   --wwlc-cube is the cube's edge length; the stage height, the rings, the
+   glow and the floor shadow are all sized from it so they grow together. */
+.home-page .trusted-accredited {
+    padding-block: calc(clamp(44px, 6vw, 80px) + var(--wwlc-divider-h));
+}
+
+.home-page .trusted-layout {
+    grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+}
+
+.home-page .trusted-eyebrow {
+    font-size: 1.0625rem;
+}
+
+.home-page .trusted-copy h2 {
+    font-size: clamp(2.25rem, 1.5rem + 2.8vw, 3.375rem);
+}
+
+.home-page .trusted-copy p {
+    font-size: 1.1875rem;
+}
+
+.home-page .trusted-copy .trusted-note {
+    font-size: 1.0625rem;
+}
+
+.home-page .trusted-cube-stage {
+    --wwlc-cube: clamp(240px, 40vw - 130px, 420px);
+    min-height: calc(var(--wwlc-cube) * 1.4);
+}
+
+.home-page .trusted-cube {
+    --cube-size: var(--wwlc-cube);
+}
+
+.home-page .trusted-cube-backlight {
+    width: min(calc(var(--wwlc-cube) * 1.6), 100%);
+}
+
+.home-page .trusted-cube-shadow {
+    width: min(calc(var(--wwlc-cube) * 0.95), 80%);
+}
+
+.home-page .trusted-cube-stage::before {
+    width: min(calc(var(--wwlc-cube) * 1.75), 100%);
+}
+
+.home-page .trusted-cube-stage::after {
+    width: min(calc(var(--wwlc-cube) * 1.38), 94%);
+}
+
+/* One column: the cube has the full width, so it can be larger */
+@media (max-width: 980px) {
+    .home-page .trusted-cube-stage {
+        --wwlc-cube: clamp(210px, 46vw, 360px);
+    }
+}
+
+/* Phones: keep the turning cube inside the screen */
+@media (max-width: 640px) {
+    .home-page .trusted-cube-stage {
+        --wwlc-cube: clamp(200px, 58vw, 300px);
+    }
+
+    .home-page .trusted-copy h2 {
+        font-size: clamp(2rem, 1.4rem + 3vw, 2.5rem);
+    }
+
+    .home-page .trusted-copy p {
+        font-size: 1.0625rem;
+    }
 }
 
 
