@@ -151,13 +151,13 @@
             '</div>' +
 
             // Contact column (existing details only; do not invent new ones here).
-            // The address stays in English (translate="no") so it works for post and maps.
+            // The address stays in English (translate="no", dir="ltr") so it works for post and maps.
             '<div class="footer-col footer-contact">' +
             '<h3 data-i18n="footer.contactTitle">Contact</h3>' +
             '<ul>' +
-            '<li translate="no"><span class="footer-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff" />' +
+            '<li><span class="footer-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff" />' +
             '<path d="M12 21s-6-5.686-6-10A6 6 0 1 1 18 11c0 4.314-6 10-6 10Zm0-8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="#f0a728" /></svg></span> ' +
-            'A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng,<br>Wilayah Persekutuan, 50450 Kuala Lumpur,<br>Wilayah Persekutuan Kuala Lumpur, Malaysia</li>' +
+            '<span translate="no" dir="ltr">A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng,<br>Wilayah Persekutuan, 50450 Kuala Lumpur,<br>Wilayah Persekutuan Kuala Lumpur, Malaysia</span></li>' +
             '<li><span class="footer-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff" />' +
             '<rect x="4" y="7" width="16" height="10" rx="2" fill="#050f4f" />' +
             '<path d="M4 7l8 6 8-6" stroke="#ffffff" stroke-width="1.5" /></svg></span> ' +

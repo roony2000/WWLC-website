@@ -2050,3 +2050,265 @@ body.home-page {
     margin-top: calc(-1 * var(--wwlc-divider-h));
     padding-top: var(--wwlc-divider-h);
 }
+
+
+/* ==========================================================================
+   LANGUAGES: Arabic and right-to-left (RTL)
+   scripts/i18n.js switches the page to <html lang="ar" dir="rtl">; a tiny
+   script in each page's <head> does the same before the page draws.
+   Most layouts are flex/grid and mirror by themselves. The rules below fix
+   what does not: physical left/right in main.css and inline styles.
+   Shared rules use logical properties (inset-inline-*, margin-inline-*),
+   which are the same as before in English and mirror in Arabic.
+   ========================================================================== */
+
+/* Hide the page for a moment while the saved Arabic is applied, so English
+   does not flash first. The <head> script removes this after 2 s at most. */
+html.i18n-loading body {
+    visibility: hidden;
+}
+
+/* Arabic font, only when the page is Arabic. i18n.js loads Noto Sans Arabic;
+   the rest of the stack is a safe fallback on every system. Text marked
+   translate="no" (the English lesson card, the address) keeps its font. */
+:root {
+    --wwlc-font-arabic-ui: "Noto Sans Arabic", "Segoe UI", Tahoma, "Geeza Pro", "Arabic Typesetting", Arial, sans-serif;
+}
+
+html[lang="ar"] body,
+html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
+    font-family: var(--wwlc-font-arabic-ui) !important;
+    letter-spacing: normal !important; /* extra spacing breaks joined Arabic letters */
+}
+
+/* Email addresses and phone numbers always read left to right */
+[dir="rtl"] a[href^="mailto:"],
+[dir="rtl"] a[href^="tel:"] {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* --- Floating social bar: left edge in English, right edge in Arabic --- */
+.social-fixed {
+    left: auto;
+    inset-inline-start: 16px;
+}
+
+.social-label {
+    margin-left: 0;
+    margin-inline-start: 8px;
+}
+
+.social-item:hover,
+.social-item:focus {
+    padding: 0;
+    padding-inline: 14px 10px;
+}
+
+/* --- Back-to-top button: bottom corner on the inline-end side --- */
+.footer-backtotop {
+    right: auto;
+    inset-inline-end: 2.2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-backtotop {
+        inset-inline-end: 1rem;
+    }
+}
+
+.footer-icon {
+    margin-right: 0;
+    margin-inline-end: 0.2rem;
+}
+
+/* --- Language menu --- */
+.lang-selector {
+    margin-left: 0;
+    margin-inline-start: 12px;
+}
+
+/* Mobile menu (main.css switches at 980px): the selector is full width */
+@media (max-width: 980px) {
+    .lang-selector {
+        margin-inline-start: 0;
+    }
+}
+
+.lang-menu {
+    right: auto;
+    inset-inline-end: 0;
+}
+
+.lang-translate {
+    margin-left: 0;
+    margin-inline-start: 8px;
+}
+
+[dir="rtl"] .lang-menu {
+    transform-origin: top left;
+}
+
+[dir="rtl"] .lang-native::after {
+    transform-origin: right;
+}
+
+/* Items slide in from the inline-start side */
+[dir="rtl"] .lang-menu:not(.open) .lang-item {
+    transform: translateX(10px);
+}
+
+/* The language that is in use */
+.lang-item.is-selected .lang-native {
+    color: var(--wwlc-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--wwlc-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+/* "Translation coming soon" note for RU / ZH / KO / FR */
+.i18n-soon {
+    position: fixed;
+    inset-inline: 16px;
+    bottom: 16px;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 560px;
+    margin-inline: auto;
+    padding: 10px 12px 10px 16px;
+    border-radius: var(--wwlc-radius-md);
+    border-inline-start: 4px solid var(--wwlc-gold);
+    background: var(--wwlc-navy);
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    box-shadow: 0 12px 32px rgba(5, 15, 79, 0.28);
+}
+
+.i18n-soon-text {
+    flex: 1;
+}
+
+.i18n-soon-close {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.i18n-soon-close:hover {
+    background: var(--wwlc-gold);
+    color: var(--wwlc-navy);
+}
+
+.i18n-soon-close:focus-visible {
+    outline: 3px solid var(--wwlc-gold);
+    outline-offset: 2px;
+}
+
+/* --- Globe legend dots and register lists --- */
+.globe-legend .dot {
+    margin-right: 0;
+    margin-inline-end: 8px;
+}
+
+.register-next li {
+    padding-left: 0;
+    padding-inline-start: 20px;
+}
+
+.register-next li::before {
+    left: auto;
+    inset-inline-start: 0;
+}
+
+/* --- Accreditation cube ---
+   The cube is a 3D scene: it is not mirrored, so its faces and the drag
+   direction stay the same in both languages. Only the text beside it
+   (normal page flow) moves to the right in Arabic. */
+.trusted-cube {
+    direction: ltr;
+}
+
+.trusted-cube .cube-placeholder {
+    direction: rtl;
+    unicode-bidi: plaintext;
+}
+
+/* --- Sign-in and teacher pop-ups: close buttons on the inline-end corner --- */
+.auth-modal-close {
+    right: auto;
+    inset-inline-end: 18px;
+}
+
+.teacher-access-card .teacher-access-close {
+    right: auto;
+    inset-inline-end: 1.1rem;
+}
+
+/* --- Register page: path cards (styles live in register.html) --- */
+.register-type-cards .modern-card .card-desc {
+    text-align: start;
+}
+
+.register-type-cards .modern-card .card-arrow {
+    margin-left: 0;
+    margin-inline-start: auto;
+}
+
+[dir="rtl"] .register-type-cards .modern-card .card-arrow svg {
+    transform: scaleX(-1); /* the arrow points the reading way */
+}
+
+[dir="rtl"] .register-type-cards .modern-card:hover .card-arrow {
+    transform: translateX(-6px) scale(1.1);
+}
+
+/* --- Inline styles in the pages that use physical sides (Arabic only) --- */
+/* Show/hide password eye buttons, register.html */
+[dir="rtl"] .toggle-password {
+    right: auto !important;
+    left: 10px !important;
+}
+
+[dir="rtl"] #password,
+[dir="rtl"] #confirmPassword {
+    padding-right: 14px !important;
+    padding-left: 38px !important;
+}
+
+/* Drop-down arrow of the security question */
+[dir="rtl"] .form-field select {
+    background-position: left 14px center;
+}
+
+/* "Forgot?" link next to the password label */
+[dir="rtl"] #forgotBtn {
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+}
+
+/* Download icon in the corner of the fee and calendar cards */
+[dir="rtl"] .brochure-card > a[download][title] {
+    right: auto !important;
+    left: 10px !important;
+}
+
+/* Save / Cancel buttons on My Profile */
+[dir="rtl"] #changePasswordForm > div[style*="text-align:right"] {
+    text-align: left !important;
+}
+
+[dir="rtl"] #cancelChangePassword {
+    margin-left: 0 !important;
+    margin-right: 0.7rem !important;
+}
