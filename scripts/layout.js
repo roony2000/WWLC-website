@@ -7,6 +7,10 @@
        <script src="scripts/layout.js"></script>
        <noscript> ...plain links... </noscript>
 
+   Pages in a subfolder (e.g. blog/) use "../scripts/layout.js"; the
+   script sees the "../" in its own src and puts it in front of every
+   link and image it writes, so the header and footer work from there too.
+
    The script is NOT deferred on purpose: it writes the header in place
    while the page is still loading, so every script that runs later
    (nav.js, main.js and the inline scripts) finds the header ready.
@@ -25,14 +29,36 @@
 
     var BUSINESS_NAME = 'Wordsworth Language Centre';
 
+    // This <script> tag. Read now: document.currentScript is only set
+    // while the script first runs.
+    var ME = document.currentScript;
+
+    // The way back to the site root from this page: "" for pages in the
+    // root, "../" for pages in a subfolder such as blog/. Worked out from
+    // this script's own src ("scripts/layout.js" or "../scripts/layout.js").
+    var ROOT = (function () {
+        var src = (ME && ME.getAttribute('src')) || '';
+        var at = src.indexOf('scripts/layout.js');
+        return at > 0 ? src.slice(0, at) : '';
+    })();
+
+    // A site path (e.g. "faq.html") as a link that works from this page
+    function url(path) {
+        return ROOT + path;
+    }
+
     // Main navigation links: [href, label, translation key]
-    // Seven links do not fit in one row below 1280px; site.css ("Header:
-    // seven menu links") moves them to their own row on those screens.
+    // Paths are from the site root; url() adds "../" when needed.
+    // Eight links do not fit in one row below 1280px; site.css ("Header:
+    // eight menu links") moves them to their own row on those screens.
+    // A link to a folder's index.html (blog/index.html) is also marked
+    // on every other page in that folder (each blog article).
     var NAV_LINKS = [
         ['courses.html', 'Courses', 'nav.courses'],
         ['placement.php', 'Placement Test', 'nav.placement'],
         ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees'],
         ['events.html', 'Events', 'nav.events'],
+        ['blog/index.html', 'Blog', 'nav.blog'],
         ['about.html', 'About', 'nav.about'],
         ['faq.html', 'FAQ', 'nav.faq'],
         ['contact.html', 'Contact', 'nav.contact']
@@ -45,6 +71,7 @@
         ['placement.php', 'Placement Test', 'nav.placement'],
         ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees'],
         ['events.html', 'Events', 'nav.events'],
+        ['blog/index.html', 'Blog', 'nav.blog'],
         ['about.html', 'About', 'nav.about'],
         ['faq.html', 'FAQ', 'nav.faq'],
         ['contact.html', 'Contact', 'nav.contact'],
@@ -63,17 +90,29 @@
         ['fr', 'FR', 'Fran&ccedil;ais', 'French', 'fr', 'French']
     ];
 
-    // The file name of the current page, e.g. "contact.html" ("/" counts as index.html)
+    // The current page from the site root, e.g. "contact.html" or
+    // "blog/sample-article.html" (a folder on its own counts as its index.html)
     function currentPage() {
-        var file = window.location.pathname.split('/').pop();
-        return file || 'index.html';
+        var parts = window.location.pathname.split('/');
+        var file = parts.pop() || 'index.html';
+        var depth = ROOT.split('../').length - 1;   // how many folders deep
+        var folders = depth ? parts.slice(-depth) : [];
+        return folders.concat(file).join('/');
+    }
+
+    // aria-current for a menu link: "page" on its own page, "true" on the
+    // other pages of its folder (a blog article marks the Blog link)
+    function currentAttr(href) {
+        var page = currentPage();
+        if (href === page) return ' aria-current="page"';
+        var folder = href.replace(/index\.html$/, '');
+        if (folder !== href && page.indexOf(folder) === 0) return ' aria-current="true"';
+        return '';
     }
 
     function navLinksHtml() {
-        var page = currentPage();
         return NAV_LINKS.map(function (link) {
-            var current = link[0] === page ? ' aria-current="page"' : '';
-            return '<li><a href="' + link[0] + '"' + current + ' data-i18n="' + link[2] + '">' + link[1] + '</a></li>';
+            return '<li><a href="' + url(link[0]) + '"' + currentAttr(link[0]) + ' data-i18n="' + link[2] + '">' + link[1] + '</a></li>';
         }).join('');
     }
 
@@ -93,8 +132,8 @@
         return '' +
             '<header class="navbar" role="banner">' +
             '<div class="container nav-inner">' +
-            '<a class="logo-link" href="index.html" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink">' +
-            '<img class="logo-img" src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" />' +
+            '<a class="logo-link" href="' + url('index.html') + '" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink">' +
+            '<img class="logo-img" src="' + url('assets/images/ss.png') + '" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" />' +
             '</a>' +
             '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation" data-i18n-attr="aria-label:nav.openMenu">' +
             '<span class="nav-toggle-lines" aria-hidden="true">' +
@@ -113,8 +152,8 @@
             '</button>' +
             '<ul class="lang-menu" id="langMenu" role="menu" aria-labelledby="langBtn">' + languageItemsHtml() + '</ul>' +
             '</div>' +
-            '<a class="ghost nav-signin" href="register.html?showLogin=1" data-i18n="nav.signIn">Sign In</a>' +
-            '<a class="cta" href="register.html" data-i18n="nav.register">Register</a>' +
+            '<a class="ghost nav-signin" href="' + url('register.html?showLogin=1') + '" data-i18n="nav.signIn">Sign In</a>' +
+            '<a class="cta" href="' + url('register.html') + '" data-i18n="nav.register">Register</a>' +
             '</div>' +
             '</div>' +
             '</header>';
@@ -123,7 +162,7 @@
     function footerHtml() {
         var year = new Date().getFullYear();
         var quickLinks = FOOTER_LINKS.map(function (link) {
-            return '<li><a href="' + link[0] + '" data-i18n="' + link[2] + '">' + link[1] + '</a></li>';
+            return '<li><a href="' + url(link[0]) + '" data-i18n="' + link[2] + '">' + link[1] + '</a></li>';
         }).join('');
 
         return '' +
@@ -132,7 +171,7 @@
 
             // Brand column: logo, tagline, social links
             '<div class="footer-col footer-brand">' +
-            '<a href="index.html" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink"><img src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" class="footer-logo" /></a>' +
+            '<a href="' + url('index.html') + '" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink"><img src="' + url('assets/images/ss.png') + '" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" class="footer-logo" /></a>' +
             '<div class="footer-tagline" data-i18n="footer.tagline" data-i18n-html>Empowering <span style="color:#f0a728; font-weight:900; letter-spacing:0.04em;">Language</span>, Inspiring <span style="color:#ffffff; font-weight:900; letter-spacing:0.04em;">Futures</span></div>' +
             '<div class="footer-socials">' +
             '<a href="https://www.instagram.com/wordsworth.language.centre?igsh=eTFvbHB4ZWl4czZx" target="_blank" rel="noopener" aria-label="Instagram" data-i18n-attr="aria-label:social.instagram" class="footer-social">' +
@@ -185,9 +224,8 @@
 
     // 1) Header: write it right where this <script> tag sits.
     if (!document.querySelector('header.navbar')) {
-        var me = document.currentScript;
-        if (me && me.parentNode) {
-            me.insertAdjacentHTML('beforebegin', headerHtml());
+        if (ME && ME.parentNode) {
+            ME.insertAdjacentHTML('beforebegin', headerHtml());
         } else if (document.body) {
             document.body.insertAdjacentHTML('afterbegin', headerHtml());
         }

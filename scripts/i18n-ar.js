@@ -40,6 +40,7 @@ window.WWLC_I18N_AR = {
     'nav.courses': 'الدورات',
     'nav.about': 'من نحن',
     'nav.faq': 'الأسئلة الشائعة',
+    'nav.blog': 'المدونة',
     'nav.signIn': 'تسجيل الدخول',
     'nav.register': 'تسجيل',
     'nav.openMenu': 'فتح قائمة التنقل',

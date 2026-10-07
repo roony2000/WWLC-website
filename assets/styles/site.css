@@ -3349,8 +3349,8 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
 
 
 /* ==========================================================================
-   HEADER: seven menu links (every page)
-   The header (scripts/layout.js) now has seven links. On desktop a link
+   HEADER: eight menu links (every page)
+   The header (scripts/layout.js) now has eight links. On desktop a link
    never breaks onto two lines. From 1280px the English header fits in one
    row with a slightly smaller logo and gaps. Between the mobile menu
    (980px) and 1280px, and always in Arabic (longer words), the links move
@@ -3361,6 +3361,22 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
 @media (min-width: 981px) {
     .main-nav a {
         white-space: nowrap;
+    }
+}
+
+/* On a blog article the Blog link is marked with aria-current="true"
+   (layout.js); it looks the same as the link of the current page. */
+.main-nav a[aria-current="true"] {
+    font-weight: 700;
+}
+
+.main-nav a[aria-current="true"]::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+@media (max-width: 980px) {
+    .main-nav a[aria-current="true"]::after {
+        transform: scaleX(1);
     }
 }
 
@@ -3375,6 +3391,21 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
 
     .main-nav ul {
         gap: 20px;
+    }
+
+    .nav-actions {
+        flex-shrink: 0;
+    }
+}
+
+/* Just above 1280px the eight links need a little less space between them */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .nav-inner {
+        gap: 14px;
+    }
+
+    .main-nav ul {
+        gap: 16px;
     }
 }
 
