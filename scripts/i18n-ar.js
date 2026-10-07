@@ -360,6 +360,7 @@ window.WWLC_I18N_AR = {
 
     // --- Fee & Calendar page ---
     'fees.title': 'هيكل الرسوم والتقويم الأكاديمي 2026',
+    'feesPage.lead': 'نزّل هيكل الرسوم والتقويم الأكاديمي لعام 2026 بصيغة PDF.',
     'fees.feeImageAlt': 'هيكل الرسوم',
     'fees.feeDownloadTitle': 'تنزيل ملف PDF لهيكل الرسوم',
     'fees.calendarImageAlt': 'التقويم الأكاديمي 2026',

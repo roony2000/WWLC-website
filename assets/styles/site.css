@@ -2297,12 +2297,6 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
     margin-right: 10px !important;
 }
 
-/* Download icon in the corner of the fee and calendar cards */
-[dir="rtl"] .brochure-card > a[download][title] {
-    right: auto !important;
-    left: 10px !important;
-}
-
 /* Save / Cancel buttons on My Profile */
 [dir="rtl"] #changePasswordForm > div[style*="text-align:right"] {
     text-align: left !important;
@@ -3925,4 +3919,227 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-auto-rows: clamp(120px, 30vw, 230px);
     }
+}
+
+
+/* ==========================================================================
+   FEE & CALENDAR PAGE (fee-calendar.html)
+   One card per brochure. The top of each card is a navy folder; the
+   brochure page sticks out of it, slightly turned, and lifts a little on
+   hover. Below: what is inside, and a gold download button.
+   Prices and dates stay in the brochure files only.
+   The page script downloads the PDF when a .brochure-card is clicked.
+   ========================================================================== */
+
+.fc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 48px);
+}
+
+@media (max-width: 900px) {
+    .fc-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 560px;
+    }
+}
+
+.fc-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(5, 15, 79, 0.08);
+    border-radius: 22px;
+    background: var(--wwlc-surface);
+    box-shadow:
+        0 0 0 8px rgba(240, 167, 40, 0.12),
+        0 36px 72px -36px rgba(5, 15, 79, 0.5);
+    cursor: pointer;
+}
+
+/* --- The folder with the brochure page sticking out --- */
+.fc-preview {
+    position: relative;
+    height: clamp(240px, 28vw, 340px);
+    padding: clamp(24px, 3.5vw, 40px) clamp(28px, 6vw, 72px) 0;
+    overflow: hidden;
+    background:
+        var(--wwlc-grain-dark) 0 0 / 180px 180px,
+        radial-gradient(60% 70% at 85% 0%, rgba(240, 167, 40, 0.25), transparent 70%),
+        repeating-linear-gradient(to bottom, transparent 0 39px, rgba(255, 255, 255, 0.05) 39px 40px),
+        linear-gradient(160deg, var(--wwlc-blue-deep) 0%, var(--wwlc-navy) 100%);
+}
+
+/* Gold edge where the folder meets the card */
+.fc-preview::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    height: 5px;
+    background: var(--wwlc-gold);
+}
+
+.fc-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -10px 40px -10px rgba(0, 0, 0, 0.55);
+    transform: rotate(-2deg);
+    transform-origin: 50% 100%;
+}
+
+[dir="rtl"] .fc-preview img {
+    transform: rotate(2deg);
+}
+
+/* On hover the page comes up out of the folder a little */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .fc-preview img {
+        transition: transform 0.35s ease;
+    }
+
+    .fc-card:hover .fc-preview img {
+        transform: translateY(-10px) rotate(0deg);
+    }
+}
+
+/* Round download icon in the top corner (inline-end side, so it swaps in Arabic) */
+.fc-corner {
+    position: absolute;
+    z-index: 1;
+    inset-block-start: 14px;
+    inset-inline-end: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.5);
+}
+
+.fc-corner:hover {
+    background: var(--wwlc-gold-soft);
+}
+
+.inner-page .fc-preview .fc-corner:focus-visible {
+    outline-color: var(--wwlc-gold);
+}
+
+/* --- What is inside --- */
+.fc-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(24px, 3.5vw, 36px);
+}
+
+.inner-page .fc-body h2 {
+    font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.375rem);
+    line-height: 1.12;
+}
+
+.inner-page .fc-body > p:not(.fc-tags) {
+    color: var(--wwlc-ink-muted);
+}
+
+.inner-page .fc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.fc-tags span {
+    padding: 4px 12px;
+    border-radius: var(--wwlc-radius-pill);
+    background: var(--wwlc-gold-soft);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--wwlc-navy);
+}
+
+.fc-meta {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--wwlc-navy);
+}
+
+/* A small gold dot before each line */
+.fc-meta li {
+    position: relative;
+    padding-inline-start: 18px;
+}
+
+.fc-meta li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 2px;
+    top: 0.6em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--wwlc-gold);
+}
+
+/* Buttons sit at the bottom, so both cards line up */
+.fc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-block-start: auto;
+    padding-block-start: 10px;
+}
+
+.inner-page .fc-actions a {
+    text-decoration: none;
+}
+
+.fc-actions .brochure-download-btn {
+    min-height: 54px;
+    padding-inline: 30px;
+    font-size: 1.0625rem;
+}
+
+/* Download arrow before "Download Now" */
+.fc-actions .brochure-download-btn::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-inline-end: 10px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23050f4f' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v13M6 11l6 6 6-6M4 21h16'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.fc-actions .pg-btn--line {
+    min-height: 54px;
+    color: var(--wwlc-navy);
+}
+
+.fc-actions .pg-btn--line:hover {
+    background: var(--wwlc-gold-soft);
+}
+
+@media (max-width: 640px) {
+    .fc-actions .pg-btn {
+        width: 100%;
+    }
+
+    .fc-card {
+        box-shadow:
+            0 0 0 5px rgba(240, 167, 40, 0.12),
+            0 28px 56px -32px rgba(5, 15, 79, 0.5);
+    }
+}
+
+/* The long page title breaks into two lines instead of three */
+.inner-page.fees-page .pg-hero h1 {
+    max-width: 22ch;
 }
