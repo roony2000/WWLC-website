@@ -22,6 +22,29 @@
     <meta property="og:site_name" content="Wordsworth Language Centre" />
     <meta property="og:locale" content="en_GB" />
     <meta name="twitter:card" content="summary" />
+    <!-- Structured data about the centre (JSON-LD). The address, email and phone are copied
+         exactly from the footer in scripts/layout.js: change them in both places together.
+         TODO: once the domain is confirmed, add "url": "https://YOUR-DOMAIN/" and make the
+         logo a full address (https://YOUR-DOMAIN/assets/images/ss.png). Do not add opening
+         hours, ratings or other details until WWLC confirms them. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Wordsworth Language Centre",
+        "logo": "assets/images/ss.png",
+        "email": "info@wordsworth.edu.my",
+        "telephone": "0175045565",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng",
+            "postalCode": "50450",
+            "addressLocality": "Kuala Lumpur",
+            "addressRegion": "Wilayah Persekutuan Kuala Lumpur",
+            "addressCountry": "Malaysia"
+        }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/styles/main.css" />
