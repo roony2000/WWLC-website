@@ -3352,3 +3352,92 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
     from { opacity: 0; transform: translateY(-6px); }
     to { opacity: 1; transform: none; }
 }
+
+
+/* ==========================================================================
+   HEADER: seven menu links (every page)
+   The header (scripts/layout.js) now has seven links. On desktop a link
+   never breaks onto two lines. From 1280px the English header fits in one
+   row with a slightly smaller logo and gaps. Between the mobile menu
+   (980px) and 1280px, and always in Arabic (longer words), the links move
+   to their own row under the logo, centred over a hairline.
+   The mobile menu (980px and below) is unchanged.
+   ========================================================================== */
+
+@media (min-width: 981px) {
+    .main-nav a {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1280px) {
+    .nav-inner {
+        gap: 20px;
+    }
+
+    .logo-img {
+        height: 58px;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+}
+
+@media (min-width: 981px) and (max-width: 1279px) {
+    .nav-inner {
+        flex-wrap: wrap;
+        row-gap: 0;
+        padding-block-end: 0;
+    }
+
+    .main-nav {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        margin-block-start: 14px;
+        border-block-start: 1px solid #e9edf5;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 30px;
+        padding-block: 14px;
+    }
+
+    .nav-actions {
+        margin-inline-start: auto;
+    }
+}
+
+@media (min-width: 1280px) {
+    html[lang="ar"] .nav-inner {
+        flex-wrap: wrap;
+        row-gap: 0;
+        padding-block-end: 0;
+    }
+
+    html[lang="ar"] .main-nav {
+        order: 3;
+        flex: 1 1 100%;
+        width: 100%;
+        margin-block-start: 14px;
+        border-block-start: 1px solid #e9edf5;
+    }
+
+    html[lang="ar"] .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 34px;
+        padding-block: 14px;
+    }
+
+    html[lang="ar"] .nav-actions {
+        margin-inline-start: auto;
+    }
+
+    html[lang="ar"] .logo-img {
+        height: 68px;
+    }
+}

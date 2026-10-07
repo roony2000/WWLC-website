@@ -26,19 +26,27 @@
     var BUSINESS_NAME = 'Wordsworth Language Centre';
 
     // Main navigation links: [href, label, translation key]
+    // Seven links do not fit in one row below 1280px; site.css ("Header:
+    // seven menu links") moves them to their own row on those screens.
     var NAV_LINKS = [
+        ['courses.html', 'Courses', 'nav.courses'],
         ['placement.php', 'Placement Test', 'nav.placement'],
+        ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees'],
         ['events.html', 'Events', 'nav.events'],
-        ['contact.html', 'Contact', 'nav.contact'],
-        ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees']
+        ['about.html', 'About', 'nav.about'],
+        ['faq.html', 'FAQ', 'nav.faq'],
+        ['contact.html', 'Contact', 'nav.contact']
     ];
 
     // Footer quick links: [href, label, translation key]
     var FOOTER_LINKS = [
         ['index.html', 'Home', 'nav.home'],
+        ['courses.html', 'Courses', 'nav.courses'],
         ['placement.php', 'Placement Test', 'nav.placement'],
-        ['events.html', 'Events', 'nav.events'],
         ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees'],
+        ['events.html', 'Events', 'nav.events'],
+        ['about.html', 'About', 'nav.about'],
+        ['faq.html', 'FAQ', 'nav.faq'],
         ['contact.html', 'Contact', 'nav.contact'],
         ['register.html', 'Register', 'nav.register']
     ];
