@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- DRAFT: a sample article made from blog/_template-article.html, to show the
+     layout. Neutral practice tips only: no facts about fees, visas, schedules,
+     results or accreditation. TODO: replace it with a real article (or delete
+     it and its card in blog/index.html) before the blog goes live. -->
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
+    <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
+    <!-- TODO: remove this noindex line once the page has real, checked content
+         (search engines skip pages that have it). -->
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="../assets/images/ss.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Simple daily habits for practising English reading, listening, speaking and writing, even on a busy day." />
+    <title data-i18n="page.blogSample.title">How to practise English every day | Wordsworth Language Centre Blog</title>
+    <!-- TODO: add the canonical link once the domain is confirmed:
+         <link rel="canonical" href="https://YOUR-DOMAIN/blog/sample-article.html" /> -->
+    <!-- TODO: add BlogPosting structured data (see blog/_template-article.html)
+         once the article has a real author and publish date. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../assets/styles/main.css" />
+    <link rel="stylesheet" href="../assets/styles/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+        rel="stylesheet" />
+
+    <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
+    <script src='../scripts/ga4.js'></script>
+    <script defer src="../scripts/i18n-ar.js"></script>
+    <script defer src="../scripts/i18n.js"></script>
+</head>
+
+<body class="inner-page article-page">
+    <!-- The header is written here by layout.js; it adds "../" to its links by itself -->
+    <script src="../scripts/layout.js"></script>
+    <noscript>
+        <nav class="noscript-nav" aria-label="Main">
+            <a href="../index.html">Home</a> |
+            <a href="../courses.html">Courses</a> |
+            <a href="../placement.php">Placement Test</a> |
+            <a href="../fee-calendar.html">Fee &amp; Calendar</a> |
+            <a href="../events.html">Events</a> |
+            <a href="index.html">Blog</a> |
+            <a href="../about.html">About</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../contact.html">Contact</a> |
+            <a href="../register.html?showLogin=1">Sign In</a> |
+            <a href="../register.html">Register</a>
+        </nav>
+    </noscript>
+
+    <main id="main-content">
+        <section class="pg-band pg-hero pg-curve" aria-labelledby="page-title">
+            <div class="pg-wrap">
+                <div class="pg-hero-copy">
+                    <nav class="pg-crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs.label">
+                        <ol>
+                            <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                            <li><a href="index.html" data-i18n="nav.blog">Blog</a></li>
+                            <li aria-current="page" data-i18n="sample.title">How to practise English every day</li>
+                        </ol>
+                    </nav>
+                    <!-- TODO: remove this draft note once the article is real -->
+                    <p class="ar-draft" data-i18n="sample.draftNote">Draft: this sample article is not published yet.</p>
+                    <p class="ar-tags"><span class="bl-tag" data-i18n="blog.cat.practice">Study tips</span></p>
+                    <h1 id="page-title" data-i18n="sample.title">How to practise English every day</h1>
+                    <!-- TODO: replace "Author and date to be added" with the real author and date:
+                         <span><span data-i18n="article.by">By</span> <span translate="no">AUTHOR NAME</span></span>
+                         <span><time datetime="YYYY-MM-DD">DD Month YYYY</time></span> -->
+                    <p class="ar-meta">
+                        <span data-i18n="sample.metaTodo">Author and date to be added</span>
+                        <span data-i18n="sample.readTime">2 minute read</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pg-band pg-band--warm pg-curve">
+            <div class="pg-wrap ar-layout">
+                <nav class="ar-toc" aria-labelledby="toc-title">
+                    <p class="ar-toc-title" id="toc-title" data-i18n="article.toc">On this page</p>
+                    <ol>
+                        <li><a href="#start-small" data-i18n="sample.h2.start">Start small and keep it regular</a></li>
+                        <li><a href="#read-listen" data-i18n="sample.h2.read">Read and listen to things you enjoy</a></li>
+                        <li><a href="#speak" data-i18n="sample.h2.speak">Speak out loud, even on your own</a></li>
+                        <li><a href="#write" data-i18n="sample.h2.write">Write a few sentences each day</a></li>
+                        <li><a href="#review" data-i18n="sample.h2.review">Look back at your week</a></li>
+                    </ol>
+                </nav>
+
+                <article class="ar-sheet" aria-labelledby="page-title">
+                    <p class="ar-intro" data-i18n="sample.intro">You do not need hours of free time to practise English. A few short habits, repeated often, keep the language part of your day. Here are simple ideas you can start today and adjust to your own level.</p>
+
+                    <aside class="ar-takeaways" aria-labelledby="takeaways-title">
+                        <h2 id="takeaways-title" data-i18n="article.takeaways">Key takeaways</h2>
+                        <ul class="pg-ticks">
+                            <li data-i18n="sample.take.one">Short, regular practice is easier to keep up than long, rare sessions.</li>
+                            <li data-i18n="sample.take.two">Mix reading, listening, speaking and writing across the week.</li>
+                            <li data-i18n="sample.take.three">Choose material you enjoy and that suits your level.</li>
+                            <li data-i18n="sample.take.four">Look back once a week at what you have learned.</li>
+                        </ul>
+                    </aside>
+
+                    <h2 id="start-small" data-i18n="sample.h2.start">Start small and keep it regular</h2>
+                    <p data-i18n="sample.start.p1">Pick a moment that is already part of your day, such as your journey to work, a coffee break or the time before bed. Ten or fifteen minutes is enough to begin. What matters is coming back to it every day.</p>
+                    <p data-i18n="sample.start.p2">Write your plan down so it is easy to remember, for example: &ldquo;On weekdays, I read one short article on the bus.&rdquo;</p>
+
+                    <h2 id="read-listen" data-i18n="sample.h2.read">Read and listen to things you enjoy</h2>
+                    <p data-i18n="sample.read.p1">Choose topics you already like, such as sport, cooking, travel, technology or music. When the subject interests you, it is easier to keep going, even when some words are new.</p>
+                    <ul>
+                        <li data-i18n="sample.read.li1">Read a short news story, a blog post or a few pages of a book.</li>
+                        <li data-i18n="sample.read.li2">Listen to a podcast, a song or a video with English subtitles.</li>
+                        <li data-i18n="sample.read.li3">Note down three new words or phrases each time.</li>
+                    </ul>
+
+                    <h2 id="speak" data-i18n="sample.h2.speak">Speak out loud, even on your own</h2>
+                    <p data-i18n="sample.speak.p1">You can practise speaking without a partner. Read a paragraph aloud, repeat a sentence after the speaker in a video, or describe what you are doing while you cook or tidy up.</p>
+                    <p data-i18n="sample.speak.p2">If you can, record yourself for one minute and listen back. Over time, you will hear what you want to work on next.</p>
+
+                    <h2 id="write" data-i18n="sample.h2.write">Write a few sentences each day</h2>
+                    <p data-i18n="sample.write.p1">Keep a simple English diary. Two or three sentences about your day are enough. Try to use one of the new words you noted while reading or listening.</p>
+
+                    <h2 id="review" data-i18n="sample.h2.review">Look back at your week</h2>
+                    <p data-i18n="sample.review.p1">Once a week, read through your notes. Which words do you remember? Which ones do you need to see again? Choose a few to practise in the coming week, and change your plan if something is not working.</p>
+                    <p data-i18n="sample.review.p2">If you are not sure of your level, a placement test can help you choose material that is neither too easy nor too hard.</p>
+
+                    <p class="ar-back"><a class="pg-link" href="index.html" data-i18n="article.back">Back to the blog</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- RELATED: there are no other articles yet, so these cards point to
+             related pages of the site. TODO: replace them with related articles. -->
+        <section class="pg-band pg-band--blue pg-curve" aria-labelledby="related-title">
+            <div class="pg-wrap">
+                <h2 class="pg-title" id="related-title" data-i18n="sample.related">Keep exploring</h2>
+                <ul class="bl-grid bl-grid--related" role="list">
+                    <li>
+                        <article class="bl-card">
+                            <div class="bl-cover bl-cover--speaking" aria-hidden="true">
+                                <span class="bl-cover-label"></span>
+                                <span class="bl-cover-band"></span>
+                            </div>
+                            <div class="bl-card-body">
+                                <p class="bl-tags"><span class="bl-tag" data-i18n="nav.courses">Courses</span></p>
+                                <h3 class="bl-card-title" id="related-courses" data-i18n="sample.rel.courses">Find a course for your goals</h3>
+                                <a class="bl-more" href="../courses.html" aria-describedby="related-courses" data-i18n="blog.readMore">Read more</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="bl-card">
+                            <div class="bl-cover bl-cover--writing" aria-hidden="true">
+                                <span class="bl-cover-label"></span>
+                                <span class="bl-cover-band"></span>
+                            </div>
+                            <div class="bl-card-body">
+                                <p class="bl-tags"><span class="bl-tag" data-i18n="nav.faq">FAQ</span></p>
+                                <h3 class="bl-card-title" id="related-faq" data-i18n="sample.rel.faq">Answers to common questions</h3>
+                                <a class="bl-more" href="../faq.html" aria-describedby="related-faq" data-i18n="blog.readMore">Read more</a>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="pg-band pg-band--gold pg-curve" aria-labelledby="article-cta-title">
+            <div class="pg-wrap pg-cta">
+                <div class="pg-cta-copy">
+                    <h2 class="pg-title" id="article-cta-title" data-i18n="article.cta.title">Find your English level</h2>
+                    <p data-i18n="coursesPage.cta.text">Take the placement test, or send us a message and we will recommend the best class pathway for your goals.</p>
+                </div>
+                <div class="pg-cta-actions">
+                    <a class="pg-btn pg-btn--navy" href="../placement.php#start" data-i18n="hero.ctaPlacement">Start Your Placement Test</a>
+                    <a class="pg-btn pg-btn--line" href="../contact.html" data-i18n="homeContact.title">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../scripts/nav.js"></script>
+</body>
+
+</html>
