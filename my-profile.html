@@ -6,7 +6,7 @@
     <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="assets/images/ss.png" />
-    <title>My Profile | Wordsworth Language Centre</title>
+    <title data-i18n="page.profile.title">My Profile | Wordsworth Language Centre</title>
     <link rel="stylesheet" href="assets/styles/main.css" />
     <link rel="stylesheet" href="assets/styles/site.css" />
 
@@ -17,13 +17,13 @@
 </head>
 <body>
     <div class="social-fixed" aria-hidden="false">
-        <a class="social-item whatsapp" href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <a class="social-item whatsapp" href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre" target="_blank" rel="noopener" aria-label="WhatsApp" data-i18n-attr="aria-label:social.whatsapp">
             <!-- ...existing code... -->
         </a>
-        <a class="social-item wechat" href="#" target="_blank" rel="noopener" aria-label="WeChat">
+        <a class="social-item wechat" href="#" target="_blank" rel="noopener" aria-label="WeChat" data-i18n-attr="aria-label:social.wechat">
             <!-- ...existing code... -->
         </a>
-        <a class="social-item telegram" href="https://t.me/USERNAME" target="_blank" rel="noopener" aria-label="Telegram">
+        <a class="social-item telegram" href="https://t.me/USERNAME" target="_blank" rel="noopener" aria-label="Telegram" data-i18n-attr="aria-label:social.telegram">
             <!-- ...existing code... -->
         </a>
     </div>
@@ -43,42 +43,44 @@
     <main style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #f9f9f9; border-radius: 12px; box-shadow: 0 2px 8px rgba(44,62,80,0.07);">
         <div class="profile-card">
             <div class="profile-avatar-wrap">
-                <img src="assets/images/myprofile.png" alt="Profile Photo" class="profile-avatar-img" />
+                <img src="assets/images/myprofile.png" alt="Profile Photo" data-i18n-attr="alt:profile.photoAlt" class="profile-avatar-img" />
             </div>
-            <h1 class="profile-title">My Profile</h1>
+            <h1 class="profile-title" data-i18n="profile.title">My Profile</h1>
+            <!-- The values (Loading..., name, email, phone) are written by the script below,
+                 so they have no data-i18n label; i18n.js matches "Loading..." by its wording. -->
             <div class="profile-info">
                 <div class="profile-info-row">
-                    <span class="profile-label">Name:</span>
+                    <span class="profile-label" data-i18n="profile.nameLabel">Name:</span>
                     <span class="profile-value" id="profileName">Loading...</span>
                 </div>
                 <div class="profile-info-row">
-                    <span class="profile-label">Email:</span>
+                    <span class="profile-label" data-i18n="profile.emailLabel">Email:</span>
                     <span class="profile-value" id="profileEmail">Loading...</span>
                 </div>
                 <div class="profile-info-row">
-                    <span class="profile-label">Phone:</span>
+                    <span class="profile-label" data-i18n="profile.phoneLabel">Phone:</span>
                     <span class="profile-value" id="profilePhone">Loading...</span>
                 </div>
                 <div class="profile-info-row">
-                    <span class="profile-label">Password:</span>
+                    <span class="profile-label" data-i18n="profile.passwordLabel">Password:</span>
                     <span class="profile-value" id="profilePassword">â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢</span>
                 </div>
             </div>
-            <button class="profile-edit-btn" title="Edit Profile">Edit Profile</button>
-                            <button class="profile-edit-btn" id="logoutBtn" style="background:#c00; color:#fff; margin-top:1rem;">Log Out</button>
+            <button class="profile-edit-btn" title="Edit Profile" data-i18n-attr="title:profile.edit" data-i18n="profile.edit">Edit Profile</button>
+                            <button class="profile-edit-btn" id="logoutBtn" style="background:#c00; color:#fff; margin-top:1rem;" data-i18n="profile.logout">Log Out</button>
                 <div id="changePasswordSection" style="display:none; margin-top:1.5rem; width:100%;">
                     <form id="changePasswordForm" style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
                         <div style="width:100%;">
-                            <label for="currentPassword" style="font-weight:600; color:#4e6a8a;">Current Password</label>
+                            <label for="currentPassword" style="font-weight:600; color:#4e6a8a;" data-i18n="profile.currentPassword">Current Password</label>
                             <input type="password" id="currentPassword" name="currentPassword" class="profile-input" style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc; margin-top:0.3rem;" required />
                         </div>
                         <div style="width:100%;">
-                            <label for="newPassword" style="font-weight:600; color:#4e6a8a;">New Password</label>
+                            <label for="newPassword" style="font-weight:600; color:#4e6a8a;" data-i18n="profile.newPassword">New Password</label>
                             <input type="password" id="newPassword" name="newPassword" class="profile-input" style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc; margin-top:0.3rem;" required />
                         </div>
                         <div style="width:100%; text-align:right;">
-                            <button type="submit" class="profile-edit-btn" style="padding:0.5rem 1.5rem; font-size:1rem;">Save</button>
-                            <button type="button" id="cancelChangePassword" class="profile-edit-btn" style="background:#eee; color:#2563eb; margin-left:0.7rem; box-shadow:none;" >Cancel</button>
+                            <button type="submit" class="profile-edit-btn" style="padding:0.5rem 1.5rem; font-size:1rem;" data-i18n="profile.save">Save</button>
+                            <button type="button" id="cancelChangePassword" class="profile-edit-btn" style="background:#eee; color:#2563eb; margin-left:0.7rem; box-shadow:none;" data-i18n="profile.cancel">Cancel</button>
                         </div>
                         <div id="passwordChangeMsg" style="width:100%; text-align:center; color:#c00; font-size:0.98rem; margin-top:0.5rem;"></div>
                     </form>

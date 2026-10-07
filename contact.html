@@ -6,7 +6,7 @@
     <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="assets/images/ss.png" />
-        <title>Contact | Wordsworth Language Centre</title>
+        <title data-i18n="page.contact.title">Contact | Wordsworth Language Centre</title>
     <link rel="stylesheet" href="assets/styles/main.css" />
     <link rel="stylesheet" href="assets/styles/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -33,20 +33,21 @@
     <main class="contact-pro-main">
         <section class="container contact-pro-shell">
             <div class="contact-pro-head">
-                <p class="contact-pro-eyebrow">Contact</p>
-                <h1>Talk to Wordsworth Language Centre</h1>
-                <p>Send us your enquiry and we will recommend the best class pathway for your goals.</p>
+                <p class="contact-pro-eyebrow" data-i18n="contact.eyebrow">Contact</p>
+                <h1 data-i18n="contact.title">Talk to Wordsworth Language Centre</h1>
+                <p data-i18n="contact.lead">Send us your enquiry and we will recommend the best class pathway for your goals.</p>
             </div>
 
             <div class="contact-pro-grid">
                 <div class="contact-pro-left">
                     <div class="contact-pro-card">
-                        <h2>Our Details</h2>
+                        <h2 data-i18n="contact.detailsTitle">Our Details</h2>
+                        <!-- The name and address values stay in English (translate="no"), as written officially. -->
                         <ul class="contact-pro-list">
-                            <li><strong>Name:</strong> WordsWorth Language Center</li>
-                            <li><strong>Address:</strong> A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng, Wilayah Persekutuan, 50450 Kuala Lumpur, Malaysia</li>
-                            <li><strong>Email:</strong> <a href="mailto:info@wordsworth.edu.my">info@wordsworth.edu.my</a></li>
-                            <li><strong>Phone:</strong> <a href="tel:0175045565">0175045565</a></li>
+                            <li><strong data-i18n="contact.nameLabel">Name:</strong> <span translate="no">WordsWorth Language Center</span></li>
+                            <li><strong data-i18n="contact.addressLabel">Address:</strong> <span translate="no">A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng, Wilayah Persekutuan, 50450 Kuala Lumpur, Malaysia</span></li>
+                            <li><strong data-i18n="contact.emailLabel">Email:</strong> <a href="mailto:info@wordsworth.edu.my">info@wordsworth.edu.my</a></li>
+                            <li><strong data-i18n="contact.phoneLabel">Phone:</strong> <a href="tel:0175045565">0175045565</a></li>
                         </ul>
                     </div>
                 </div>
@@ -54,26 +55,26 @@
                 <div class="contact-pro-right">
                     <form id="contactPageForm" class="contact-pro-form" action="contact_submit.php" method="post" novalidate>
                         <label>
-                            <span>Full Name</span>
+                            <span data-i18n="contactForm.name">Full Name</span>
                             <input type="text" name="name" required maxlength="120" />
                         </label>
                         <label>
-                            <span>Email</span>
+                            <span data-i18n="contactForm.email">Email</span>
                             <input type="email" name="email" required maxlength="190" />
                         </label>
                         <label>
-                            <span>Phone</span>
+                            <span data-i18n="contactForm.phone">Phone</span>
                             <input type="text" name="phone" required maxlength="40" />
                         </label>
                         <label>
-                            <span>Course</span>
-                            <input type="text" name="course" maxlength="160" placeholder="e.g. IELTS Accelerator (optional)" />
+                            <span data-i18n="contactForm.course">Course</span>
+                            <input type="text" name="course" maxlength="160" placeholder="e.g. IELTS Accelerator (optional)" data-i18n-attr="placeholder:contactForm.coursePlaceholder" />
                         </label>
                         <label class="contact-pro-full">
-                            <span>Message</span>
-                            <textarea name="message" maxlength="2000" rows="6" placeholder="Tell us what you need (optional)"></textarea>
+                            <span data-i18n="contactForm.message">Message</span>
+                            <textarea name="message" maxlength="2000" rows="6" placeholder="Tell us what you need (optional)" data-i18n-attr="placeholder:contactForm.messagePlaceholder"></textarea>
                         </label>
-                        <button type="submit" class="cta">Send Message</button>
+                        <button type="submit" class="cta" data-i18n="contactForm.send">Send Message</button>
                         <p id="contactPageMessage" class="home-contact-message" hidden></p>
                     </form>
                 </div>

@@ -58,6 +58,8 @@ window.WWLC_I18N_AR = {
     'social.whatsapp': 'واتساب',
     'social.wechat': 'وي تشات',
     'social.telegram': 'تيليجرام',
+    'social.instagram': 'إنستغرام',
+    'social.tiktok': 'تيك توك',
 
     // --- Footer (scripts/layout.js) ---
     'footer.tagline': 'نُمكّن <span style="color:#f0a728; font-weight:900;">اللغة</span>، ونُلهم <span style="color:#ffffff; font-weight:900;">المستقبل</span>',

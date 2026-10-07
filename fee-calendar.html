@@ -5,7 +5,7 @@
     <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
     <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fee & Calendar | Wordsworth Language Centre</title>
+    <title data-i18n="page.fees.title">Fee & Calendar | Wordsworth Language Centre</title>
     <link rel="icon" type="image/png" href="assets/images/ss.png" />
     <link rel="stylesheet" href="assets/styles/main.css" />
     <link rel="stylesheet" href="assets/styles/site.css" />
@@ -31,49 +31,49 @@
     </noscript>
     <main class="calendar-main">
         <section class="calendar-section">
-                        <h1 class="calendar-title" style="text-align: center; font-size: 2.5rem; font-weight: 700; color: #1a237e; margin-top: 2rem; margin-bottom: 2rem; letter-spacing: 1px; font-family: 'Segoe UI', Arial, sans-serif; text-shadow: 0 2px 8px #e3e3e3;">
+                        <h1 class="calendar-title" data-i18n="fees.title" style="text-align: center; font-size: 2.5rem; font-weight: 700; color: #1a237e; margin-top: 2rem; margin-bottom: 2rem; letter-spacing: 1px; font-family: 'Segoe UI', Arial, sans-serif; text-shadow: 0 2px 8px #e3e3e3;">
                             Fee Structure & Academic Calendar 2026
                         </h1>
             <div class="fee-calendar-flex">
                                 <div class="fee-card brochure-card" data-download="assets/fee-structure-2026.pdf" style="position: relative; cursor: pointer;">
-                                    <img src="assets/images/fee.png" alt="Fee Structure" class="fee-img clickable-img" data-img="assets/images/fee.png" />
-                                    <a href="assets/fee-structure-2026.pdf" download title="Download Fee Structure PDF" style="position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 50%; padding: 8px; box-shadow: 0 2px 6px #bbb; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/fee.png" alt="Fee Structure" data-i18n-attr="alt:fees.feeImageAlt" class="fee-img clickable-img" data-img="assets/images/fee.png" />
+                                    <a href="assets/fee-structure-2026.pdf" download title="Download Fee Structure PDF" data-i18n-attr="title:fees.feeDownloadTitle" style="position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 50%; padding: 8px; box-shadow: 0 2px 6px #bbb; display: flex; align-items: center; justify-content: center;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#1a237e" viewBox="0 0 24 24"><path d="M12 16a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v10a1 1 0 0 1-1 1zm5.707-3.707a1 1 0 0 0-1.414 0L13 15.586V5a1 1 0 1 0-2 0v10.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414z"/></svg>
                                     </a>
-                                    <a href="assets/fee-structure-2026.pdf" download class="brochure-download-btn">Download Now</a>
+                                    <a href="assets/fee-structure-2026.pdf" download class="brochure-download-btn" data-i18n="fees.downloadNow">Download Now</a>
                                 </div>
                                 <div class="calendar-card brochure-card" data-download="assets/academic-calendar-2026.pdf" style="position: relative; cursor: pointer;">
-                                    <img src="assets/images/WWLC Academic Calendar 2026.jpg" alt="Academic Calendar 2026" class="calendar-img clickable-img" data-img="assets/images/WWLC Academic Calendar 2026.jpg" />
-                                    <a href="assets/academic-calendar-2026.pdf" download title="Download Academic Calendar PDF" style="position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 50%; padding: 8px; box-shadow: 0 2px 6px #bbb; display: flex; align-items: center; justify-content: center;">
+                                    <img src="assets/images/WWLC Academic Calendar 2026.jpg" alt="Academic Calendar 2026" data-i18n-attr="alt:fees.calendarImageAlt" class="calendar-img clickable-img" data-img="assets/images/WWLC Academic Calendar 2026.jpg" />
+                                    <a href="assets/academic-calendar-2026.pdf" download title="Download Academic Calendar PDF" data-i18n-attr="title:fees.calendarDownloadTitle" style="position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 50%; padding: 8px; box-shadow: 0 2px 6px #bbb; display: flex; align-items: center; justify-content: center;">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#1a237e" viewBox="0 0 24 24"><path d="M12 16a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v10a1 1 0 0 1-1 1zm5.707-3.707a1 1 0 0 0-1.414 0L13 15.586V5a1 1 0 1 0-2 0v10.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 0 0 0-1.414z"/></svg>
                                     </a>
-                                    <a href="assets/academic-calendar-2026.pdf" download class="brochure-download-btn">Download Now</a>
+                                    <a href="assets/academic-calendar-2026.pdf" download class="brochure-download-btn" data-i18n="fees.downloadNow">Download Now</a>
                                 </div>
             </div>
         </section>
         <section class="courses-preview-section">
-            <div class="courses-preview-header">Brochures.showing 2 Items</div>
+            <div class="courses-preview-header" data-i18n="fees.brochuresHeader">Brochures.showing 2 Items</div>
             <div class="courses-preview-grid">
                 <article class="course-preview-card tone-blue brochure-card" data-download="assets/fee-structure-2026.pdf" style="cursor: pointer;">
-                    <div class="course-tags"><span>Brochure</span><span>2026</span></div>
-                    <h3>Fee Structure</h3>
-                    <p>Complete fee details by study duration, including enrollment fee, registration fee, and books/materials information.</p>
-                    <div class="course-meta">Document type: PDF</div>
-                    <div class="course-meta">Use this for full tuition breakdown</div>
+                    <div class="course-tags"><span data-i18n="fees.tagBrochure">Brochure</span><span>2026</span></div>
+                    <h3 data-i18n="fees.fee.title">Fee Structure</h3>
+                    <p data-i18n="fees.fee.text">Complete fee details by study duration, including enrollment fee, registration fee, and books/materials information.</p>
+                    <div class="course-meta" data-i18n="fees.docType">Document type: PDF</div>
+                    <div class="course-meta" data-i18n="fees.fee.use">Use this for full tuition breakdown</div>
                     <div class="course-actions">
-                        <a href="assets/images/fee.png" class="course-btn course-btn-primary">View Details</a>
-                        <a href="assets/fee-structure-2026.pdf" download class="course-btn course-btn-ghost">Brochure</a>
+                        <a href="assets/images/fee.png" class="course-btn course-btn-primary" data-i18n="fees.viewDetails">View Details</a>
+                        <a href="assets/fee-structure-2026.pdf" download class="course-btn course-btn-ghost" data-i18n="fees.brochureButton">Brochure</a>
                     </div>
                 </article>
                 <article class="course-preview-card tone-green brochure-card" data-download="assets/academic-calendar-2026.pdf" style="cursor: pointer;">
-                    <div class="course-tags"><span>Brochure</span><span>2026</span></div>
-                    <h3>Academic Calendar</h3>
-                    <p>Official class calendar with monthly schedule, key public holidays, exam periods, and important annual dates.</p>
-                    <div class="course-meta">Document type: PDF</div>
-                    <div class="course-meta">Use this for yearly planning</div>
+                    <div class="course-tags"><span data-i18n="fees.tagBrochure">Brochure</span><span>2026</span></div>
+                    <h3 data-i18n="fees.calendar.title">Academic Calendar</h3>
+                    <p data-i18n="fees.calendar.text">Official class calendar with monthly schedule, key public holidays, exam periods, and important annual dates.</p>
+                    <div class="course-meta" data-i18n="fees.docType">Document type: PDF</div>
+                    <div class="course-meta" data-i18n="fees.calendar.use">Use this for yearly planning</div>
                     <div class="course-actions">
-                        <a href="assets/images/WWLC Academic Calendar 2026.jpg" class="course-btn course-btn-primary">View Details</a>
-                        <a href="assets/academic-calendar-2026.pdf" download class="course-btn course-btn-ghost">Brochure</a>
+                        <a href="assets/images/WWLC Academic Calendar 2026.jpg" class="course-btn course-btn-primary" data-i18n="fees.viewDetails">View Details</a>
+                        <a href="assets/academic-calendar-2026.pdf" download class="course-btn course-btn-ghost" data-i18n="fees.brochureButton">Brochure</a>
                     </div>
                 </article>
             </div>

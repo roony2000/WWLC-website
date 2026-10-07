@@ -127,17 +127,17 @@
             '<a href="index.html" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink"><img src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" class="footer-logo" /></a>' +
             '<div class="footer-tagline" data-i18n="footer.tagline" data-i18n-html>Empowering <span style="color:#f0a728; font-weight:900; letter-spacing:0.04em;">Language</span>, Inspiring <span style="color:#ffffff; font-weight:900; letter-spacing:0.04em;">Futures</span></div>' +
             '<div class="footer-socials">' +
-            '<a href="https://www.instagram.com/wordsworth.language.centre?igsh=eTFvbHB4ZWl4czZx" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social">' +
+            '<a href="https://www.instagram.com/wordsworth.language.centre?igsh=eTFvbHB4ZWl4czZx" target="_blank" rel="noopener" aria-label="Instagram" data-i18n-attr="aria-label:social.instagram" class="footer-social">' +
             '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" />' +
             '<path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5Zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5Zm5.25.75a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z" fill="#e1306c" /></svg>' +
             '</a>' +
-            '<a href="https://www.tiktok.com/@wwlc_official?_r=1&amp;_t=ZS-93arfYFsky1" target="_blank" rel="noopener" aria-label="TikTok" class="footer-social">' +
+            '<a href="https://www.tiktok.com/@wwlc_official?_r=1&amp;_t=ZS-93arfYFsky1" target="_blank" rel="noopener" aria-label="TikTok" data-i18n-attr="aria-label:social.tiktok" class="footer-social">' +
             '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" />' +
             '<path d="M16.5 3.5v8.25a3.25 3.25 0 1 1-3.25-3.25" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />' +
             '<path d="M16.5 3.5a3.25 3.25 0 0 0 3.25 3.25" stroke="#25f4ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />' +
             '<circle cx="16.5" cy="3.5" r="1.25" fill="#fe2c55" /></svg>' +
             '</a>' +
-            '<a href="https://wa.me/60175045565" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-social">' +
+            '<a href="https://wa.me/60175045565" target="_blank" rel="noopener" aria-label="WhatsApp" data-i18n-attr="aria-label:social.whatsapp" class="footer-social">' +
             '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" />' +
             '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.58-.487-.501-.669-.51-.173-.007-.372-.009-.571-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.366.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.007-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#25d366" /></svg>' +
             '</a>' +
