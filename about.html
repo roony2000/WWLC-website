@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
+    <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
+    <link rel="icon" type="image/png" href="assets/images/ss.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="About Wordsworth Language Centre, an English language centre at Megan Avenue 2, Kuala Lumpur, teaching adults, teens and young learners. Find our address, email and phone." />
+    <title data-i18n="page.about.title">About Us | Wordsworth Language Centre, Kuala Lumpur</title>
+    <!-- TODO: add the canonical link once the domain is confirmed:
+         <link rel="canonical" href="https://YOUR-DOMAIN/about.html" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <link rel="stylesheet" href="assets/styles/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+        rel="stylesheet" />
+
+    <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
+    <script src='scripts/ga4.js'></script>
+    <script defer src="scripts/i18n-ar.js"></script>
+    <script defer src="scripts/i18n.js"></script>
+</head>
+
+<body class="inner-page about-page">
+    <script src="scripts/layout.js"></script>
+    <noscript>
+        <nav aria-label="Main" style="padding:12px 16px; background:#050f4f; color:#ffffff;">
+            <a href="index.html" style="color:#ffffff;">Home</a> |
+            <a href="courses.html" style="color:#ffffff;">Courses</a> |
+            <a href="placement.php" style="color:#ffffff;">Placement Test</a> |
+            <a href="fee-calendar.html" style="color:#ffffff;">Fee &amp; Calendar</a> |
+            <a href="events.html" style="color:#ffffff;">Events</a> |
+            <a href="about.html" style="color:#ffffff;">About</a> |
+            <a href="faq.html" style="color:#ffffff;">FAQ</a> |
+            <a href="contact.html" style="color:#ffffff;">Contact</a> |
+            <a href="register.html?showLogin=1" style="color:#ffffff;">Sign In</a> |
+            <a href="register.html" style="color:#ffffff;">Register</a>
+        </nav>
+    </noscript>
+
+    <main id="main-content">
+        <section class="pg-band pg-hero pg-curve" aria-labelledby="page-title">
+            <div class="pg-wrap">
+                <div class="pg-hero-copy">
+                    <nav class="pg-crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs.label">
+                        <ol>
+                            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                            <li aria-current="page" data-i18n="nav.about">About</li>
+                        </ol>
+                    </nav>
+                    <h1 id="page-title" data-i18n="aboutPage.title">About Wordsworth Language Centre</h1>
+                    <p class="pg-lead" data-i18n="hero.lead">From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers
+                        help you speak with clarity, fluency, and heart.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE ARE + key facts -->
+        <section class="pg-band pg-band--cream pg-curve" aria-labelledby="who-title">
+            <div class="pg-wrap ab-intro">
+                <div class="ab-prose">
+                    <h2 class="pg-title" id="who-title" data-i18n="aboutPage.who.title">Who we are</h2>
+                    <p data-i18n="aboutPage.who.p1">Wordsworth Language Centre is an English language centre in Kuala Lumpur. We help adults and young learners master English with immersive courses, expert teachers and a supportive community.</p>
+                    <p data-i18n="aboutPage.who.p2">Our courses cover every stage of life: general, IELTS and business English for adults; Cambridge exam preparation, public speaking and study skills for teens; and phonics and confidence clubs for young learners.</p>
+                    <p data-i18n="aboutPage.who.p3">Our placement test helps us recommend the best class pathway for your goals. Outside the classroom, learners join community trips and events, from waterfall and hill walks to a treasure hunt.</p>
+                    <div class="ab-links">
+                        <a class="pg-btn" href="courses.html" data-i18n="hero.ctaCourses">Explore courses</a>
+                        <a class="pg-link" href="events.html" data-i18n="aboutPage.who.eventsLink">See our events</a>
+                    </div>
+                </div>
+
+                <aside class="ab-card" aria-labelledby="facts-title">
+                    <h3 id="facts-title" data-i18n="aboutPage.facts.title">At a glance</h3>
+                    <dl class="ab-facts">
+                        <div>
+                            <dt data-i18n="aboutPage.facts.location">Location</dt>
+                            <dd data-i18n="aboutPage.facts.locationValue">Kuala Lumpur, Malaysia</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="aboutPage.facts.learners">We teach</dt>
+                            <dd data-i18n="aboutPage.facts.learnersValue">Adults, teens and young learners</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="aboutPage.facts.founded">Founded</dt>
+                            <!-- TODO: add the founding year once confirmed by WWLC. -->
+                            <dd class="ab-soon" data-i18n="aboutPage.facts.soon">Details coming soon</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="aboutPage.facts.students">Students taught</dt>
+                            <!-- TODO: add the number of students once confirmed by WWLC. -->
+                            <dd class="ab-soon" data-i18n="aboutPage.facts.soon">Details coming soon</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="aboutPage.facts.teachers">Teacher qualifications</dt>
+                            <!-- TODO: add teacher qualifications once confirmed by WWLC
+                                 (the homepage mentions CELTA and DELTA, still marked TODO-verify). -->
+                            <dd class="ab-soon" data-i18n="aboutPage.facts.soon">Details coming soon</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <!-- RECOGNITION (same wording as the homepage accreditation section) -->
+        <section class="pg-band pg-band--blue pg-curve" aria-labelledby="recog-title">
+            <div class="pg-wrap">
+                <header class="ab-recog-head">
+                    <h2 class="pg-title" id="recog-title" data-i18n="trusted.title">Teaching you can trust</h2>
+                    <p class="pg-intro" data-i18n="trusted.text">We are confirming the official details of the organisations that recognise our centre. Their logos will appear here soon.</p>
+                </header>
+                <ul class="ab-recog">
+                    <li class="ab-seal">
+                        <div class="ab-seal-mark">
+                            <img src="assets/images/MOEM.png" width="413" height="177" alt="Ministry of Education Malaysia logo"
+                                data-i18n-attr="alt:trusted.moeLogo" loading="lazy" decoding="async" />
+                        </div>
+                        <p data-i18n="aboutPage.recog.moe">Ministry of Education Malaysia</p>
+                    </li>
+                    <li class="ab-seal ab-seal--soon">
+                        <!-- TODO: add the official Ministry of Culture logo and name once confirmed.
+                             Replace the empty mark with <img src="assets/images/logos/FILE.png" alt="NAME logo" />. -->
+                        <div class="ab-seal-mark" role="img" aria-label="Partner logo coming soon" data-i18n-attr="aria-label:trusted.partnerSoon"></div>
+                        <p data-i18n="trusted.logoSoon">Logo coming soon</p>
+                    </li>
+                    <li class="ab-seal ab-seal--soon">
+                        <!-- TODO: add the official Saudi Cultural Attaché logo and name once confirmed.
+                             Replace the empty mark with <img src="assets/images/logos/FILE.png" alt="NAME logo" />. -->
+                        <div class="ab-seal-mark" role="img" aria-label="Partner logo coming soon" data-i18n-attr="aria-label:trusted.partnerSoon"></div>
+                        <p data-i18n="trusted.logoSoon">Logo coming soon</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FIND US (details from the footer in scripts/layout.js; do not add new ones here) -->
+        <section class="pg-band pg-band--warm pg-curve" aria-labelledby="visit-title">
+            <div class="pg-wrap ab-visit">
+                <div class="ab-visit-copy">
+                    <h2 class="pg-title" id="visit-title" data-i18n="aboutPage.visit.title">Visit us in Kuala Lumpur</h2>
+                    <p class="pg-intro" data-i18n="why.location.text">Our institute is perfectly situated in the heart of Kuala Lumpur, making it easily accessible
+                        from anywhere in the city.</p>
+                    <!-- TODO: opening hours — add only once confirmed by WWLC. -->
+                </div>
+                <div class="ab-address-wrap">
+                    <div class="ab-address">
+                        <!-- The address stays in English (translate="no", dir="ltr") so it works for post and maps. -->
+                        <dl>
+                            <div>
+                                <dt data-i18n="aboutPage.visit.address">Address</dt>
+                                <dd translate="no" dir="ltr">A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng,<br>Wilayah Persekutuan, 50450 Kuala Lumpur,<br>Wilayah Persekutuan Kuala Lumpur, Malaysia</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="aboutPage.visit.email">Email</dt>
+                                <dd><a href="mailto:info@wordsworth.edu.my">info@wordsworth.edu.my</a></dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="aboutPage.visit.phone">Phone</dt>
+                                <dd><a href="tel:0175045565">0175045565</a></dd>
+                            </div>
+                        </dl>
+                        <div class="ab-address-actions">
+                            <a class="pg-btn" href="https://www.google.com/maps/search/?api=1&amp;query=A-8-4%2C%20Megan%20Avenue%202%2C%20Jalan%20Yap%20Kwan%20Seng%2C%2050450%20Kuala%20Lumpur%2C%20Malaysia"
+                                target="_blank" rel="noopener" data-i18n="aboutPage.visit.map">Open in Google Maps</a>
+                            <a class="pg-btn pg-btn--line" href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre"
+                                target="_blank" rel="noopener" data-i18n="homeContact.whatsapp">Message us on WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing call to action -->
+        <section class="pg-band pg-band--gold pg-curve" aria-labelledby="about-cta-title">
+            <div class="pg-wrap pg-cta">
+                <div class="pg-cta-copy">
+                    <h2 class="pg-title" id="about-cta-title" data-i18n="aboutPage.cta.title">Ready to start?</h2>
+                    <p data-i18n="coursesPage.cta.text">Take the placement test, or send us a message and we will recommend the best class pathway for your goals.</p>
+                </div>
+                <div class="pg-cta-actions">
+                    <a class="pg-btn pg-btn--navy" href="placement.php#start" data-i18n="hero.ctaPlacement">Start Your Placement Test</a>
+                    <a class="pg-btn pg-btn--line" href="contact.html" data-i18n="homeContact.title">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="scripts/nav.js"></script>
+</body>
+
+</html>

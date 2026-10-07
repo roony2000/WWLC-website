@@ -23,6 +23,7 @@ window.WWLC_I18N_AR = {
     'page.profile.title': 'ملفي الشخصي | مركز ووردزوورث للغات',
     'page.register.title': 'إنشاء حساب | مركز ووردزوورث للغات',
     'page.courses.title': 'دورات اللغة الإنجليزية في كوالالمبور | مركز ووردزوورث للغات',
+    'page.about.title': 'من نحن | مركز ووردزوورث للغات، كوالالمبور',
 
     // --- Brand ---
     'brand.name': 'مركز ووردزوورث للغات',
@@ -36,6 +37,7 @@ window.WWLC_I18N_AR = {
     'nav.contact': 'اتصل بنا',
     'nav.fees': 'الرسوم والتقويم',
     'nav.courses': 'الدورات',
+    'nav.about': 'من نحن',
     'nav.signIn': 'تسجيل الدخول',
     'nav.register': 'تسجيل',
     'nav.openMenu': 'فتح قائمة التنقل',
@@ -203,6 +205,30 @@ window.WWLC_I18N_AR = {
     'coursesPage.for.kids.confidence': 'المتعلمون الصغار الخجولون المستعدون لاكتشاف أصواتهم.',
     'coursesPage.cta.title': 'لست متأكدًا من الدورة المناسبة لك؟',
     'coursesPage.cta.text': 'خُض اختبار تحديد المستوى، أو أرسل لنا رسالة وسنوصي لك بأفضل مسار دراسي يناسب أهدافك.',
+
+    // --- About page (about.html) ---
+    'aboutPage.title': 'عن مركز ووردزوورث للغات',
+    'aboutPage.who.title': 'من نحن',
+    'aboutPage.who.p1': 'مركز ووردزوورث للغات هو مركز لتعليم اللغة الإنجليزية في كوالالمبور. نساعد البالغين والمتعلمين الصغار على إتقان الإنجليزية من خلال دورات غامرة ومعلمين خبراء ومجتمع داعم.',
+    'aboutPage.who.p2': 'تغطي دوراتنا كل مراحل الحياة: الإنجليزية العامة وIELTS والإنجليزية للأعمال للبالغين؛ والتحضير لامتحانات كامبريدج والخطابة ومهارات الدراسة للمراهقين؛ والصوتيات ونوادي الثقة للمتعلمين الصغار.',
+    'aboutPage.who.p3': 'يساعدنا اختبار تحديد المستوى على أن نوصي لك بأفضل مسار دراسي يناسب أهدافك. وخارج الصف، يشارك المتعلمون في رحلات وفعاليات مجتمعية، من نزهات الشلالات والتلال إلى البحث عن الكنز.',
+    'aboutPage.who.eventsLink': 'اطّلع على فعالياتنا',
+    'aboutPage.facts.title': 'لمحة سريعة',
+    'aboutPage.facts.location': 'الموقع',
+    'aboutPage.facts.locationValue': 'كوالالمبور، ماليزيا',
+    'aboutPage.facts.learners': 'نُعلّم',
+    'aboutPage.facts.learnersValue': 'البالغين والمراهقين والمتعلمين الصغار',
+    'aboutPage.facts.founded': 'سنة التأسيس',
+    'aboutPage.facts.students': 'عدد الطلاب',
+    'aboutPage.facts.teachers': 'مؤهلات المعلمين',
+    'aboutPage.facts.soon': 'التفاصيل قريبًا',
+    'aboutPage.recog.moe': 'وزارة التعليم الماليزية',
+    'aboutPage.visit.title': 'زورونا في كوالالمبور',
+    'aboutPage.visit.address': 'العنوان',
+    'aboutPage.visit.email': 'البريد الإلكتروني',
+    'aboutPage.visit.phone': 'الهاتف',
+    'aboutPage.visit.map': 'افتح في خرائط Google',
+    'aboutPage.cta.title': 'هل أنت مستعد للبدء؟',
 
     // --- Homepage: globe / learner stories ---
     'stories.title': 'أصوات من حول العالم',

@@ -2854,3 +2854,283 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
         width: 100%;
     }
 }
+
+
+/* ==========================================================================
+   ABOUT PAGE (about.html)
+   "Who we are" reads as prose beside a library index card of key facts.
+   Recognition is a row of seals. The address sits on a navy card over a
+   tilted gold sheet, the same pairing as the homepage correction card.
+   ========================================================================== */
+
+.ab-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(36px, 6vw, 88px);
+}
+
+@media (max-width: 900px) {
+    .ab-intro {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.ab-prose {
+    display: grid;
+    gap: 18px;
+    max-width: 62ch;
+}
+
+.inner-page .ab-prose p {
+    font-size: 1.125rem;
+    color: var(--wwlc-ink);
+}
+
+.ab-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 28px;
+    margin-block-start: 10px;
+}
+
+/* Index card: white with a gold margin line; each row is a ruled line */
+.ab-card {
+    position: relative;
+    padding: 26px clamp(20px, 3vw, 32px) 18px;
+    padding-inline-start: clamp(28px, 4vw, 44px);
+    border-radius: 6px;
+    background:
+        linear-gradient(to right, transparent 0 14px, rgba(240, 167, 40, 0.7) 14px 16px, transparent 16px) 0 0 / 100% 100% no-repeat,
+        var(--wwlc-surface);
+    box-shadow:
+        0 1px 0 rgba(5, 15, 79, 0.06),
+        0 24px 48px -26px rgba(5, 15, 79, 0.4);
+}
+
+[dir="rtl"] .ab-card {
+    background:
+        linear-gradient(to left, transparent 0 14px, rgba(240, 167, 40, 0.7) 14px 16px, transparent 16px) 0 0 / 100% 100% no-repeat,
+        var(--wwlc-surface);
+}
+
+@media (min-width: 901px) {
+    .ab-card {
+        transform: rotate(-1deg);
+    }
+
+    [dir="rtl"] .ab-card {
+        transform: rotate(1deg);
+    }
+}
+
+.inner-page .ab-card h3 {
+    margin-block-end: 8px;
+    font-size: 1.375rem;
+}
+
+.ab-facts {
+    margin: 0;
+}
+
+.ab-facts > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+    min-height: 44px;
+    padding-block: 10px;
+    border-block-start: 1px solid rgba(5, 15, 79, 0.1);
+}
+
+.ab-facts dt {
+    font-weight: 600;
+    color: var(--wwlc-ink-muted);
+}
+
+.ab-facts dd {
+    margin: 0;
+    font-weight: 700;
+    color: var(--wwlc-navy);
+    text-align: end;
+}
+
+/* A fact that is not confirmed yet */
+.ab-facts .ab-soon {
+    font-weight: 500;
+    color: var(--wwlc-ink-muted);
+}
+
+/* --- Recognition seals --- */
+.ab-recog-head {
+    display: grid;
+    gap: 14px;
+    max-width: 46rem;
+    margin-block-end: clamp(28px, 4vw, 44px);
+}
+
+.ab-recog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(16px, 2.4vw, 28px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ab-seal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 22px;
+    border: 1px solid rgba(5, 15, 79, 0.08);
+    border-radius: 14px;
+    background: var(--wwlc-surface);
+    text-align: center;
+    box-shadow: 0 16px 36px -24px rgba(5, 15, 79, 0.35);
+}
+
+.ab-seal-mark {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+}
+
+.ab-seal-mark img {
+    width: 86%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Placeholder seal: gold shield in a dashed gold frame (as on the homepage cube) */
+.ab-seal--soon .ab-seal-mark {
+    border: 2px dashed rgba(240, 167, 40, 0.85);
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 4L40 10V22C40 33 33 40 24 44C15 40 8 33 8 22V10Z' fill='%23f0a728' fill-opacity='0.15' stroke='%23f0a728' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M24 15L26.6 21L33 21.4L28 25.5L29.6 32L24 28.4L18.4 32L20 25.5L15 21.4L21.4 21Z' fill='%23f0a728'/%3E%3C/svg%3E") center / auto 52% no-repeat,
+        var(--wwlc-cream);
+}
+
+.inner-page .ab-seal p {
+    font-weight: 600;
+    color: var(--wwlc-navy);
+}
+
+.inner-page .ab-seal--soon p {
+    color: var(--wwlc-ink-muted);
+}
+
+/* --- Find us --- */
+.ab-visit {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(40px, 6vw, 88px);
+}
+
+@media (max-width: 900px) {
+    .ab-visit {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.ab-visit-copy {
+    display: grid;
+    gap: 16px;
+}
+
+/* Gold sheet behind the navy address card */
+.ab-address-wrap {
+    position: relative;
+    margin-inline-end: 10px;
+}
+
+.ab-address-wrap::before {
+    content: "";
+    position: absolute;
+    inset-block: 14px -14px;
+    inset-inline: 22px -10px;
+    border-radius: 18px;
+    background: var(--wwlc-gold);
+    transform: rotate(2.5deg);
+}
+
+[dir="rtl"] .ab-address-wrap::before {
+    transform: rotate(-2.5deg);
+}
+
+.ab-address {
+    position: relative;
+    padding: clamp(26px, 4vw, 40px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    background:
+        repeating-linear-gradient(to bottom, transparent 0 39px, rgba(255, 255, 255, 0.05) 39px 40px),
+        linear-gradient(150deg, var(--wwlc-blue-deep) 0%, #0a1d6e 60%, var(--wwlc-navy) 100%);
+    color: #ffffff;
+    box-shadow: 0 32px 60px -28px rgba(5, 15, 79, 0.6);
+}
+
+.ab-address dl {
+    display: grid;
+    gap: 18px;
+    margin: 0;
+}
+
+.ab-address dt {
+    margin-block-end: 2px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--wwlc-gold);
+}
+
+.ab-address dd {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+}
+
+.ab-address a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: rgba(240, 167, 40, 0.8);
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+.inner-page .ab-address a:focus-visible {
+    outline-color: var(--wwlc-gold);
+}
+
+.ab-address-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-block-start: 26px;
+    padding-block-start: 22px;
+    border-block-start: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+.inner-page .ab-address-actions a {
+    text-decoration: none;
+}
+
+.inner-page .ab-address-actions .pg-btn--line {
+    color: #ffffff;
+}
+
+.inner-page .ab-address-actions .pg-btn--line:hover {
+    background: #ffffff;
+    color: var(--wwlc-navy);
+}
+
+@media (max-width: 640px) {
+    .ab-address-actions .pg-btn {
+        width: 100%;
+    }
+}
