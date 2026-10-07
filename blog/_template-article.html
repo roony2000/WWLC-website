@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==========================================================================
+     BLOG ARTICLE TEMPLATE — copy this file for every new article.
+
+     How to make a new article:
+     1. Copy this file inside the blog/ folder and give the copy a short,
+        lowercase name with hyphens, e.g. blog/learning-new-words.html.
+        (Keep the file in blog/: every local path below starts with "../".)
+     2. In <head>: write the <title> and the meta description (about 150
+        characters, saying what the reader will learn), and fill in the
+        canonical link once the domain is confirmed.
+     3. Replace every text in [square brackets]. Do not invent facts, prices,
+        dates, results or quotes: leave a hidden TODO comment instead.
+     4. Translation: give every new text its own data-i18n key, starting with
+        a short name for the article (e.g. data-i18n="words.intro"), and add
+        the Arabic for each key to scripts/i18n-ar.js. Keys starting with
+        "article." and "nav." are shared; keep them as they are.
+     5. One <h1> only (the title). Each section is an <h2> with an id; the
+        "On this page" list links to those ids, so keep the two in step.
+     6. Reading time: number of words divided by 200, rounded up.
+     7. Add a card for the article at the top of blog/index.html (it becomes
+        the large first card; take .bl-card--lead off the old first card).
+     8. When the article is real, checked and ready to publish, delete the
+        <meta name="robots" content="noindex" /> line in <head>, and fill in
+        and uncomment the structured data (JSON-LD) block.
+     The header and footer come from scripts/layout.js: never copy them in.
+     ========================================================================== -->
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
+    <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
+    <!-- TODO: remove this noindex line once the page has real, checked content
+         (search engines skip pages that have it). -->
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="../assets/images/ss.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="[One or two sentences, about 150 characters, saying what the reader will learn.]" />
+    <title data-i18n="page.blogTemplate.title">[Article title] | Wordsworth Language Centre Blog</title>
+    <!-- TODO: add the canonical link once the domain is confirmed:
+         <link rel="canonical" href="https://YOUR-DOMAIN/blog/FILE-NAME.html" /> -->
+    <!-- TODO: structured data. Fill in every value with real details, then remove
+         the comment marks around the <script> block:
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ARTICLE TITLE",
+        "description": "SAME TEXT AS THE META DESCRIPTION",
+        "datePublished": "YYYY-MM-DD",
+        "dateModified": "YYYY-MM-DD",
+        "author": { "@type": "Person", "name": "AUTHOR NAME" },
+        "publisher": { "@type": "Organization", "name": "Wordsworth Language Centre" },
+        "mainEntityOfPage": "https://YOUR-DOMAIN/blog/FILE-NAME.html"
+    }
+    </script>
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../assets/styles/main.css" />
+    <link rel="stylesheet" href="../assets/styles/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=Noto+Sans+Arabic:wght@400;600&family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap"
+        rel="stylesheet" />
+
+    <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
+    <script src='../scripts/ga4.js'></script>
+    <script defer src="../scripts/i18n-ar.js"></script>
+    <script defer src="../scripts/i18n.js"></script>
+</head>
+
+<body class="inner-page article-page">
+    <!-- The header is written here by layout.js; it adds "../" to its links by itself -->
+    <script src="../scripts/layout.js"></script>
+    <noscript>
+        <nav class="noscript-nav" aria-label="Main">
+            <a href="../index.html">Home</a> |
+            <a href="../courses.html">Courses</a> |
+            <a href="../placement.php">Placement Test</a> |
+            <a href="../fee-calendar.html">Fee &amp; Calendar</a> |
+            <a href="../events.html">Events</a> |
+            <a href="index.html">Blog</a> |
+            <a href="../about.html">About</a> |
+            <a href="../faq.html">FAQ</a> |
+            <a href="../contact.html">Contact</a> |
+            <a href="../register.html?showLogin=1">Sign In</a> |
+            <a href="../register.html">Register</a>
+        </nav>
+    </noscript>
+
+    <main id="main-content">
+        <!-- ARTICLE HEADER: breadcrumb, category, title, author / date / reading time -->
+        <section class="pg-band pg-hero pg-curve" aria-labelledby="page-title">
+            <div class="pg-wrap">
+                <div class="pg-hero-copy">
+                    <nav class="pg-crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:crumbs.label">
+                        <ol>
+                            <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                            <li><a href="index.html" data-i18n="nav.blog">Blog</a></li>
+                            <li aria-current="page" data-i18n="tpl.title">[Article title]</li>
+                        </ol>
+                    </nav>
+                    <p class="ar-tags"><span class="bl-tag" data-i18n="tpl.category">[Category]</span></p>
+                    <h1 id="page-title" data-i18n="tpl.title">[Article title]</h1>
+                    <!-- Author names stay as written: keep translate="no" on the name. -->
+                    <p class="ar-meta">
+                        <span><span data-i18n="article.by">By</span> <span translate="no">[Author name]</span></span>
+                        <span><time datetime="YYYY-MM-DD" data-i18n="tpl.date">[Date]</time></span>
+                        <span data-i18n="tpl.readTime">[N] minute read</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTICLE BODY: contents list beside the text (above it on small screens) -->
+        <section class="pg-band pg-band--warm pg-curve">
+            <div class="pg-wrap ar-layout">
+                <nav class="ar-toc" aria-labelledby="toc-title">
+                    <p class="ar-toc-title" id="toc-title" data-i18n="article.toc">On this page</p>
+                    <ol>
+                        <li><a href="#section-one" data-i18n="tpl.h2.one">[First section heading]</a></li>
+                        <li><a href="#section-two" data-i18n="tpl.h2.two">[Second section heading]</a></li>
+                        <li><a href="#section-three" data-i18n="tpl.h2.three">[Third section heading]</a></li>
+                    </ol>
+                </nav>
+
+                <article class="ar-sheet" aria-labelledby="page-title">
+                    <p class="ar-intro" data-i18n="tpl.intro">[Opening paragraph: one to three sentences saying who this article is for and what they will get from it.]</p>
+
+                    <!-- KEY TAKEAWAYS: three to five short points that sum up the article -->
+                    <aside class="ar-takeaways" aria-labelledby="takeaways-title">
+                        <h2 id="takeaways-title" data-i18n="article.takeaways">Key takeaways</h2>
+                        <ul class="pg-ticks">
+                            <li data-i18n="tpl.take.one">[First key point]</li>
+                            <li data-i18n="tpl.take.two">[Second key point]</li>
+                            <li data-i18n="tpl.take.three">[Third key point]</li>
+                        </ul>
+                    </aside>
+
+                    <h2 id="section-one" data-i18n="tpl.h2.one">[First section heading]</h2>
+                    <p data-i18n="tpl.p">[Paragraph text.]</p>
+                    <h3 data-i18n="tpl.h3">[Optional smaller heading]</h3>
+                    <p data-i18n="tpl.p">[Paragraph text.]</p>
+
+                    <h2 id="section-two" data-i18n="tpl.h2.two">[Second section heading]</h2>
+                    <p data-i18n="tpl.p">[Paragraph text.]</p>
+                    <ul>
+                        <li data-i18n="tpl.li">[List item]</li>
+                        <li data-i18n="tpl.li">[List item]</li>
+                    </ul>
+
+                    <h2 id="section-three" data-i18n="tpl.h2.three">[Third section heading]</h2>
+                    <p data-i18n="tpl.p">[Paragraph text.]</p>
+
+                    <p class="ar-back"><a class="pg-link" href="index.html" data-i18n="article.back">Back to the blog</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- RELATED POSTS: two or three cards, same markup as on blog/index.html.
+             TODO: point each card at a real article and copy its title, category
+             and excerpt from blog/index.html. -->
+        <section class="pg-band pg-band--blue pg-curve" aria-labelledby="related-title">
+            <div class="pg-wrap">
+                <h2 class="pg-title" id="related-title" data-i18n="article.related">Related articles</h2>
+                <ul class="bl-grid bl-grid--related" role="list">
+                    <li>
+                        <article class="bl-card">
+                            <div class="bl-cover bl-cover--speaking" aria-hidden="true">
+                                <span class="bl-cover-label"></span>
+                                <span class="bl-cover-band"></span>
+                            </div>
+                            <div class="bl-card-body">
+                                <p class="bl-tags"><span class="bl-tag" data-i18n="tpl.category">[Category]</span></p>
+                                <h3 class="bl-card-title" id="related-one" data-i18n="tpl.related">[Related article title]</h3>
+                                <a class="bl-more" href="index.html" aria-describedby="related-one" data-i18n="blog.readMore">Read more</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="bl-card">
+                            <div class="bl-cover bl-cover--writing" aria-hidden="true">
+                                <span class="bl-cover-label"></span>
+                                <span class="bl-cover-band"></span>
+                            </div>
+                            <div class="bl-card-body">
+                                <p class="bl-tags"><span class="bl-tag" data-i18n="tpl.category">[Category]</span></p>
+                                <h3 class="bl-card-title" id="related-two" data-i18n="tpl.related">[Related article title]</h3>
+                                <a class="bl-more" href="index.html" aria-describedby="related-two" data-i18n="blog.readMore">Read more</a>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION: the placement test (keep it on every article) -->
+        <section class="pg-band pg-band--gold pg-curve" aria-labelledby="article-cta-title">
+            <div class="pg-wrap pg-cta">
+                <div class="pg-cta-copy">
+                    <h2 class="pg-title" id="article-cta-title" data-i18n="article.cta.title">Find your English level</h2>
+                    <p data-i18n="coursesPage.cta.text">Take the placement test, or send us a message and we will recommend the best class pathway for your goals.</p>
+                </div>
+                <div class="pg-cta-actions">
+                    <a class="pg-btn pg-btn--navy" href="../placement.php#start" data-i18n="hero.ctaPlacement">Start Your Placement Test</a>
+                    <a class="pg-btn pg-btn--line" href="../contact.html" data-i18n="homeContact.title">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../scripts/nav.js"></script>
+</body>
+
+</html>

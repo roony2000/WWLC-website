@@ -26,6 +26,7 @@ window.WWLC_I18N_AR = {
     'page.about.title': 'من نحن | مركز ووردزوورث للغات، كوالالمبور',
     'page.faq.title': 'الأسئلة الشائعة | مركز ووردزوورث للغات، كوالالمبور',
     'page.blog.title': 'المدونة | مركز ووردزوورث للغات، كوالالمبور',
+    'page.blogTemplate.title': '[عنوان المقال] | مدونة مركز ووردزوورث للغات',
 
     // --- Brand ---
     'brand.name': 'مركز ووردزوورث للغات',
@@ -395,6 +396,31 @@ window.WWLC_I18N_AR = {
     'sample.title': 'كيف تمارس اللغة الإنجليزية كل يوم',
     'sample.excerpt': 'عادات يومية صغيرة للقراءة والاستماع والتحدث والكتابة تناسب يومك المزدحم.',
     'sample.readTime': 'قراءة في 3 دقائق',
+
+    // --- Blog articles: shared labels (every article in blog/) ---
+    'article.by': 'بقلم',
+    'article.toc': 'في هذه الصفحة',
+    'article.takeaways': 'أهم النقاط',
+    'article.back': 'العودة إلى المدونة',
+    'article.related': 'مقالات ذات صلة',
+    'article.cta.title': 'اكتشف مستواك في اللغة الإنجليزية',
+
+    // --- Blog article template (blog/_template-article.html) ---
+    'tpl.title': '[عنوان المقال]',
+    'tpl.category': '[التصنيف]',
+    'tpl.date': '[التاريخ]',
+    'tpl.readTime': 'قراءة في [N] دقائق',
+    'tpl.intro': '[الفقرة الافتتاحية: من جملة إلى ثلاث جمل توضّح لمن هذا المقال وما الذي سيستفيده القارئ منه.]',
+    'tpl.take.one': '[النقطة الأولى]',
+    'tpl.take.two': '[النقطة الثانية]',
+    'tpl.take.three': '[النقطة الثالثة]',
+    'tpl.h2.one': '[عنوان القسم الأول]',
+    'tpl.h2.two': '[عنوان القسم الثاني]',
+    'tpl.h2.three': '[عنوان القسم الثالث]',
+    'tpl.h3': '[عنوان فرعي اختياري]',
+    'tpl.p': '[نص الفقرة.]',
+    'tpl.li': '[عنصر في القائمة]',
+    'tpl.related': '[عنوان مقال ذي صلة]',
 
     // --- My profile page ---
     'profile.photoAlt': 'الصورة الشخصية',
