@@ -16,33 +16,36 @@
    - .navbar, .nav-toggle, .main-nav, .nav-actions  -> scripts/nav.js
    - #mainNav (aria-controls of .nav-toggle)          -> scripts/nav.js
    - #langSelector, #langBtn, #langMenu, #langBtnFlag,
-     #langBtnLabel, .lang-item and its data-* attrs    -> scripts/main.js
-   - .main-nav a, .cta (translated to Arabic)         -> scripts/main.js
+     #langBtnLabel, .lang-item and its data-* attrs    -> scripts/i18n.js
+   Translation: every text here has a data-i18n (or data-i18n-attr) key;
+   the Arabic for each key is in scripts/i18n-ar.js.
    ========================================================================== */
 (function () {
     'use strict';
 
     var BUSINESS_NAME = 'Wordsworth Language Centre';
 
-    // Main navigation links: [href, label]
+    // Main navigation links: [href, label, translation key]
     var NAV_LINKS = [
-        ['placement.php', 'Placement Test'],
-        ['events.html', 'Events'],
-        ['contact.html', 'Contact'],
-        ['fee-calendar.html', 'Fee &amp; Calendar']
+        ['placement.php', 'Placement Test', 'nav.placement'],
+        ['events.html', 'Events', 'nav.events'],
+        ['contact.html', 'Contact', 'nav.contact'],
+        ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees']
     ];
 
-    // Footer quick links: [href, label]
+    // Footer quick links: [href, label, translation key]
     var FOOTER_LINKS = [
-        ['index.html', 'Home'],
-        ['placement.php', 'Placement Test'],
-        ['events.html', 'Events'],
-        ['fee-calendar.html', 'Fee &amp; Calendar'],
-        ['contact.html', 'Contact'],
-        ['register.html', 'Register']
+        ['index.html', 'Home', 'nav.home'],
+        ['placement.php', 'Placement Test', 'nav.placement'],
+        ['events.html', 'Events', 'nav.events'],
+        ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees'],
+        ['contact.html', 'Contact', 'nav.contact'],
+        ['register.html', 'Register', 'nav.register']
     ];
 
     // Languages in the selector: [lang, code, native name, English name, flag, flag alt]
+    // Native names never change. The English names and flag alts are
+    // translated with the keys lang.name.<lang> and lang.flag.<lang>.
     var LANGUAGES = [
         ['en', 'EN', 'English', '', 'gb', 'English (UK)'],
         ['ar', 'AR', '&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;', 'Arabic', 'sa', 'Arabic (SA)'],
@@ -62,18 +65,18 @@
         var page = currentPage();
         return NAV_LINKS.map(function (link) {
             var current = link[0] === page ? ' aria-current="page"' : '';
-            return '<li><a href="' + link[0] + '"' + current + '>' + link[1] + '</a></li>';
+            return '<li><a href="' + link[0] + '"' + current + ' data-i18n="' + link[2] + '">' + link[1] + '</a></li>';
         }).join('');
     }
 
     function languageItemsHtml() {
         return LANGUAGES.map(function (l) {
             var flag = 'https://flagcdn.com/' + l[4] + '.svg';
-            var english = l[3] ? '<span class="lang-translate">' + l[3] + '</span>' : '';
+            var english = l[3] ? '<span class="lang-translate" data-i18n="lang.name.' + l[0] + '">' + l[3] + '</span>' : '';
             return '<li role="menuitem">' +
                 '<button class="lang-item" data-lang="' + l[0] + '" data-code="' + l[1] + '" data-label="' + l[2] + '" data-flag="' + flag + '">' +
-                '<img class="flag-img" src="' + flag + '" alt="' + l[5] + '" loading="lazy" decoding="async" />' +
-                '<span class="lang-native">' + l[2] + '</span>' + english +
+                '<img class="flag-img" src="' + flag + '" alt="' + l[5] + '" data-i18n-attr="alt:lang.flag.' + l[0] + '" loading="lazy" decoding="async" />' +
+                '<span class="lang-native" translate="no">' + l[2] + '</span>' + english +
                 '</button></li>';
         }).join('');
     }
@@ -82,28 +85,28 @@
         return '' +
             '<header class="navbar" role="banner">' +
             '<div class="container nav-inner">' +
-            '<a class="logo-link" href="index.html" aria-label="' + BUSINESS_NAME + ' home">' +
-            '<img class="logo-img" src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" />' +
+            '<a class="logo-link" href="index.html" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink">' +
+            '<img class="logo-img" src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" />' +
             '</a>' +
-            '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">' +
+            '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation" data-i18n-attr="aria-label:nav.openMenu">' +
             '<span class="nav-toggle-lines" aria-hidden="true">' +
             '<span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>' +
             '</span>' +
             '</button>' +
-            '<nav class="main-nav" id="mainNav" role="navigation" aria-label="Main">' +
+            '<nav class="main-nav" id="mainNav" role="navigation" aria-label="Main" data-i18n-attr="aria-label:nav.mainLabel">' +
             '<ul>' + navLinksHtml() + '</ul>' +
             '</nav>' +
             '<div class="nav-actions">' +
             '<div class="lang-selector" id="langSelector" aria-haspopup="true">' +
-            '<button id="langBtn" class="lang-btn" aria-expanded="false" title="Select language">' +
+            '<button id="langBtn" class="lang-btn" aria-expanded="false" title="Select language" data-i18n-attr="title:lang.select">' +
             '<img class="flag-img" id="langBtnFlag" src="https://flagcdn.com/gb.svg" alt="English (UK)" />' +
-            '<span id="langBtnLabel" class="lang-label">EN</span>' +
+            '<span id="langBtnLabel" class="lang-label" translate="no">EN</span>' +
             '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z" /></svg>' +
             '</button>' +
             '<ul class="lang-menu" id="langMenu" role="menu" aria-labelledby="langBtn">' + languageItemsHtml() + '</ul>' +
             '</div>' +
-            '<a class="ghost nav-signin" href="register.html?showLogin=1">Sign In</a>' +
-            '<a class="cta" href="register.html">Register</a>' +
+            '<a class="ghost nav-signin" href="register.html?showLogin=1" data-i18n="nav.signIn">Sign In</a>' +
+            '<a class="cta" href="register.html" data-i18n="nav.register">Register</a>' +
             '</div>' +
             '</div>' +
             '</header>';
@@ -112,7 +115,7 @@
     function footerHtml() {
         var year = new Date().getFullYear();
         var quickLinks = FOOTER_LINKS.map(function (link) {
-            return '<li><a href="' + link[0] + '">' + link[1] + '</a></li>';
+            return '<li><a href="' + link[0] + '" data-i18n="' + link[2] + '">' + link[1] + '</a></li>';
         }).join('');
 
         return '' +
@@ -121,8 +124,8 @@
 
             // Brand column: logo, tagline, social links
             '<div class="footer-col footer-brand">' +
-            '<a href="index.html" aria-label="' + BUSINESS_NAME + ' home"><img src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" class="footer-logo" /></a>' +
-            '<div class="footer-tagline">Empowering <span style="color:#f0a728; font-weight:900; letter-spacing:0.04em;">Language</span>, Inspiring <span style="color:#ffffff; font-weight:900; letter-spacing:0.04em;">Futures</span></div>' +
+            '<a href="index.html" aria-label="' + BUSINESS_NAME + ' home" data-i18n-attr="aria-label:brand.homeLink"><img src="assets/images/ss.png" alt="' + BUSINESS_NAME + ' logo" data-i18n-attr="alt:brand.logoAlt" class="footer-logo" /></a>' +
+            '<div class="footer-tagline" data-i18n="footer.tagline" data-i18n-html>Empowering <span style="color:#f0a728; font-weight:900; letter-spacing:0.04em;">Language</span>, Inspiring <span style="color:#ffffff; font-weight:900; letter-spacing:0.04em;">Futures</span></div>' +
             '<div class="footer-socials">' +
             '<a href="https://www.instagram.com/wordsworth.language.centre?igsh=eTFvbHB4ZWl4czZx" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social">' +
             '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#fff" />' +
@@ -143,15 +146,16 @@
 
             // Quick links column
             '<div class="footer-col footer-links">' +
-            '<h3>Quick Links</h3>' +
+            '<h3 data-i18n="footer.quickLinks">Quick Links</h3>' +
             '<ul>' + quickLinks + '</ul>' +
             '</div>' +
 
-            // Contact column (existing details only; do not invent new ones here)
+            // Contact column (existing details only; do not invent new ones here).
+            // The address stays in English (translate="no") so it works for post and maps.
             '<div class="footer-col footer-contact">' +
-            '<h3>Contact</h3>' +
+            '<h3 data-i18n="footer.contactTitle">Contact</h3>' +
             '<ul>' +
-            '<li><span class="footer-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff" />' +
+            '<li translate="no"><span class="footer-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff" />' +
             '<path d="M12 21s-6-5.686-6-10A6 6 0 1 1 18 11c0 4.314-6 10-6 10Zm0-8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="#f0a728" /></svg></span> ' +
             'A-8-4, Megan Avenue, 2, Jalan Yap Kwan Seng,<br>Wilayah Persekutuan, 50450 Kuala Lumpur,<br>Wilayah Persekutuan Kuala Lumpur, Malaysia</li>' +
             '<li><span class="footer-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#fff" />' +
@@ -166,8 +170,8 @@
             '</div>' +
 
             '</div>' +
-            '<div class="footer-bottom">&copy; ' + year + ' ' + BUSINESS_NAME + '. All Rights Reserved.</div>' +
-            '<a href="#top" class="footer-backtotop" aria-label="Back to top">&#8679;</a>' +
+            '<div class="footer-bottom">&copy; ' + year + ' <span data-i18n="brand.name">' + BUSINESS_NAME + '</span>. <span data-i18n="footer.rights">All Rights Reserved.</span></div>' +
+            '<a href="#top" class="footer-backtotop" aria-label="Back to top" data-i18n-attr="aria-label:footer.backToTop">&#8679;</a>' +
             '</footer>';
     }
 

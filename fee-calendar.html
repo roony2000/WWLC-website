@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
+    <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Fee & Calendar | Wordsworth Language Centre</title>
     <link rel="icon" type="image/png" href="assets/images/ss.png" />
@@ -11,6 +13,8 @@
 
     <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
     <script src='scripts/ga4.js'></script>
+    <script defer src="scripts/i18n-ar.js"></script>
+    <script defer src="scripts/i18n.js"></script>
 </head>
 <body>
     <script src="scripts/layout.js"></script>

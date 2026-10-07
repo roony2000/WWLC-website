@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8" />
+    <!-- Language: set Arabic direction before the page draws (details in scripts/i18n.js) -->
+    <script>(function () { try { if (localStorage.getItem('wwlcLang') === 'ar') { var h = document.documentElement; h.lang = 'ar'; h.dir = 'rtl'; h.classList.add('i18n-loading'); setTimeout(function () { h.classList.remove('i18n-loading'); }, 2000); } } catch (e) {} })();</script>
     <link rel="icon" type="image/png" href="assets/images/ss.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
         content="Wordsworth Language Centre in Kuala Lumpur helps adults and young learners master English with immersive courses, expert teachers, and supportive community." />
-    <title>Wordsworth Language Centre - Kuala Lumpur</title>
+    <title data-i18n="page.home.title">Wordsworth Language Centre - Kuala Lumpur</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="assets/styles/main.css" />
@@ -19,6 +21,8 @@
 
     <script>window.GA4_MEASUREMENT_ID = window.GA4_MEASUREMENT_ID || 'G-ZGN925DB12';</script>
     <script src='scripts/ga4.js'></script>
+    <script defer src="scripts/i18n-ar.js"></script>
+    <script defer src="scripts/i18n.js"></script>
 </head>
 
 <body class="home-page">
@@ -32,7 +36,7 @@
     <!-- Social fixed icons -->
     <div class="social-fixed" aria-hidden="false">
         <a class="social-item whatsapp" href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre"
-            target="_blank" rel="noopener" aria-label="WhatsApp">
+            target="_blank" rel="noopener" aria-label="WhatsApp" data-i18n-attr="aria-label:social.whatsapp">
             <!-- WhatsApp SVG (neutral, will show on colored circle) -->
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path fill="#fff"
@@ -40,10 +44,10 @@
                 <path fill="#fff"
                     d="M17.24 14.1c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.26-.7.87-.86 1.04-.16.16-.31.18-.58.06-.27-.13-1.12-.41-2.12-1.31-.79-.71-1.32-1.59-1.47-1.86-.15-.27-.02-.42.12-.55.12-.12.27-.31.41-.46.14-.16.19-.27.29-.45.09-.18.05-.33-.02-.46-.07-.13-.6-1.45-.82-1.98-.22-.53-.44-.46-.6-.47-.15-.01-.33-.01-.5-.01-.17 0-.46.06-.7.33-.24.27-.93.9-.93 2.19 0 1.29.95 2.54 1.08 2.72.13.18 1.86 2.92 4.52 3.98 2.66 1.06 2.66.71 3.13.67.46-.04 1.49-.6 1.7-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.49-.29z" />
             </svg>
-            <span class="social-label">WhatsApp</span>
+            <span class="social-label" data-i18n="social.whatsapp">WhatsApp</span>
         </a>
 
-        <a class="social-item wechat" href="#" target="_blank" rel="noopener" aria-label="WeChat">
+        <a class="social-item wechat" href="#" target="_blank" rel="noopener" aria-label="WeChat" data-i18n-attr="aria-label:social.wechat">
             <!-- corrected WeChat-like SVG (two chat bubbles) -->
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
                 <g fill="none" fill-rule="evenodd">
@@ -58,17 +62,17 @@
                         opacity=".98" />
                 </g>
             </svg>
-            <span class="social-label">WeChat</span>
+            <span class="social-label" data-i18n="social.wechat">WeChat</span>
         </a>
 
         <a class="social-item telegram" href="https://t.me/USERNAME" target="_blank" rel="noopener"
-            aria-label="Telegram">
+            aria-label="Telegram" data-i18n-attr="aria-label:social.telegram">
             <!-- Telegram SVG -->
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path fill="#fff"
                     d="M12 .5C5.73.5.5 5.73.5 12S5.73 23.5 12 23.5 23.5 18.27 23.5 12 18.27.5 12 .5zm4.4 8.9l-1.6 7.3c-.1.5-.4.6-.8.4l-2.2-1.6-1.1 1.1c-.1.1-.2.2-.4.2l.2-3.1 5.6-5c.2-.2-.0-.3-.3-.1l-6.9 4.3-3.1-.97c-.6-.17-.6-.6.13-.9L16.8 8.4c.5-.17.9.12.6.95z" />
             </svg>
-            <span class="social-label">Telegram</span>
+            <span class="social-label" data-i18n="social.telegram">Telegram</span>
         </a>
     </div>
 
@@ -96,26 +100,27 @@
         <section class="hero" id="about">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
-                    <p class="eyebrow">English language centre in Kuala Lumpur</p>
-                    <h1>Unlock confident English, <span>for every stage of life</span>.</h1>
-                    <p class="lead">From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers
+                    <p class="eyebrow" data-i18n="hero.eyebrow">English language centre in Kuala Lumpur</p>
+                    <h1 data-i18n="hero.title" data-i18n-html>Unlock confident English, <span>for every stage of life</span>.</h1>
+                    <p class="lead" data-i18n="hero.lead">From fast-track IELTS bootcamps to lively junior clubs, our supportive teachers
                         help you speak with clarity, fluency, and heart.</p>
 
                     <div class="hero-cta">
-                        <a class="cta large" href="placement.php#start">Start Your Placement Test</a>
-                        <a class="ghost" href="#courses">Explore courses</a>
+                        <a class="cta large" href="placement.php#start" data-i18n="hero.ctaPlacement">Start Your Placement Test</a>
+                        <a class="ghost" href="#courses" data-i18n="hero.ctaCourses">Explore courses</a>
                     </div>
 
                     <div class="trust-row">
-                        <div class="trust-pill">8:1 average class size</div><!-- TODO-verify -->
-                        <div class="trust-pill">Cambridge-aligned curriculum</div>
-                        <div class="trust-pill">Evening & weekend options</div>
+                        <div class="trust-pill" data-i18n="hero.trust.classSize">8:1 average class size</div><!-- TODO-verify -->
+                        <div class="trust-pill" data-i18n="hero.trust.cambridge">Cambridge-aligned curriculum</div>
+                        <div class="trust-pill" data-i18n="hero.trust.schedule">Evening & weekend options</div>
                     </div>
                 </div>
 
                 <!-- Decorative "teacher's correction" card. Hidden from screen readers;
-                     dir="ltr" keeps the English sentence in order when the page is Arabic. -->
-                <div class="hero-media" aria-hidden="true">
+                     dir="ltr" keeps the English sentence in order when the page is Arabic,
+                     and translate="no" keeps it in English (it is an English lesson). -->
+                <div class="hero-media" aria-hidden="true" translate="no">
                     <div class="media-shape"></div>
                     <div class="hero-note" dir="ltr">
                         <p class="hero-note-line">Yesterday I <span class="hero-note-fix"><span
@@ -127,16 +132,16 @@
                     </div>
                 </div>
 
-                <aside class="hero-card reveal" aria-label="Wordsworth highlights">
+                <aside class="hero-card reveal" aria-label="Wordsworth highlights" data-i18n-attr="aria-label:hero.card.label">
                     <div class="card-inner">
-                        <img src="assets/images/ss.png" alt="Wordsworth crest" class="hero-logo" />
-                        <h3>What makes us different?</h3>
+                        <img src="assets/images/ss.png" alt="Wordsworth crest" class="hero-logo" data-i18n-attr="alt:hero.card.crestAlt" />
+                        <h3 data-i18n="hero.card.title">What makes us different?</h3>
                         <ul class="benefits">
-                            <li>Personal learning plans tracked weekly</li>
-                            <li>Native-speaking coaches with CELTA &amp; DELTA</li><!-- TODO-verify -->
-                            <li>Community events, clubs, and conversation labs</li>
+                            <li data-i18n="hero.card.plans">Personal learning plans tracked weekly</li>
+                            <li data-i18n="hero.card.coaches">Native-speaking coaches with CELTA &amp; DELTA</li><!-- TODO-verify -->
+                            <li data-i18n="hero.card.community">Community events, clubs, and conversation labs</li>
                         </ul>
-                        <a class="cta small" href="#stories">Meet our learners</a>
+                        <a class="cta small" href="#stories" data-i18n="hero.card.cta">Meet our learners</a>
                     </div>
                 </aside>
             </div>
@@ -146,8 +151,8 @@
         <section class="why-wwlc" id="why-wwlc">
             <div class="container why-wwlc-inner">
                 <header class="why-wwlc-header">
-                    <h2 class="why-wwlc-title">Why Choose Wordsworth Language Centre?</h2>
-                    <p class="why-wwlc-sub">Experience the difference. Discover your potential.</p>
+                    <h2 class="why-wwlc-title" data-i18n="why.title">Why Choose Wordsworth Language Centre?</h2>
+                    <p class="why-wwlc-sub" data-i18n="why.sub">Experience the difference. Discover your potential.</p>
                 </header>
                 <div class="why-wwlc-benefits-grid">
                     <div class="why-wwlc-benefit">
@@ -159,8 +164,8 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3>Expert Coaches</h3>
-                        <p>Learn from certified, passionate educators who turn lessons into life-changing experiences.
+                        <h3 data-i18n="why.coaches.title">Expert Coaches</h3>
+                        <p data-i18n="why.coaches.text">Learn from certified, passionate educators who turn lessons into life-changing experiences.
                         </p>
                     </div>
                     <div class="why-wwlc-benefit">
@@ -172,8 +177,8 @@
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3>Real-World Confidence</h3>
-                        <p>Build skills that go beyond exams - communicate, present, and connect with impact.</p>
+                        <h3 data-i18n="why.confidence.title">Real-World Confidence</h3>
+                        <p data-i18n="why.confidence.text">Build skills that go beyond exams - communicate, present, and connect with impact.</p>
                     </div>
                     <div class="why-wwlc-benefit">
                         <div class="why-wwlc-icon">
@@ -185,8 +190,8 @@
                                 <circle cx="24" cy="36" r="2.5" fill="#f0a728" />
                             </svg>
                         </div>
-                        <h3>Personalized Pathways</h3>
-                        <p>Your journey is unique. We tailor every step to your goals, strengths, and dreams.</p>
+                        <h3 data-i18n="why.pathways.title">Personalized Pathways</h3>
+                        <p data-i18n="why.pathways.text">Your journey is unique. We tailor every step to your goals, strengths, and dreams.</p>
                     </div>
                     <div class="why-wwlc-benefit">
                         <div class="why-wwlc-icon">
@@ -198,8 +203,8 @@
                                     stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3>Global Community</h3>
-                        <p>Join a vibrant, supportive network of learners and alumni from over 20 countries.</p><!-- TODO-verify -->
+                        <h3 data-i18n="why.community.title">Global Community</h3>
+                        <p data-i18n="why.community.text">Join a vibrant, supportive network of learners and alumni from over 20 countries.</p><!-- TODO-verify -->
                     </div>
                     <div class="why-wwlc-benefit">
                         <div class="why-wwlc-icon">
@@ -210,8 +215,8 @@
                                 <rect x="18" y="16" width="12" height="6" rx="2" fill="#f0a728" />
                             </svg>
                         </div>
-                        <h3>Career Advancement</h3>
-                        <p>Unlock new professional opportunities and accelerate your career growth with our recognized
+                        <h3 data-i18n="why.career.title">Career Advancement</h3>
+                        <p data-i18n="why.career.text">Unlock new professional opportunities and accelerate your career growth with our recognized
                             language programs.</p>
                     </div>
                     <div class="why-wwlc-benefit">
@@ -224,8 +229,8 @@
                                     fill="#fff" />
                             </svg>
                         </div>
-                        <h3>Central Location</h3>
-                        <p>Our institute is perfectly situated in the heart of Kuala Lumpur, making it easily accessible
+                        <h3 data-i18n="why.location.title">Central Location</h3>
+                        <p data-i18n="why.location.text">Our institute is perfectly situated in the heart of Kuala Lumpur, making it easily accessible
                             from anywhere in the city.</p>
                     </div>
                     <div class="why-wwlc-benefit">
@@ -237,8 +242,8 @@
                                 <circle cx="24" cy="24" r="4" fill="#050f4f" />
                             </svg>
                         </div>
-                        <h3>Innovative Solutions</h3>
-                        <p>Benefit from our advanced IS systems that streamline your learning experience and provide
+                        <h3 data-i18n="why.innovation.title">Innovative Solutions</h3>
+                        <p data-i18n="why.innovation.text">Benefit from our advanced IS systems that streamline your learning experience and provide
                             modern educational resources.</p>
                     </div>
                     <div class="why-wwlc-benefit">
@@ -251,8 +256,8 @@
                                     fill="#fff" />
                             </svg>
                         </div>
-                        <h3>Dedicated Support</h3>
-                        <p>Our team is always ready to assist you, ensuring a smooth and enjoyable learning journey from
+                        <h3 data-i18n="why.support.title">Dedicated Support</h3>
+                        <p data-i18n="why.support.text">Our team is always ready to assist you, ensuring a smooth and enjoyable learning journey from
                             start to finish.</p>
                     </div>
                     <div class="why-wwlc-benefit">
@@ -265,13 +270,13 @@
                                 <circle cx="24" cy="24" r="9" stroke="#050f4f" stroke-width="3" />
                             </svg>
                         </div>
-                        <h3>Flexible Schedule</h3>
-                        <p>Choose from a variety of class times to fit your busy lifestyle, making learning convenient
+                        <h3 data-i18n="why.schedule.title">Flexible Schedule</h3>
+                        <p data-i18n="why.schedule.text">Choose from a variety of class times to fit your busy lifestyle, making learning convenient
                             and effective.</p>
                     </div>
                 </div>
                 <div class="why-wwlc-cta">
-                    <a href="#courses" class="why-wwlc-btn">Start Your Journey</a>
+                    <a href="#courses" class="why-wwlc-btn" data-i18n="why.cta">Start Your Journey</a>
                 </div>
             </div>
         </section>
@@ -280,19 +285,19 @@
             <div class="courses-bg" aria-hidden="true"></div>
             <div class="container courses-inner">
                 <header class="courses-head">
-                    <span class="courses-eyebrow">Course Pathways</span>
-                    <h2>Programs designed for real-world confidence</h2>
-                    <p>Choose the pathway that matches your goals. Each track blends live coaching, guided digital
+                    <span class="courses-eyebrow" data-i18n="courses.eyebrow">Course Pathways</span>
+                    <h2 data-i18n="courses.title">Programs designed for real-world confidence</h2>
+                    <p data-i18n="courses.lead">Choose the pathway that matches your goals. Each track blends live coaching, guided digital
                         practice, and unforgettable community events.</p>
-                    <div class="courses-tabs" role="tablist" aria-label="Course pathways">
+                    <div class="courses-tabs" role="tablist" aria-label="Course pathways" data-i18n-attr="aria-label:courses.eyebrow">
                         <button class="courses-pill is-active" id="courses-adults-tab" type="button" role="tab"
                             tabindex="0" aria-selected="true" aria-controls="courses-adults"
-                            data-course-pill="adults">Adults &amp; Professionals</button>
+                            data-course-pill="adults" data-i18n="courses.tab.adults">Adults &amp; Professionals</button>
                         <button class="courses-pill" id="courses-teens-tab" type="button" role="tab" tabindex="-1"
-                            aria-selected="false" aria-controls="courses-teens" data-course-pill="teens">Teens &amp;
+                            aria-selected="false" aria-controls="courses-teens" data-course-pill="teens" data-i18n="courses.tab.teens">Teens &amp;
                             Exams</button>
                         <button class="courses-pill" id="courses-kids-tab" type="button" role="tab" tabindex="-1"
-                            aria-selected="false" aria-controls="courses-kids" data-course-pill="kids">Young
+                            aria-selected="false" aria-controls="courses-kids" data-course-pill="kids" data-i18n="courses.tab.kids">Young
                             Learners</button>
                     </div>
                 </header>
@@ -301,41 +306,41 @@
                     aria-labelledby="courses-adults-tab" tabindex="-1">
                     <div class="courses-grid">
                         <article class="course-card">
-                            <span class="course-tag">Intensive General English</span>
-                            <h3>University Writing Studio</h3>
-                            <p>Boost your English skills quickly with immersive lessons in speaking, listening, reading,
+                            <span class="course-tag" data-i18n="courses.adults.general.tag">Intensive General English</span>
+                            <h3 data-i18n="courses.adults.general.title">University Writing Studio</h3>
+                            <p data-i18n="courses.adults.general.text">Boost your English skills quickly with immersive lessons in speaking, listening, reading,
                                 and writing for everyday life, work, and travel.</p>
                             <ul class="course-highlights">
-                                <li>Small-group seminars</li>
-                                <li>Asynchronous writing critiques</li>
-                                <li>Partner university sessions</li>
+                                <li data-i18n="courses.adults.general.point1">Small-group seminars</li>
+                                <li data-i18n="courses.adults.general.point2">Asynchronous writing critiques</li>
+                                <li data-i18n="courses.adults.general.point3">Partner university sessions</li>
                             </ul>
                             <div class="course-meta">
-                                <a class="course-link" href="placement.php?track=adult#start">Book placement</a>
+                                <a class="course-link" href="placement.php?track=adult#start" data-i18n="courses.bookPlacement">Book placement</a>
                             </div>
                         </article>
                         <article class="course-card">
-                            <span class="course-tag">IELTS · Intensive</span>
-                            <h3>IELTS Accelerator (Band 5.5 → 7.0)</h3>
-                            <p>Targeted grammar, speaking clinics, and weekly mock tests coached by certified examiners.
+                            <span class="course-tag" data-i18n="courses.adults.ielts.tag">IELTS · Intensive</span>
+                            <h3 data-i18n="courses.adults.ielts.title">IELTS Accelerator (Band 5.5 → 7.0)</h3>
+                            <p data-i18n="courses.adults.ielts.text">Targeted grammar, speaking clinics, and weekly mock tests coached by certified examiners.
                             </p>
                             <ul class="course-highlights">
-                                <li>Hybrid timetable</li>
-                                <li>Personal feedback dashboard every Friday</li>
-                                <li>Speaking lab with instant scoring</li>
+                                <li data-i18n="courses.adults.ielts.point1">Hybrid timetable</li>
+                                <li data-i18n="courses.adults.ielts.point2">Personal feedback dashboard every Friday</li>
+                                <li data-i18n="courses.adults.ielts.point3">Speaking lab with instant scoring</li>
                             </ul>
                             <div class="course-meta">
                             </div>
                         </article>
                         <article class="course-card">
-                            <span class="course-tag">Business English</span>
-                            <h3>Executive Fluency Lab</h3>
-                            <p>Boardroom-ready communication skills with negotiation drills, pitch reviews, and
+                            <span class="course-tag" data-i18n="courses.adults.business.tag">Business English</span>
+                            <h3 data-i18n="courses.adults.business.title">Executive Fluency Lab</h3>
+                            <p data-i18n="courses.adults.business.text">Boardroom-ready communication skills with negotiation drills, pitch reviews, and
                                 networking events.</p>
                             <ul class="course-highlights">
-                                <li>Evening schedule</li>
-                                <li>1:1 coaching</li>
-                                <li>Access to leadership speaker series</li>
+                                <li data-i18n="courses.adults.business.point1">Evening schedule</li>
+                                <li data-i18n="courses.adults.business.point2">1:1 coaching</li>
+                                <li data-i18n="courses.adults.business.point3">Access to leadership speaker series</li>
                             </ul>
                             <div class="course-meta">
                             </div>
@@ -347,40 +352,40 @@
                     aria-labelledby="courses-teens-tab" tabindex="-1" aria-hidden="true" hidden>
                     <div class="courses-grid">
                         <article class="course-card">
-                            <span class="course-tag">IGCSE Prep</span>
-                            <h3>Cambridge Exam Mentorship</h3>
-                            <p>Strategy labs, timed papers, and vocabulary boosts that mirror Cambridge IGCSE English as
+                            <span class="course-tag" data-i18n="courses.teens.igcse.tag">IGCSE Prep</span>
+                            <h3 data-i18n="courses.teens.igcse.title">Cambridge Exam Mentorship</h3>
+                            <p data-i18n="courses.teens.igcse.text">Strategy labs, timed papers, and vocabulary boosts that mirror Cambridge IGCSE English as
                                 a Second Language.</p>
                             <ul class="course-highlights">
-                                <li>Progress diagnostics</li>
-                                <li>Guardian feedback dashboard</li>
-                                <li>Masterclasses with alumni</li>
+                                <li data-i18n="courses.teens.igcse.point1">Progress diagnostics</li>
+                                <li data-i18n="courses.teens.igcse.point2">Guardian feedback dashboard</li>
+                                <li data-i18n="courses.teens.igcse.point3">Masterclasses with alumni</li>
                             </ul>
                             <div class="course-meta">
                             </div>
                         </article>
                         <article class="course-card">
-                            <span class="course-tag">Public Speaking</span>
-                            <h3>Teen Oratory League</h3>
-                            <p>Anchor points, rebuttal training, and storytelling challenges that grow persuasive
+                            <span class="course-tag" data-i18n="courses.teens.speaking.tag">Public Speaking</span>
+                            <h3 data-i18n="courses.teens.speaking.title">Teen Oratory League</h3>
+                            <p data-i18n="courses.teens.speaking.text">Anchor points, rebuttal training, and storytelling challenges that grow persuasive
                                 confidence.</p>
                             <ul class="course-highlights">
-                                <li>Debates with rotating themes</li>
-                                <li>Coach video critiques on every speech</li>
-                                <li>Final showcase with industry judges</li>
+                                <li data-i18n="courses.teens.speaking.point1">Debates with rotating themes</li>
+                                <li data-i18n="courses.teens.speaking.point2">Coach video critiques on every speech</li>
+                                <li data-i18n="courses.teens.speaking.point3">Final showcase with industry judges</li>
                             </ul>
                             <div class="course-meta">
                             </div>
                         </article>
                         <article class="course-card">
-                            <span class="course-tag">Study Skills</span>
-                            <h3>Future Scholar Lab</h3>
-                            <p>Project-based workshops that fuse critical reading, note-making, and collaborative
+                            <span class="course-tag" data-i18n="courses.teens.study.tag">Study Skills</span>
+                            <h3 data-i18n="courses.teens.study.title">Future Scholar Lab</h3>
+                            <p data-i18n="courses.teens.study.text">Project-based workshops that fuse critical reading, note-making, and collaborative
                                 research skills.</p>
                             <ul class="course-highlights">
-                                <li>Capstone showcase with mentor feedback</li>
-                                <li>Integrated STEAM challenges</li>
-                                <li>Digital skills bootcamp add-on</li>
+                                <li data-i18n="courses.teens.study.point1">Capstone showcase with mentor feedback</li>
+                                <li data-i18n="courses.teens.study.point2">Integrated STEAM challenges</li>
+                                <li data-i18n="courses.teens.study.point3">Digital skills bootcamp add-on</li>
                             </ul>
                             <div class="course-meta">
                             </div>
@@ -392,40 +397,40 @@
                     aria-labelledby="courses-kids-tab" tabindex="-1" aria-hidden="true" hidden>
                     <div class="courses-grid">
                         <article class="course-card">
-                            <span class="course-tag">Phonics</span>
-                            <h3>Sound &amp; Story Explorers</h3>
-                            <p>Interactive storytelling, sensory phonics games, and parent coaching moments for ages
+                            <span class="course-tag" data-i18n="courses.kids.phonics.tag">Phonics</span>
+                            <h3 data-i18n="courses.kids.phonics.title">Sound &amp; Story Explorers</h3>
+                            <p data-i18n="courses.kids.phonics.text">Interactive storytelling, sensory phonics games, and parent coaching moments for ages
                                 4-6.</p>
                             <ul class="course-highlights">
-                                <li>Visual phonics toolkit included</li>
-                                <li>Progress postcards home</li>
-                                <li>Optional bilingual support track</li>
+                                <li data-i18n="courses.kids.phonics.point1">Visual phonics toolkit included</li>
+                                <li data-i18n="courses.kids.phonics.point2">Progress postcards home</li>
+                                <li data-i18n="courses.kids.phonics.point3">Optional bilingual support track</li>
                             </ul>
                             <div class="course-meta">
                             </div>
                         </article>
                         <article class="course-card">
-                            <span class="course-tag">Creative Club</span>
-                            <h3>Imagination Makers</h3>
-                            <p>Role-play quests, collaborative storytelling, and maker projects that grow confidence
+                            <span class="course-tag" data-i18n="courses.kids.creative.tag">Creative Club</span>
+                            <h3 data-i18n="courses.kids.creative.title">Imagination Makers</h3>
+                            <p data-i18n="courses.kids.creative.text">Role-play quests, collaborative storytelling, and maker projects that grow confidence
                                 through play.</p>
                             <ul class="course-highlights">
-                                <li>Themed missions each fortnight</li>
-                                <li>Speech snapshots for guardians</li>
-                                <li>Cross-curricular art &amp; science tie-ins</li>
+                                <li data-i18n="courses.kids.creative.point1">Themed missions each fortnight</li>
+                                <li data-i18n="courses.kids.creative.point2">Speech snapshots for guardians</li>
+                                <li data-i18n="courses.kids.creative.point3">Cross-curricular art &amp; science tie-ins</li>
                             </ul>
                             <div class="course-meta">
                             </div>
                         </article>
                         <article class="course-card">
-                            <span class="course-tag">Confidence</span>
-                            <h3>Mini Speakers Lab</h3>
-                            <p>Movement, rhythm, and micro-presentations that transform shy voices into bold
+                            <span class="course-tag" data-i18n="courses.kids.confidence.tag">Confidence</span>
+                            <h3 data-i18n="courses.kids.confidence.title">Mini Speakers Lab</h3>
+                            <p data-i18n="courses.kids.confidence.text">Movement, rhythm, and micro-presentations that transform shy voices into bold
                                 storytellers.</p>
                             <ul class="course-highlights">
-                                <li>Coach & guardian reflection</li>
-                                <li>Video journal for every learner</li>
-                                <li>Celebration assembly every term</li>
+                                <li data-i18n="courses.kids.confidence.point1">Coach & guardian reflection</li>
+                                <li data-i18n="courses.kids.confidence.point2">Video journal for every learner</li>
+                                <li data-i18n="courses.kids.confidence.point3">Celebration assembly every term</li>
                             </ul>
                             <div class="course-meta">
                             </div>
@@ -440,22 +445,22 @@
              (with permission) before launch. -->
         <section class="global-voices container" id="stories">
             <div class="globe-copy">
-                <h2>Voices from around the world</h2>
-                <p>Discover what our learners say about Wordsworth and see the countries they come from.</p>
+                <h2 data-i18n="stories.title">Voices from around the world</h2>
+                <p data-i18n="stories.lead">Discover what our learners say about Wordsworth and see the countries they come from.</p>
                 <ul class="globe-legend">
-                    <li><span class="dot beginner"></span> Beginners</li>
-                    <li><span class="dot intermediate"></span> Intermediate</li>
-                    <li><span class="dot advanced"></span> Advanced</li>
+                    <li><span class="dot beginner"></span> <span data-i18n="stories.level.beginners">Beginners</span></li>
+                    <li><span class="dot intermediate"></span> <span data-i18n="stories.level.intermediate">Intermediate</span></li>
+                    <li><span class="dot advanced"></span> <span data-i18n="stories.level.advanced">Advanced</span></li>
                 </ul>
             </div>
             <div class="globe-stage">
                 <div class="globe-clock" id="klClock" aria-live="polite">
-                    <span class="clock-label">Kuala Lumpur · MYT</span>
+                    <span class="clock-label" data-i18n="stories.clockLabel">Kuala Lumpur · MYT</span>
                     <span class="clock-time" id="klClockTime">--:--</span>
                     <span class="clock-date" id="klClockDate"></span>
                 </div>
                 <button class="globe-fullscreen" id="globeFullscreen" type="button" aria-pressed="false"
-                    aria-label="Enter fullscreen globe view">
+                    aria-label="Enter fullscreen globe view" data-i18n-attr="aria-label:stories.enterFullscreen">
                     <svg class="icon-expand" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill="currentColor"
                             d="M4 4h7v2H6v5H4V4zm10 0h6v7h-2V6h-4V4zM4 13h2v5h5v2H4v-7zm14 5v-5h2v7h-7v-2h5z" />
@@ -465,24 +470,24 @@
                             d="M9 4v2H6v3H4V4h5zm11 5h-2V6h-3V4h5v5zM4 15h2v3h3v2H4v-5zm11 5v-2h3v-3h2v5h-5z" />
                     </svg>
                 </button>
-                <canvas id="globeCanvas" aria-label="Interactive globe showing student origins"></canvas>
+                <canvas id="globeCanvas" aria-label="Interactive globe showing student origins" data-i18n-attr="aria-label:stories.globeLabel"></canvas>
                 <aside class="globe-panel" id="globePanel">
                     <div class="panel-persona">
                         <div class="panel-photo-wrap">
-                            <img id="panelPhoto" alt="Learner portrait" src="" />
+                            <img id="panelPhoto" alt="Learner portrait" src="" data-i18n-attr="alt:stories.panel.photoAlt" />
                         </div>
                         <div class="panel-meta">
-                            <img id="panelFlag" class="panel-flag" alt="Country flag" src="" />
+                            <img id="panelFlag" class="panel-flag" alt="Country flag" src="" data-i18n-attr="alt:stories.panel.flagAlt" />
                             <div class="panel-meta-text">
                                 <p class="panel-name" id="panelName"></p>
                                 <span class="panel-level" id="panelLevel"></span>
                             </div>
                         </div>
                     </div>
-                    <h3 id="panelCountry">Select a marker</h3>
-                    <p class="panel-quote" id="panelQuote">Rotate the planet and click a glowing point to hear from our
+                    <h3 id="panelCountry" data-i18n="stories.panel.select">Select a marker</h3>
+                    <p class="panel-quote" id="panelQuote" data-i18n="stories.panel.hint">Rotate the planet and click a glowing point to hear from our
                         students.</p>
-                    <button class="panel-watch" id="panelWatch" type="button" disabled>Watch their journey</button>
+                    <button class="panel-watch" id="panelWatch" type="button" disabled data-i18n="stories.panel.watch">Watch their journey</button>
                 </aside>
             </div>
         </section>
@@ -490,14 +495,14 @@
         <section class="trusted-accredited" id="trusted">
             <div class="container trusted-layout">
                 <div class="trusted-copy">
-                    <p class="trusted-eyebrow">Trusted · Accredited</p>
+                    <p class="trusted-eyebrow" data-i18n="trusted.eyebrow">Trusted · Accredited</p>
                     <!-- TODO-verify exact accreditation wording -->
                     <!-- TODO: confirm the exact wording of this heading and paragraph once the recognising
                          organisations and their official logos are confirmed. If you change the English,
-                         update the matching Arabic keys in scripts/main.js too. -->
-                    <h2>Teaching you can trust</h2>
-                    <p>We are confirming the official details of the organisations that recognise our centre. Their logos will appear here soon.</p>
-                    <p class="trusted-note">Drag, tap, or use your arrow keys to rotate the cube and reveal every logo.
+                         update the matching Arabic keys (trusted.*) in scripts/i18n-ar.js too. -->
+                    <h2 data-i18n="trusted.title">Teaching you can trust</h2>
+                    <p data-i18n="trusted.text">We are confirming the official details of the organisations that recognise our centre. Their logos will appear here soon.</p>
+                    <p class="trusted-note" data-i18n="trusted.hint">Drag, tap, or use your arrow keys to rotate the cube and reveal every logo.
                     </p>
                 </div>
 
@@ -505,10 +510,10 @@
                     <div class="trusted-cube-backlight" aria-hidden="true"></div>
                     <div class="trusted-cube-shadow" aria-hidden="true"></div>
                     <div class="trusted-cube" data-trusted-cube tabindex="0"
-                        aria-label="Interactive cube. Drag or use the arrow keys to turn it.">
+                        aria-label="Interactive cube. Drag or use the arrow keys to turn it." data-i18n-attr="aria-label:trusted.cubeLabel">
                         <!-- Face 1: the WWLC logo -->
                         <div class="cube-face cube-face--front" role="img"
-                            aria-label="Wordsworth Language Centre logo">
+                            aria-label="Wordsworth Language Centre logo" data-i18n-attr="aria-label:brand.logoAlt">
                             <div class="cube-plate">
                                 <img src="assets/images/ss.png" alt="" loading="lazy" decoding="async" />
                             </div>
@@ -516,7 +521,7 @@
 
                         <!-- Face 2: Ministry of Education Malaysia logo -->
                         <div class="cube-face cube-face--left" role="img"
-                            aria-label="Ministry of Education Malaysia logo">
+                            aria-label="Ministry of Education Malaysia logo" data-i18n-attr="aria-label:trusted.moeLogo">
                             <div class="cube-plate">
                                 <img src="assets/images/MOEM.png" alt="" loading="lazy" decoding="async" />
                             </div>
@@ -524,7 +529,7 @@
 
                         <!-- Face 3: Kuala Lumpur skyline at night, with the Petronas Towers -->
                         <div class="cube-face cube-face--right" role="img"
-                            aria-label="Illustration of the Kuala Lumpur skyline with the Petronas Towers">
+                            aria-label="Illustration of the Kuala Lumpur skyline with the Petronas Towers" data-i18n-attr="aria-label:trusted.skylineArt">
                             <svg class="cube-art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
                                 <defs>
                                     <mask id="cubeMoonMask">
@@ -562,7 +567,7 @@
                         <!-- Face 4: glowing light bulb, inspired by the bulb in the WWLC logo.
                              The filament is a small "W". The glow pulse stops for "reduce motion". -->
                         <div class="cube-face cube-face--top cube-face--bulb" role="img"
-                            aria-label="Illustration of a glowing light bulb with a W-shaped filament">
+                            aria-label="Illustration of a glowing light bulb with a W-shaped filament" data-i18n-attr="aria-label:trusted.bulbArt">
                             <svg class="cube-art" viewBox="0 0 160 160" aria-hidden="true" focusable="false">
                                 <defs>
                                     <radialGradient id="cubeBulbGlow" cx="50%" cy="50%" r="50%">
@@ -603,11 +608,11 @@
                              <div class="cube-plate"><img src="assets/images/logos/FILE-NAME.png" alt="NAME OF ORGANISATION logo" loading="lazy" decoding="async" /></div> -->
                         <div class="cube-face cube-face--back">
                             <!-- TODO: add official Ministry of Culture / Saudi Cultural Attaché logo -->
-                            <span class="cube-placeholder" role="img" aria-label="Partner logo coming soon">Logo coming soon</span>
+                            <span class="cube-placeholder" role="img" aria-label="Partner logo coming soon" data-i18n-attr="aria-label:trusted.partnerSoon" data-i18n="trusted.logoSoon">Logo coming soon</span>
                         </div>
                         <div class="cube-face cube-face--bottom">
                             <!-- TODO: add official Ministry of Culture / Saudi Cultural Attaché logo -->
-                            <span class="cube-placeholder" role="img" aria-label="Partner logo coming soon">Logo coming soon</span>
+                            <span class="cube-placeholder" role="img" aria-label="Partner logo coming soon" data-i18n-attr="aria-label:trusted.partnerSoon" data-i18n="trusted.logoSoon">Logo coming soon</span>
                         </div>
                     </div>
                 </div>
@@ -617,37 +622,37 @@
         <section class="home-contact" id="home-contact">
             <div class="container home-contact-grid">
                 <div class="home-contact-heading">
-                    <h2 class="home-contact-eyebrow">Contact Us</h2>
-                    <p class="home-contact-lead">Questions about courses or the placement test? Send us a message and our team will get back to you.</p>
-                    <p class="home-contact-alt"><span>Prefer to chat?</span> <a
+                    <h2 class="home-contact-eyebrow" data-i18n="homeContact.title">Contact Us</h2>
+                    <p class="home-contact-lead" data-i18n="homeContact.lead">Questions about courses or the placement test? Send us a message and our team will get back to you.</p>
+                    <p class="home-contact-alt"><span data-i18n="homeContact.chat">Prefer to chat?</span> <a
                             href="https://wa.me/60175045565?text=Hello%20Wordsworth%20Language%20Centre"
-                            target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+                            target="_blank" rel="noopener" data-i18n="homeContact.whatsapp">Message us on WhatsApp</a></p>
                 </div>
                 <form id="homeContactForm" class="home-contact-form" action="contact_submit.php" method="post"
                     novalidate>
                     <label>
-                        <span>Full Name</span>
+                        <span data-i18n="contactForm.name">Full Name</span>
                         <input type="text" name="name" required maxlength="120" />
                     </label>
                     <label>
-                        <span>Email</span>
+                        <span data-i18n="contactForm.email">Email</span>
                         <input type="email" name="email" required maxlength="190" />
                     </label>
                     <label>
-                        <span>Phone</span>
+                        <span data-i18n="contactForm.phone">Phone</span>
                         <input type="text" name="phone" required maxlength="40" />
                     </label>
                     <label>
-                        <span>Course</span>
+                        <span data-i18n="contactForm.course">Course</span>
                         <input type="text" name="course" maxlength="160"
-                            placeholder="e.g. IELTS Accelerator (optional)" />
+                            placeholder="e.g. IELTS Accelerator (optional)" data-i18n-attr="placeholder:contactForm.coursePlaceholder" />
                     </label>
                     <label class="home-contact-full">
-                        <span>Message</span>
+                        <span data-i18n="contactForm.message">Message</span>
                         <textarea name="message" maxlength="2000" rows="5"
-                            placeholder="Tell us what you need (optional)"></textarea>
+                            placeholder="Tell us what you need (optional)" data-i18n-attr="placeholder:contactForm.messagePlaceholder"></textarea>
                     </label>
-                    <button type="submit" class="cta">Send Message</button>
+                    <button type="submit" class="cta" data-i18n="contactForm.send">Send Message</button>
                     <p id="homeContactMessage" class="home-contact-message" hidden></p>
                 </form>
             </div>
@@ -656,10 +661,10 @@
     <div id="testimonialModal" class="testimonial-modal" aria-hidden="true">
         <div class="modal-backdrop"></div>
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="testimonialName">
-            <button id="testimonialClose" class="modal-close" aria-label="Close testimonial">&times;</button>
+            <button id="testimonialClose" class="modal-close" aria-label="Close testimonial" data-i18n-attr="aria-label:stories.modal.close">&times;</button>
             <div class="modal-header">
-                <h3 id="testimonialName">Student name</h3>
-                <p id="testimonialQuote">Their story will appear here.</p>
+                <h3 id="testimonialName" data-i18n="stories.modal.name">Student name</h3>
+                <p id="testimonialQuote" data-i18n="stories.modal.quote">Their story will appear here.</p>
             </div>
             <div class="modal-video">
                 <video id="testimonialVideo" controls playsinline preload="none"></video>
