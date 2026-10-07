@@ -3134,3 +3134,221 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
         width: 100%;
     }
 }
+
+
+/* ==========================================================================
+   FAQ PAGE (faq.html)
+   A topic index on the start side (it stays in view on wide screens) and
+   the questions on white sheets. Each question is a <details> element, so
+   it opens and closes without JavaScript. The gold "+" turns into an "x"
+   when a question is open.
+   ========================================================================== */
+
+.fq-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(32px, 5vw, 72px);
+}
+
+@media (max-width: 900px) {
+    .fq-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* --- Topic index --- */
+.fq-index {
+    padding-inline-start: 18px;
+    border-inline-start: 3px solid var(--wwlc-gold);
+}
+
+@media (min-width: 901px) {
+    .fq-index {
+        position: sticky;
+        top: 170px;
+    }
+}
+
+.inner-page .fq-index-title {
+    margin-block-end: 10px;
+    font-weight: 700;
+    color: var(--wwlc-navy);
+}
+
+.fq-index ol {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.fq-index a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: var(--wwlc-navy);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    transition: text-decoration-color 0.18s ease;
+}
+
+.fq-index a:hover {
+    text-decoration-color: var(--wwlc-gold);
+}
+
+/* Phones and tablets: the index becomes a row of chips */
+@media (max-width: 900px) {
+    .fq-index {
+        padding-inline-start: 0;
+        border-inline-start: 0;
+    }
+
+    .fq-index ol {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .fq-index a {
+        min-height: 44px;
+        padding: 0 16px;
+        border: 1.5px solid rgba(5, 15, 79, 0.2);
+        border-radius: var(--wwlc-radius-pill);
+        background: var(--wwlc-surface);
+        text-decoration: none;
+    }
+
+    .fq-index a:hover {
+        border-color: var(--wwlc-gold);
+    }
+}
+
+/* --- Topics and questions --- */
+.fq-topics {
+    display: grid;
+    gap: clamp(36px, 5vw, 56px);
+}
+
+.fq-topic {
+    scroll-margin-top: 180px;
+}
+
+@media (max-width: 980px) {
+    .fq-topic {
+        scroll-margin-top: 100px;
+    }
+}
+
+.inner-page .fq-topic h2 {
+    margin-block-end: 16px;
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+    line-height: 1.2;
+}
+
+.fq-sheet {
+    padding: 4px clamp(18px, 3vw, 32px);
+    border: 1px solid rgba(5, 15, 79, 0.06);
+    border-block-start: 4px solid var(--wwlc-gold);
+    border-radius: 14px;
+    background: var(--wwlc-surface);
+    box-shadow: 0 16px 36px -24px rgba(5, 15, 79, 0.35);
+}
+
+.fq-item + .fq-item {
+    border-block-start: 1px solid rgba(5, 15, 79, 0.1);
+}
+
+.fq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 44px;
+    padding-block: 18px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--wwlc-navy);
+    list-style: none;
+    cursor: pointer;
+}
+
+.fq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The gold "+" (two bars), which turns 45 degrees into an "x" when open */
+.fq-item summary::after {
+    content: "";
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background:
+        linear-gradient(var(--wwlc-navy), var(--wwlc-navy)) center / 12px 2px no-repeat,
+        linear-gradient(var(--wwlc-navy), var(--wwlc-navy)) center / 2px 12px no-repeat,
+        var(--wwlc-gold);
+}
+
+.fq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.fq-item summary:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--wwlc-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+.fq-answer {
+    display: grid;
+    gap: 12px;
+    max-width: 65ch;
+    padding-block-end: 22px;
+    color: var(--wwlc-ink);
+}
+
+.fq-answer ol {
+    display: grid;
+    gap: 6px;
+    margin: 0;
+    padding-inline-start: 1.4em;
+}
+
+.fq-answer a:not(.pg-btn) {
+    font-weight: 600;
+    color: var(--wwlc-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--wwlc-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+/* The address stays in English (dir="ltr"), but in Arabic it lines up on
+   the right with the text around it (also on the About page card) */
+[dir="rtl"] .fq-address,
+[dir="rtl"] .ab-address dd[dir="ltr"] {
+    text-align: right;
+}
+
+/* Opening a question: the mark turns and the answer eases in */
+@media (prefers-reduced-motion: no-preference) {
+    .fq-item summary::after {
+        transition: transform 0.2s ease;
+    }
+
+    .fq-item[open] .fq-answer {
+        animation: fq-open 0.25s ease-out;
+    }
+}
+
+@keyframes fq-open {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: none; }
+}
