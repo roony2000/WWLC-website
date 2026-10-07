@@ -2312,3 +2312,545 @@ html[lang="ar"] body :not(svg, svg *, [translate="no"], [translate="no"] *) {
     margin-left: 0 !important;
     margin-right: 0.7rem !important;
 }
+
+
+/* ==========================================================================
+   INNER PAGES: shared kit (courses.html, about.html, faq.html)
+   The homepage "margin notes" idea on a normal page: a navy notebook-page
+   hero with a gold margin line, then light sections with designed
+   backgrounds. A section with .pg-curve ends in a soft curve (mask) and
+   the next section slides up beneath it, exactly like the homepage.
+   Everything is scoped to body.inner-page, so no other page changes.
+   ========================================================================== */
+
+.inner-page {
+    background: var(--wwlc-surface);
+    color: var(--wwlc-ink);
+}
+
+.inner-page #main-content {
+    font-family: var(--wwlc-font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+}
+
+.inner-page main h1,
+.inner-page main h2,
+.inner-page main h3 {
+    margin: 0;
+    font-family: var(--wwlc-font-display);
+    font-weight: 700;
+    color: var(--wwlc-navy);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+}
+
+.inner-page main p {
+    margin: 0;
+}
+
+/* Page width: 16px side space on phones, 20px from tablets up */
+.pg-wrap {
+    width: min(1160px, 100% - 40px);
+    margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+    .pg-wrap {
+        width: calc(100% - 32px);
+    }
+}
+
+/* Keyboard focus that is always visible (navy on light, gold on dark) */
+.inner-page main a:focus-visible,
+.inner-page main button:focus-visible,
+.inner-page main summary:focus-visible {
+    outline: 3px solid var(--wwlc-navy);
+    outline-offset: 3px;
+}
+
+.inner-page .pg-hero a:focus-visible,
+.inner-page .pg-band--navy a:focus-visible {
+    outline-color: var(--wwlc-gold);
+}
+
+/* --- Sections and their curved edges --- */
+.pg-band {
+    --pg-pad: clamp(56px, 8vw, 104px);
+    position: relative;
+    isolation: isolate;
+    padding-block: var(--pg-pad);
+}
+
+.pg-band.pg-curve {
+    padding-block-end: calc(var(--pg-pad) + var(--wwlc-divider-h));
+    -webkit-mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-a) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+/* Every other curve leans the other way, so the page does not repeat itself */
+.pg-band.pg-curve:nth-child(even) {
+    -webkit-mask:
+        var(--wwlc-curve-b) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+    mask:
+        var(--wwlc-curve-b) center bottom / 100% var(--wwlc-divider-h) no-repeat,
+        linear-gradient(#000 0 0) center top / 100% calc(100% - var(--wwlc-divider-h) + 1px) no-repeat;
+}
+
+.pg-curve + .pg-band {
+    margin-block-start: calc(-1 * var(--wwlc-divider-h));
+    padding-block-start: calc(var(--pg-pad) + var(--wwlc-divider-h));
+}
+
+/* Earlier sections sit on top, so each curve shows the next section */
+.inner-page main > :nth-child(1) { z-index: 9; }
+.inner-page main > :nth-child(2) { z-index: 8; }
+.inner-page main > :nth-child(3) { z-index: 7; }
+.inner-page main > :nth-child(4) { z-index: 6; }
+.inner-page main > :nth-child(5) { z-index: 5; }
+.inner-page main > :nth-child(6) { z-index: 4; }
+.inner-page main > :nth-child(7) { z-index: 3; }
+.inner-page main > :nth-child(8) { z-index: 2; }
+
+/* The footer slides up beneath the last section's curve */
+.inner-page .wwlc-footer {
+    margin-top: calc(-1 * var(--wwlc-divider-h));
+    padding-top: var(--wwlc-divider-h);
+}
+
+/* --- Designed backgrounds ---
+   cream: warm, with fine diagonal gold hairlines (a teacher's ruled margin)
+   blue:  pale blue, with a faint navy dot grid (squared exercise paper)
+   warm:  plain warm cream with soft glows
+   gold:  the brand gold, for a closing call to action (navy text, 8.6:1)
+   navy:  dark, like the hero */
+.pg-band--cream {
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        radial-gradient(40% 50% at 100% 20%, rgba(240, 167, 40, 0.2), transparent 70%),
+        radial-gradient(40% 45% at 0% 75%, rgba(156, 201, 255, 0.24), transparent 70%),
+        repeating-linear-gradient(120deg, transparent 0 56px, rgba(240, 167, 40, 0.14) 56px 57px),
+        linear-gradient(180deg, #fbf5ea 0%, var(--wwlc-cream) 40%, #fcefd6 100%);
+}
+
+.pg-band--blue {
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        radial-gradient(50% 60% at 0% 0%, rgba(156, 201, 255, 0.4), transparent 70%),
+        radial-gradient(38% 50% at 90% 70%, rgba(240, 167, 40, 0.14), transparent 70%),
+        radial-gradient(circle, rgba(5, 15, 79, 0.07) 1px, transparent 1.5px) 0 0 / 22px 22px,
+        linear-gradient(180deg, var(--wwlc-paleblue-soft) 0%, var(--wwlc-paleblue) 100%);
+}
+
+.pg-band--warm {
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        radial-gradient(45% 55% at 85% 40%, rgba(240, 167, 40, 0.18), transparent 70%),
+        radial-gradient(40% 45% at 0% 0%, rgba(156, 201, 255, 0.28), transparent 70%),
+        linear-gradient(180deg, var(--wwlc-cream) 0%, #fcefd6 100%);
+}
+
+.pg-band--gold {
+    background:
+        var(--wwlc-grain-light) 0 0 / 180px 180px,
+        repeating-linear-gradient(to bottom, transparent 0 39px, rgba(5, 15, 79, 0.07) 39px 40px),
+        radial-gradient(60% 80% at 100% 0%, rgba(255, 255, 255, 0.35), transparent 70%),
+        linear-gradient(160deg, var(--wwlc-gold-light) 0%, var(--wwlc-gold) 70%);
+    color: var(--wwlc-navy);
+}
+
+.pg-band--navy,
+.pg-hero {
+    background:
+        var(--wwlc-grain-dark) 0 0 / 180px 180px,
+        conic-gradient(from 200deg at 92% -8%, transparent 0deg, rgba(255, 255, 255, 0.05) 5deg, transparent 11deg, rgba(240, 167, 40, 0.06) 18deg, transparent 25deg, rgba(255, 255, 255, 0.04) 33deg, transparent 40deg, transparent 360deg),
+        radial-gradient(55% 65% at 88% 12%, rgba(240, 167, 40, 0.24), transparent 62%),
+        radial-gradient(45% 55% at 0% 100%, rgba(156, 201, 255, 0.14), transparent 62%),
+        repeating-linear-gradient(to bottom, transparent 0 39px, rgba(255, 255, 255, 0.045) 39px 40px),
+        linear-gradient(160deg, var(--wwlc-blue-deep) 0%, #0a1d6e 45%, var(--wwlc-navy) 100%);
+    color: #ffffff;
+}
+
+/* --- Page hero --- */
+.pg-hero {
+    --pg-pad: clamp(48px, 7vw, 96px);
+    overflow: clip;
+}
+
+/* Two thin gold rings in the top corner (decorative), as on the homepage */
+.pg-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block-start: clamp(-180px, -12vw, -90px);
+    inset-inline-end: clamp(-180px, -12vw, -90px);
+    width: clamp(260px, 32vw, 460px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(240, 167, 40, 0.35);
+    border-radius: 50%;
+    outline: 1px solid rgba(240, 167, 40, 0.16);
+    outline-offset: clamp(18px, 3vw, 40px);
+    pointer-events: none;
+}
+
+.pg-hero-copy {
+    max-width: 48rem;
+    padding-inline-start: clamp(16px, 3vw, 36px);
+    border-inline-start: 2px solid var(--wwlc-gold);
+}
+
+.pg-crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.pg-crumbs li + li::before {
+    content: "/";
+    margin-inline-end: 8px;
+    color: var(--wwlc-gold);
+}
+
+.pg-crumbs a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: rgba(240, 167, 40, 0.8);
+    text-underline-offset: 4px;
+}
+
+.inner-page .pg-hero h1 {
+    max-width: 18ch;
+    font-size: clamp(2.375rem, 1.5rem + 3.4vw, 4rem);
+    line-height: 1.06;
+    color: #ffffff;
+}
+
+/* The teacher's pen stroke under the heading. On page load it is drawn
+   once from the reading side; with "reduce motion" it is simply there. */
+.inner-page .pg-hero h1::after {
+    content: "";
+    display: block;
+    width: clamp(140px, 28vw, 260px);
+    height: 14px;
+    margin-block-start: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M3 10C52 3 124 2 197 7' fill='none' stroke='%23f0a728' stroke-width='4' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+[dir="rtl"] .inner-page .pg-hero h1::after {
+    transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .inner-page .pg-hero h1::after {
+        clip-path: inset(0 100% 0 0);
+        animation: pg-pen 0.8s 0.25s cubic-bezier(0.6, 0, 0.3, 1) forwards;
+    }
+
+    .pg-hero::before {
+        animation: wwlc-drift 18s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes pg-pen {
+    to { clip-path: inset(0 0 0 0); }
+}
+
+.inner-page .pg-lead {
+    max-width: 36em;
+    margin-block-start: 22px;
+    font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.1875rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+/* --- Section headings --- */
+.inner-page .pg-title {
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 2.875rem);
+    line-height: 1.12;
+}
+
+.pg-intro {
+    max-width: 60ch;
+    color: var(--wwlc-ink-muted);
+}
+
+/* --- Buttons and links --- */
+.pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 2px solid transparent;
+    border-radius: var(--wwlc-radius-pill);
+    background: var(--wwlc-gold);
+    color: var(--wwlc-navy);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.pg-btn:hover {
+    background: var(--wwlc-gold-hover);
+    color: var(--wwlc-navy);
+}
+
+/* Navy button, for gold backgrounds */
+.pg-btn--navy {
+    background: var(--wwlc-navy);
+    color: #ffffff;
+}
+
+.pg-btn--navy:hover {
+    background: var(--wwlc-blue-deep);
+    color: #ffffff;
+}
+
+/* Outline button: takes the text colour of its section */
+.pg-btn--line {
+    border-color: currentColor;
+    background: transparent;
+    color: inherit;
+}
+
+.pg-btn--line:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: inherit;
+}
+
+.pg-link {
+    font-weight: 600;
+    color: var(--wwlc-navy);
+    text-decoration: underline;
+    text-decoration-color: var(--wwlc-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+.pg-link:hover {
+    text-decoration-color: var(--wwlc-navy);
+}
+
+/* Teacher's tick, used as the bullet in lists (same as the homepage) */
+.pg-ticks {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pg-ticks li {
+    position: relative;
+    padding-inline-start: 24px;
+}
+
+.pg-ticks li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 2px;
+    top: 0.45em;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid var(--wwlc-navy);
+    border-bottom: 2px solid var(--wwlc-navy);
+    transform: rotate(-45deg);
+}
+
+/* --- Closing call to action (gold band) --- */
+.pg-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px 48px;
+}
+
+.pg-cta-copy {
+    max-width: 40rem;
+}
+
+.inner-page .pg-cta-copy p {
+    margin-block-start: 12px;
+    font-size: 1.125rem;
+    color: var(--wwlc-navy);
+}
+
+.pg-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+@media (max-width: 640px) {
+    .pg-cta-actions,
+    .pg-cta-actions .pg-btn {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================================
+   COURSES PAGE (courses.html)
+   Three "chapters", one per age group, each on its own background. The
+   chapter heading sits over a gold rule, like a divider in a ring binder.
+   Course cards are the homepage cards plus "Who it's for" and two actions.
+   ========================================================================== */
+
+/* Jump links in the hero (one per chapter) */
+.cg-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 32px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cg-jump a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    border-radius: var(--wwlc-radius-pill);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.cg-jump a:hover {
+    background: #ffffff;
+    color: var(--wwlc-navy);
+}
+
+.cg-group {
+    scroll-margin-top: 72px;
+}
+
+.cg-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: end;
+    gap: 14px clamp(24px, 5vw, 64px);
+    margin-block-end: clamp(28px, 4vw, 44px);
+    padding-block-end: 20px;
+    border-block-end: 3px solid var(--wwlc-gold);
+}
+
+.cg-head p {
+    max-width: 52ch;
+    color: var(--wwlc-ink-muted);
+}
+
+@media (max-width: 768px) {
+    .cg-head {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.cg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2.4vw, 28px);
+}
+
+@media (max-width: 1023px) {
+    .cg-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* The third card takes the full width instead of sitting alone */
+    .cg-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .cg-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.cg-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(22px, 2.6vw, 30px);
+    border: 1px solid rgba(5, 15, 79, 0.06);
+    border-block-start: 4px solid var(--wwlc-gold);
+    border-radius: 14px;
+    background: var(--wwlc-surface);
+    box-shadow: 0 16px 36px -22px rgba(5, 15, 79, 0.3);
+}
+
+/* Course type with a gold highlighter stroke under it */
+.inner-page .cg-tag {
+    align-self: flex-start;
+    padding: 0 3px;
+    background: linear-gradient(to top, var(--wwlc-gold-light) 0 42%, transparent 42%);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--wwlc-navy);
+}
+
+.inner-page .cg-card h3 {
+    font-size: 1.375rem;
+    line-height: 1.25;
+}
+
+.cg-text {
+    font-size: 1rem;
+    color: var(--wwlc-ink-muted);
+}
+
+/* "Who it's for": a small margin note */
+.cg-for {
+    padding: 12px 14px;
+    border-inline-start: 3px solid var(--wwlc-navy);
+    border-start-start-radius: 4px;
+    border-end-start-radius: 4px;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+    background: var(--wwlc-paleblue-soft);
+    font-size: 0.98rem;
+    color: var(--wwlc-ink);
+}
+
+.cg-for strong {
+    display: block;
+    color: var(--wwlc-navy);
+}
+
+.cg-card .pg-ticks {
+    font-size: 0.98rem;
+}
+
+.cg-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    margin-block-start: auto;
+    padding-block-start: 18px;
+    border-block-start: 1px dashed var(--wwlc-border);
+}
+
+@media (max-width: 400px) {
+    .cg-actions .pg-btn {
+        width: 100%;
+    }
+}

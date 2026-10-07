@@ -22,6 +22,7 @@ window.WWLC_I18N_AR = {
     'page.fees.title': 'الرسوم والتقويم | مركز ووردزوورث للغات',
     'page.profile.title': 'ملفي الشخصي | مركز ووردزوورث للغات',
     'page.register.title': 'إنشاء حساب | مركز ووردزوورث للغات',
+    'page.courses.title': 'دورات اللغة الإنجليزية في كوالالمبور | مركز ووردزوورث للغات',
 
     // --- Brand ---
     'brand.name': 'مركز ووردزوورث للغات',
@@ -34,6 +35,7 @@ window.WWLC_I18N_AR = {
     'nav.events': 'الفعاليات',
     'nav.contact': 'اتصل بنا',
     'nav.fees': 'الرسوم والتقويم',
+    'nav.courses': 'الدورات',
     'nav.signIn': 'تسجيل الدخول',
     'nav.register': 'تسجيل',
     'nav.openMenu': 'فتح قائمة التنقل',
@@ -179,6 +181,28 @@ window.WWLC_I18N_AR = {
     'courses.kids.confidence.point1': 'تأمّل مشترك بين المدرب وولي الأمر',
     'courses.kids.confidence.point2': 'مذكرات فيديو لكل متعلم',
     'courses.kids.confidence.point3': 'حفل احتفالي كل فصل دراسي',
+
+    // --- Courses page (courses.html) ---
+    // The course cards reuse the homepage keys above; only the new text is here.
+    'crumbs.label': 'مسار التنقل',
+    'coursesPage.title': 'دورات اللغة الإنجليزية لكل مرحلة من مراحل الحياة',
+    'coursesPage.jumpLabel': 'فئات الدورات',
+    'coursesPage.forLabel': 'لمن هذه الدورة',
+    'coursesPage.feesLink': 'اطّلع على الرسوم والمواعيد',
+    'coursesPage.adults.lead': 'للبالغين الذين يريدون إنجليزية أقوى للحياة اليومية والعمل والسفر والدراسة، بما في ذلك التحضير لاختبار IELTS.',
+    'coursesPage.teens.lead': 'للمراهقين الذين يستعدون لامتحانات كامبريدج، ويريدون التحدث بثقة وبناء مهارات دراسية قوية.',
+    'coursesPage.kids.lead': 'للأطفال الذين يتعلمون أفضل من خلال القصص واللعب والحركة، بدءًا بالصوتيات للأعمار من 4 إلى 6 سنوات.',
+    'coursesPage.for.adults.general': 'البالغون الذين يريدون تحسين المهارات الأربع للحياة اليومية والعمل والسفر.',
+    'coursesPage.for.adults.ielts': 'البالغون الذين يستعدون لاختبار IELTS ويريدون الانتقال من الدرجة 5.5 نحو الدرجة 7.0.',
+    'coursesPage.for.adults.business': 'المهنيون الذين يحتاجون إلى إنجليزية واثقة في الاجتماعات والمفاوضات والعروض التقديمية.',
+    'coursesPage.for.teens.igcse': 'المراهقون الذين يستعدون لامتحان كامبريدج IGCSE للغة الإنجليزية كلغة ثانية.',
+    'coursesPage.for.teens.speaking': 'المراهقون الذين يريدون المناظرة وسرد القصص والتحدث بأسلوب مقنع.',
+    'coursesPage.for.teens.study': 'المراهقون الذين يبنون مهارات القراءة وتدوين الملاحظات والبحث للمدرسة.',
+    'coursesPage.for.kids.phonics': 'الأطفال من عمر 4 إلى 6 سنوات، مع لحظات إرشاد لأولياء أمورهم.',
+    'coursesPage.for.kids.creative': 'المتعلمون الصغار الذين تنمو ثقتهم من خلال لعب الأدوار والقصص وصنع الأشياء.',
+    'coursesPage.for.kids.confidence': 'المتعلمون الصغار الخجولون المستعدون لاكتشاف أصواتهم.',
+    'coursesPage.cta.title': 'لست متأكدًا من الدورة المناسبة لك؟',
+    'coursesPage.cta.text': 'خُض اختبار تحديد المستوى، أو أرسل لنا رسالة وسنوصي لك بأفضل مسار دراسي يناسب أهدافك.',
 
     // --- Homepage: globe / learner stories ---
     'stories.title': 'أصوات من حول العالم',
