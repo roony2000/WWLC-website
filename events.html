@@ -109,7 +109,10 @@
 				</div>
 
 				<figure class="ev-feature-photo">
-					<img src="assets/images/events-treasure-hunt.jpg" width="1400" height="788" alt="Treasure Hunt Trip" data-i18n-attr="alt:events.treasure.photoAlt" loading="eager" decoding="async" fetchpriority="high" />
+					<picture>
+						<source type="image/webp" srcset="assets/images/webp/events-treasure-hunt-640.webp 640w, assets/images/webp/events-treasure-hunt-1000.webp 1000w, assets/images/webp/events-treasure-hunt-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 50vw" />
+						<img src="assets/images/events-treasure-hunt.jpg" width="1400" height="788" alt="Treasure Hunt Trip" data-i18n-attr="alt:events.treasure.photoAlt" loading="eager" decoding="async" fetchpriority="high" />
+					</picture>
 				</figure>
 
 				<article class="ev-feature" aria-labelledby="treasure-title">
@@ -125,14 +128,16 @@
 			<div class="pg-wrap">
 				<h2 class="pg-title ev-gallery-title" id="tadom-title" data-i18n="events.tadom.title">Tadom Hill Trip</h2>
 				<ul class="ev-grid ev-grid--8">
-					<li><img src="assets/images/events-tadomhill1.jpg" width="1200" height="800" alt="Tadom Hill Trip 1" data-i18n-attr="alt:events.tadom.photo1" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill2.jpg" width="1200" height="800" alt="Tadom Hill Trip 2" data-i18n-attr="alt:events.tadom.photo2" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill3.jpg" width="1200" height="800" alt="Tadom Hill Trip 3" data-i18n-attr="alt:events.tadom.photo3" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill4.jpg" width="1200" height="800" alt="Tadom Hill Trip 4" data-i18n-attr="alt:events.tadom.photo4" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill5.jpg" width="1200" height="800" alt="Tadom Hill Trip 5" data-i18n-attr="alt:events.tadom.photo5" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill6.jpg" width="1200" height="800" alt="Tadom Hill Trip 6" data-i18n-attr="alt:events.tadom.photo6" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill7.jpg" width="1200" height="800" alt="Tadom Hill Trip 7" data-i18n-attr="alt:events.tadom.photo7" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-tadomhill8.jpg" width="1200" height="800" alt="Tadom Hill Trip 8" data-i18n-attr="alt:events.tadom.photo8" loading="lazy" decoding="async" /></li>
+					<!-- Each photo: WebP copies (assets/images/webp/) with the original JPG as fallback.
+					     sizes: the first and last photo are double width, the rest one column. -->
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill1-480.webp 480w, assets/images/webp/events-tadomhill1-800.webp 800w, assets/images/webp/events-tadomhill1-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" /><img src="assets/images/events-tadomhill1.jpg" width="1200" height="800" alt="Tadom Hill Trip 1" data-i18n-attr="alt:events.tadom.photo1" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill2-480.webp 480w, assets/images/webp/events-tadomhill2-800.webp 800w, assets/images/webp/events-tadomhill2-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-tadomhill2.jpg" width="1200" height="800" alt="Tadom Hill Trip 2" data-i18n-attr="alt:events.tadom.photo2" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill3-480.webp 480w, assets/images/webp/events-tadomhill3-800.webp 800w, assets/images/webp/events-tadomhill3-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-tadomhill3.jpg" width="1200" height="800" alt="Tadom Hill Trip 3" data-i18n-attr="alt:events.tadom.photo3" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill4-480.webp 480w, assets/images/webp/events-tadomhill4-800.webp 800w, assets/images/webp/events-tadomhill4-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-tadomhill4.jpg" width="1200" height="800" alt="Tadom Hill Trip 4" data-i18n-attr="alt:events.tadom.photo4" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill5-480.webp 480w, assets/images/webp/events-tadomhill5-800.webp 800w, assets/images/webp/events-tadomhill5-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-tadomhill5.jpg" width="1200" height="800" alt="Tadom Hill Trip 5" data-i18n-attr="alt:events.tadom.photo5" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill6-480.webp 480w, assets/images/webp/events-tadomhill6-800.webp 800w, assets/images/webp/events-tadomhill6-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-tadomhill6.jpg" width="1200" height="800" alt="Tadom Hill Trip 6" data-i18n-attr="alt:events.tadom.photo6" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill7-480.webp 480w, assets/images/webp/events-tadomhill7-800.webp 800w, assets/images/webp/events-tadomhill7-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-tadomhill7.jpg" width="1200" height="800" alt="Tadom Hill Trip 7" data-i18n-attr="alt:events.tadom.photo7" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-tadomhill8-480.webp 480w, assets/images/webp/events-tadomhill8-800.webp 800w, assets/images/webp/events-tadomhill8-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 50vw" /><img src="assets/images/events-tadomhill8.jpg" width="1200" height="800" alt="Tadom Hill Trip 8" data-i18n-attr="alt:events.tadom.photo8" loading="lazy" decoding="async" /></picture></li>
 				</ul>
 			</div>
 		</section>
@@ -142,10 +147,10 @@
 			<div class="pg-wrap">
 				<h2 class="pg-title ev-gallery-title" id="kanching-title" data-i18n="events.kanching.title">Kanching Waterfall Trip</h2>
 				<ul class="ev-grid ev-grid--4">
-					<li><img src="assets/images/events-kanchingwaterfall1.jpg" width="940" height="788" alt="Kanching Waterfall 1" data-i18n-attr="alt:events.kanching.photo1" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-kanchingwaterfall2.jpg" width="940" height="788" alt="Kanching Waterfall 2" data-i18n-attr="alt:events.kanching.photo2" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-kanchingwaterfall3.jpg" width="940" height="788" alt="Kanching Waterfall 3" data-i18n-attr="alt:events.kanching.photo3" loading="lazy" decoding="async" /></li>
-					<li><img src="assets/images/events-kanchingwaterfall4.jpg" width="940" height="788" alt="Kanching Waterfall 4" data-i18n-attr="alt:events.kanching.photo4" loading="lazy" decoding="async" /></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-kanchingwaterfall1-480.webp 480w, assets/images/webp/events-kanchingwaterfall1-800.webp 800w, assets/images/webp/events-kanchingwaterfall1-940.webp 940w" sizes="(max-width: 900px) 100vw, 50vw" /><img src="assets/images/events-kanchingwaterfall1.jpg" width="940" height="788" alt="Kanching Waterfall 1" data-i18n-attr="alt:events.kanching.photo1" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-kanchingwaterfall2-480.webp 480w, assets/images/webp/events-kanchingwaterfall2-800.webp 800w, assets/images/webp/events-kanchingwaterfall2-940.webp 940w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-kanchingwaterfall2.jpg" width="940" height="788" alt="Kanching Waterfall 2" data-i18n-attr="alt:events.kanching.photo2" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-kanchingwaterfall3-480.webp 480w, assets/images/webp/events-kanchingwaterfall3-800.webp 800w, assets/images/webp/events-kanchingwaterfall3-940.webp 940w" sizes="(max-width: 900px) 50vw, 25vw" /><img src="assets/images/events-kanchingwaterfall3.jpg" width="940" height="788" alt="Kanching Waterfall 3" data-i18n-attr="alt:events.kanching.photo3" loading="lazy" decoding="async" /></picture></li>
+					<li><picture><source type="image/webp" srcset="assets/images/webp/events-kanchingwaterfall4-480.webp 480w, assets/images/webp/events-kanchingwaterfall4-800.webp 800w, assets/images/webp/events-kanchingwaterfall4-940.webp 940w" sizes="(max-width: 900px) 100vw, 50vw" /><img src="assets/images/events-kanchingwaterfall4.jpg" width="940" height="788" alt="Kanching Waterfall 4" data-i18n-attr="alt:events.kanching.photo4" loading="lazy" decoding="async" /></picture></li>
 				</ul>
 			</div>
 		</section>

@@ -75,6 +75,12 @@
     --wwlc-curve-b: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V52C1120 6 540-10 0 38Z'/%3E%3C/svg%3E");
 }
 
+/* <picture> only picks the WebP file; it draws no box of its own, so the <img>
+   inside is sized and laid out exactly as if the <picture> were not there. */
+picture {
+    display: contents;
+}
+
 
 /* ==========================================================================
    HOMEPAGE: base
