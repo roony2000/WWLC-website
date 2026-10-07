@@ -160,13 +160,13 @@ function loadScriptOnce(src) {
 
 function ensureHomepageVendorScripts() {
     if (homepageVendorScriptsPromise) return homepageVendorScriptsPromise;
-    homepageVendorScriptsPromise = Promise.all([
-        loadScriptOnce('scripts/vendor/three.min.js'),
-        loadScriptOnce('scripts/vendor/OrbitControls.js')
-    ]).catch((error) => {
-        homepageVendorScriptsPromise = null;
-        throw error;
-    });
+    // OrbitControls.js needs THREE to exist, so load three.min.js first.
+    homepageVendorScriptsPromise = loadScriptOnce('scripts/vendor/three.min.js')
+        .then(() => loadScriptOnce('scripts/vendor/OrbitControls.js'))
+        .catch((error) => {
+            homepageVendorScriptsPromise = null;
+            throw error;
+        });
     return homepageVendorScriptsPromise;
 }
 
