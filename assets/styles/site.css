@@ -923,6 +923,40 @@ body.home-page {
     content: none;
 }
 
+/* The ninth reason ("Flexible Schedule") would sit alone in the last row of
+   the two-column grid. Where there are two columns, it spans both and lays
+   out in one row (icon, title, text), with a faint gold tint so it reads as
+   the closing card. Phones show one column, so they keep the normal card.
+   Grid columns follow the reading direction, so Arabic mirrors on its own. */
+@media (min-width: 641px) {
+    .home-page .why-wwlc-benefit:last-child,
+    .home-page .why-wwlc-benefit:last-child:hover {
+        grid-column: 1 / -1;
+        grid-template-columns: 40px minmax(0, 13rem) minmax(0, 1fr);
+        column-gap: 24px;
+        align-items: center;
+        background:
+            radial-gradient(70% 140% at 0% 50%, rgba(240, 167, 40, 0.14), transparent 70%),
+            var(--wwlc-surface);
+    }
+
+    [dir="rtl"] .home-page .why-wwlc-benefit:last-child,
+    [dir="rtl"] .home-page .why-wwlc-benefit:last-child:hover {
+        background:
+            radial-gradient(70% 140% at 100% 50%, rgba(240, 167, 40, 0.14), transparent 70%),
+            var(--wwlc-surface);
+    }
+
+    .home-page .why-wwlc-benefit:last-child .why-wwlc-icon {
+        grid-row: auto;
+    }
+
+    .home-page .why-wwlc-benefit:last-child h3,
+    .home-page .why-wwlc-benefit:last-child p {
+        margin: 0;
+    }
+}
+
 
 /* ==========================================================================
    HOMEPAGE: courses ([data-courses])
