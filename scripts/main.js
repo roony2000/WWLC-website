@@ -1103,9 +1103,10 @@ function initGlobe() {
     const enableCelestialBodies = false;
     const enableMoon = false;
 
-    const earthColorLocal = resolveFromScript('../assets/images/earthmap.jpg');
+    const earthColorLocal = resolveFromScript('../assets/images/webp/earthmap-2048.webp');
     const earthColorFallback = 'https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg';
-    const earthBumpLocal = resolveFromScript('../assets/images/earthbump.jpg');
+    // Same file as the colour map: earthbump.jpg and earthmap.jpg are identical, so it downloads once.
+    const earthBumpLocal = resolveFromScript('../assets/images/webp/earthmap-2048.webp');
     const earthBumpFallback = 'https://threejs.org/examples/textures/planets/earth_bump.jpg';
     const earthNightPrimaryUrl = 'https://raw.githubusercontent.com/ajaymt/earth-night-texture/main/earth_night_4k.jpg';
     const earthNightFallbackUrl = 'https://threejs.org/examples/textures/planets/earth_lights_2048.png';
