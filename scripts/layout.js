@@ -122,7 +122,7 @@
             var english = l[3] ? '<span class="lang-translate" data-i18n="lang.name.' + l[0] + '">' + l[3] + '</span>' : '';
             return '<li role="menuitem">' +
                 '<button class="lang-item" data-lang="' + l[0] + '" data-code="' + l[1] + '" data-label="' + l[2] + '" data-flag="' + flag + '">' +
-                '<img class="flag-img" src="' + flag + '" alt="' + l[5] + '" data-i18n-attr="alt:lang.flag.' + l[0] + '" loading="lazy" decoding="async" />' +
+                '<img class="flag-img" src="' + flag + '" width="26" height="18" alt="' + l[5] + '" data-i18n-attr="alt:lang.flag.' + l[0] + '" loading="lazy" decoding="async" />' +
                 '<span class="lang-native" translate="no">' + l[2] + '</span>' + english +
                 '</button></li>';
         }).join('');
@@ -148,7 +148,7 @@
             '<div class="nav-actions">' +
             '<div class="lang-selector" id="langSelector" aria-haspopup="true">' +
             '<button id="langBtn" class="lang-btn" aria-expanded="false" title="Select language" data-i18n-attr="title:lang.select">' +
-            '<img class="flag-img" id="langBtnFlag" src="https://flagcdn.com/gb.svg" alt="English (UK)" />' +
+            '<img class="flag-img" id="langBtnFlag" src="https://flagcdn.com/gb.svg" width="26" height="18" alt="English (UK)" />' +
             '<span id="langBtnLabel" class="lang-label" translate="no">EN</span>' +
             '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z" /></svg>' +
             '</button>' +
