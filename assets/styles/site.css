@@ -1373,6 +1373,20 @@ body.home-page {
     color: var(--wwlc-navy);
 }
 
+/* While closed, the pop-up is only see-through (opacity 0 in main.css), so Tab could
+   still reach its close button and video. visibility: hidden takes them out of the
+   Tab order; the 0.32s delay lets the fade-out finish before it applies. */
+.home-page .testimonial-modal {
+    visibility: hidden;
+    transition: opacity .32s cubic-bezier(.2, .9, .2, 1), visibility 0s linear .32s;
+}
+
+.home-page .testimonial-modal.open,
+.home-page .testimonial-modal.is-open {
+    visibility: visible;
+    transition-delay: 0s;
+}
+
 @media (max-width: 900px) {
     .home-page .global-voices {
         grid-template-columns: minmax(0, 1fr);
