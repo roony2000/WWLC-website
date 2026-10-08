@@ -49,16 +49,17 @@
 
     // Main navigation links: [href, label, translation key]
     // Paths are from the site root; url() adds "../" when needed.
-    // Eight links do not fit in one row below 1280px; site.css ("Header:
+    // The links do not fit in one row below 1280px; site.css ("Header:
     // eight menu links") moves them to their own row on those screens.
-    // A link to a folder's index.html (blog/index.html) is also marked
-    // on every other page in that folder (each blog article).
+    // Blog is not here on purpose: the owner wants it only in the footer
+    // (FOOTER_LINKS below).
+    // A link to a folder's index.html is also marked on every other page
+    // in that folder.
     var NAV_LINKS = [
         ['courses.html', 'Courses', 'nav.courses'],
         ['placement.php', 'Placement Test', 'nav.placement'],
         ['fee-calendar.html', 'Fee &amp; Calendar', 'nav.fees'],
         ['events.html', 'Events', 'nav.events'],
-        ['blog/index.html', 'Blog', 'nav.blog'],
         ['about.html', 'About', 'nav.about'],
         ['faq.html', 'FAQ', 'nav.faq'],
         ['contact.html', 'Contact', 'nav.contact']
