@@ -420,11 +420,16 @@ body.home-page {
     animation: none;
 }
 
+/* The card title is an h2 (so headings go h1 → h2 in order); the last two lines undo
+   the general ".home-page main h2" look so it still looks like the old h3. */
+.home-page .card-inner h2,
 .home-page .card-inner h3 {
     margin: 0;
     font-family: var(--wwlc-font-display);
     font-size: 1.25rem;
     color: var(--wwlc-navy);
+    letter-spacing: inherit;
+    text-wrap: wrap;
 }
 
 .home-page .benefits {
